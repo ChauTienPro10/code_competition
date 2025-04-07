@@ -1,0 +1,75 @@
+2025-04-06 17:39:20 - INFO - Starting CodingApplication using Java 21.0.6 with PID 20900 (C:\Users\LENOVO\Documents\my_project\coding\target\classes started by LENOVO in C:\Users\LENOVO\Documents\my_project\coding)
+2025-04-06 17:39:20 - INFO - Starting CodingApplication using Java 21.0.6 with PID 20900 (C:\Users\LENOVO\Documents\my_project\coding\target\classes started by LENOVO in C:\Users\LENOVO\Documents\my_project\coding)
+2025-04-06 17:39:20 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 17:39:20 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 17:39:21 - INFO - Tomcat initialized with port 8080 (http)
+2025-04-06 17:39:21 - INFO - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-06 17:39:21 - INFO - Starting service [Tomcat]
+2025-04-06 17:39:21 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-06 17:39:21 - INFO - Initializing Spring embedded WebApplicationContext
+2025-04-06 17:39:21 - INFO - Root WebApplicationContext: initialization completed in 807 ms
+2025-04-06 17:39:21 - INFO - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-06 17:39:21 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-04-06 17:39:21 - INFO - Started CodingApplication in 1.816 seconds (process running for 2.055)
+2025-04-06 17:39:21 - INFO - Started CodingApplication in 1.816 seconds (process running for 2.055)
+2025-04-06 17:39:42 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-06 17:39:42 - INFO - Graceful shutdown complete
+2025-04-06 17:39:49 - INFO - Starting CodingApplication using Java 21.0.6 with PID 21576 (C:\Users\LENOVO\Documents\my_project\coding\target\classes started by LENOVO in C:\Users\LENOVO\Documents\my_project\coding)
+2025-04-06 17:39:49 - INFO - Starting CodingApplication using Java 21.0.6 with PID 21576 (C:\Users\LENOVO\Documents\my_project\coding\target\classes started by LENOVO in C:\Users\LENOVO\Documents\my_project\coding)
+2025-04-06 17:39:49 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 17:39:49 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 17:39:49 - INFO - Tomcat initialized with port 8080 (http)
+2025-04-06 17:39:49 - INFO - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-06 17:39:49 - INFO - Starting service [Tomcat]
+2025-04-06 17:39:49 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-06 17:39:49 - INFO - Initializing Spring embedded WebApplicationContext
+2025-04-06 17:39:49 - INFO - Root WebApplicationContext: initialization completed in 815 ms
+2025-04-06 17:39:50 - INFO - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-06 17:39:50 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-04-06 17:39:50 - INFO - Started CodingApplication in 1.911 seconds (process running for 2.145)
+2025-04-06 17:39:50 - INFO - Started CodingApplication in 1.911 seconds (process running for 2.145)
+2025-04-06 17:39:51 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-06 17:39:51 - INFO - Graceful shutdown complete
+2025-04-06 17:40:29 - INFO - Starting CodingApplication using Java 21.0.6 with PID 9656 (C:\Users\LENOVO\Documents\my_project\coding\target\classes started by LENOVO in C:\Users\LENOVO\Documents\my_project\coding)
+2025-04-06 17:40:29 - INFO - Starting CodingApplication using Java 21.0.6 with PID 9656 (C:\Users\LENOVO\Documents\my_project\coding\target\classes started by LENOVO in C:\Users\LENOVO\Documents\my_project\coding)
+2025-04-06 17:40:29 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 17:40:29 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 17:40:30 - INFO - Tomcat initialized with port 8080 (http)
+2025-04-06 17:40:30 - INFO - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-06 17:40:30 - INFO - Starting service [Tomcat]
+2025-04-06 17:40:30 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-06 17:40:30 - INFO - Initializing Spring embedded WebApplicationContext
+2025-04-06 17:40:30 - INFO - Root WebApplicationContext: initialization completed in 808 ms
+2025-04-06 17:40:30 - INFO - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-06 17:40:30 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-04-06 17:40:30 - INFO - Started CodingApplication in 1.932 seconds (process running for 2.164)
+2025-04-06 17:40:30 - INFO - Started CodingApplication in 1.932 seconds (process running for 2.164)
+2025-04-06 17:40:30 - INFO - Ứng dụng bắt đầu...
+2025-04-06 17:40:30 - INFO - Ứng dụng bắt đầu...
+2025-04-06 17:40:30 - ERROR - Đây là log ERROR
+2025-04-06 17:40:30 - ERROR - Đây là log ERROR
+2025-04-06 17:41:25 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-06 17:41:25 - INFO - Graceful shutdown complete
+2025-04-06 17:41:26 - INFO - Starting CodingApplication using Java 21.0.6 with PID 21856 (C:\Users\LENOVO\Documents\my_project\coding\target\classes started by LENOVO in C:\Users\LENOVO\Documents\my_project\coding)
+2025-04-06 17:41:26 - INFO - Starting CodingApplication using Java 21.0.6 with PID 21856 (C:\Users\LENOVO\Documents\my_project\coding\target\classes started by LENOVO in C:\Users\LENOVO\Documents\my_project\coding)
+2025-04-06 17:41:26 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 17:41:26 - INFO - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 17:41:27 - INFO - Tomcat initialized with port 8080 (http)
+2025-04-06 17:41:27 - INFO - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-06 17:41:27 - INFO - Starting service [Tomcat]
+2025-04-06 17:41:27 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-06 17:41:27 - INFO - Initializing Spring embedded WebApplicationContext
+2025-04-06 17:41:27 - INFO - Root WebApplicationContext: initialization completed in 865 ms
+2025-04-06 17:41:28 - INFO - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-06 17:41:28 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-04-06 17:41:28 - INFO - Started CodingApplication in 2.063 seconds (process running for 2.32)
+2025-04-06 17:41:28 - INFO - Started CodingApplication in 2.063 seconds (process running for 2.32)
+2025-04-06 17:41:28 - INFO - Ứng dụng bắt đầu...
+2025-04-06 17:41:28 - INFO - Ứng dụng bắt đầu...
+2025-04-06 17:41:28 - ERROR - Đây là log ERROR
+2025-04-06 17:41:28 - ERROR - Đây là log ERROR
+2025-04-06 17:44:00 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-06 17:44:00 - INFO - Graceful shutdown complete
+2025-04-06 17:44:03 - ERROR - Đây là log ERROR
+2025-04-06 17:53:46 - ERROR - Đây là log ERROR
+2025-04-06 17:54:19 - ERROR - Đây là log ERROR

@@ -1,0 +1,106 @@
+<configuration>
+
+    <!-- Cấu hình appender ghi log vào console -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %p - %m%n</pattern> <!-- Định dạng log -->
+        </encoder>
+    </appender>
+
+    <!--Cau hinh cho Application-->
+    <appender name="INFO_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>logs/coding_application.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/coding_application.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %p - %m%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="ERROR_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>logs/coding_applicationError.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/coding_applicationError.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %p - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="myself.programing.coding.CodingApplication" level="INFO">
+        <appender-ref ref="INFO_LOG" />
+    </logger>
+    <logger name="myself.programing.coding.CodingApplication" level="ERROR">
+        <appender-ref ref="ERROR_LOG" />
+    </logger>
+
+    <!--dockerBaseService Logger-->
+    <appender name="DOCKER_BASE_SERVICE_INFO_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>logs/docker_base_service/docker_base_service_info.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/docker_base_service/docker_base_service_info.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %p - %m%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="DOCKER_BASE_SERVICE_ERROR_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>logs/docker_base_service/docker_base_service_error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/docker_base_service/docker_base_service_error.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %p - %m%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="myself.programing.coding.services.dockerService.DockerBaseService" level="INFO">
+        <appender-ref ref="DOCKER_BASE_SERVICE_INFO_LOG" />
+    </logger>
+    <logger name="myself.programing.coding.services.dockerService.DockerBaseService" level="ERROR">
+        <appender-ref ref="DOCKER_BASE_SERVICE_ERROR_LOG" />
+    </logger>
+
+    <!--JavaBaseService logger-->
+    <appender name="JAVA_BASE_SERVICE_INFO_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>logs/java_service/java_base/java_base_service_info.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/java_service/java_base/java_base_service_info.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %p - %m%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="JAVA_BASE_SERVICE_ERROR_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>logs/java_service/java_base/java_base_service_error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/java_service/java_base/java_base_service_error.log.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %p - %m%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="myself.programing.coding.services.javaCoding.JavaBaseService" level="INFO">
+        <appender-ref ref="JAVA_BASE_SERVICE_INFO_LOG" />
+    </logger>
+    <logger name="myself.programing.coding.services.javaCoding.JavaBaseService" level="ERROR">
+        <appender-ref ref="JAVA_BASE_SERVICE_ERROR_LOG" />
+    </logger>
+
+    <!-- Cấu hình root logger để ghi log vào file -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+</configuration>
