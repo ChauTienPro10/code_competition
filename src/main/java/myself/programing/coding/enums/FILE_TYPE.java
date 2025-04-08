@@ -2,10 +2,11 @@ package myself.programing.coding.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public enum FILE_TYPE {
     TEXT(1, "txt"),
     JAVA(2, "java"),

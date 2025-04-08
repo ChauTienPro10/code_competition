@@ -11,10 +11,5 @@ public class CodingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CodingApplication.class, args);
-		logger.info("Ứng dụng bắt đầu...");
-		logger.debug("Đây là log DEBUG");
-		logger.error("Đây là log ERROR");
-
 	}
-
 }

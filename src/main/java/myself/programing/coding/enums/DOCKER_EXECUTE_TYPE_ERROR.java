@@ -29,6 +29,5 @@ public enum DOCKER_EXECUTE_TYPE_ERROR {
         }
         return UNKNOWN_ERROR;
     }
-
 }
 

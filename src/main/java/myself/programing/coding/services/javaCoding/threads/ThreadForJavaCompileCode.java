@@ -9,13 +9,20 @@ public class ThreadForJavaCompileCode {
 
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
 
+    /**
+     *
+     * @param filePath
+     * @return String
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
     public String compile(String filePath) throws ExecutionException, InterruptedException {
         Callable<String> compileTask = () -> {
             JavaCompileService javaCompileService = new JavaCompileService();
             try {
                 return javaCompileService.doCompileToClassFile(filePath);
             } catch (DockerExecuteException e) {
-                throw new RuntimeException(e);
+                throw new ExecutionException(e);
             }
         };
         Future<String> future = executorService.submit(compileTask);
