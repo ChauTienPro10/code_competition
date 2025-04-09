@@ -59,7 +59,7 @@ public class JavaCompileService extends JavaBaseService{
             throw new DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR.UNKNOWN_ERROR, " Invalid path: " + pathInContainer);
         }
         String command = dockerServiceForJava.genCompileFileJavaCmd(pathInContainer);
-        dockerServiceForJava.executeDockerCommandHasResult(command);
-        return pathInContainer.replace(".java", ".class");
+        String result = dockerServiceForJava.executeDockerCommandHasResult(command);
+        return pathInContainer.replace(".java", ".class") + " " + result;
     }
 }
