@@ -1,6 +1,8 @@
 package myself.programing.coding.controllers.javaCode;
 
+import myself.programing.coding.dto.CompileRequestJavaDto;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class JavaCompileController {
 
     @PostMapping("/")
-    public String hello() {
-        return "hello";
+    public String compile(@RequestBody CompileRequestJavaDto request) {
+        System.out.println(request.getCode());
+        return request.getLanguage();
     }
 }
