@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  jdk21:
+    image: eclipse-temurin:21-jdk
+    container_name: jdk21-container
+    stdin_open: true
+    tty: true
+    working_dir: /app
+    volumes:
+      - ./:/app
+    networks:
+      - pro_prj_net
+
+networks:
+  pro_prj_net:
+    driver: bridge
