@@ -1,5 +1,7 @@
 package myself.programing.coding.services.javaCoding;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import myself.programing.coding.enums.DOCKER_EXECUTE_TYPE_ERROR;
 import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.services.dockerService.DockerServiceForJava;
@@ -40,6 +42,35 @@ public class JavaBaseService {
 
     /**
      *
+     * @param code
+     * @return
+     */
+    public String detectFileName(String code) throws DockerExecuteException {
+        if (code == null || code.isEmpty()) {
+            throw new DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR.UNKNOWN_ERROR, "Code is emmppty!");
+        }
+
+        String publicClassPattern = "\\bpublic\\s+class\\s+(\\w+)";
+        Pattern pattern = Pattern.compile(publicClassPattern);
+        Matcher matcher = pattern.matcher(code);
+
+        if (matcher.find()) {
+            return matcher.group(1);
+        }
+
+        String classPattern = "\\bclass\\s+(\\w+)";
+        pattern = Pattern.compile(classPattern);
+        matcher = pattern.matcher(code);
+
+        if (matcher.find()) {
+            return matcher.group(1);
+        }
+
+        return null;
+    }
+
+    /**
+     *
      * @param directoryPath
      * @throws IOException
      */
@@ -61,9 +92,7 @@ public class JavaBaseService {
     }
 
     /**
-     *
      * @param path
-     * @param idUser
      * @return String
      */
     public String doCopyFileToContainer(String path, int idUser) throws DockerExecuteException {
@@ -103,5 +132,4 @@ public class JavaBaseService {
     public void logError(String e) {
         logger.error(e);
     }
-
 }
