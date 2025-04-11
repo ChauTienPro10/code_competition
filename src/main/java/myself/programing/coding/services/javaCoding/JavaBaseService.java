@@ -66,29 +66,7 @@ public class JavaBaseService {
             return matcher.group(1);
         }
 
-        return null;
-    }
-
-    /**
-     *
-     * @param directoryPath
-     * @throws IOException
-     */
-    public void deleteJavaFile(String directoryPath) throws IOException {
-        Path startPath = Path.of(directoryPath);
-        Files.walkFileTree(startPath, new SimpleFileVisitor<Path>() {
-            @Override
-            public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-                if (file.toString().endsWith(".java") || file.toString().endsWith(".class")) {
-                    Files.delete(file);
-                }
-                return FileVisitResult.CONTINUE;
-            }
-            @Override
-            public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
-                return FileVisitResult.CONTINUE;
-            }
-        });
+        throw new DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR.COMMAND_FAILED, "Class name invalid!");
     }
 
     /**
@@ -104,6 +82,7 @@ public class JavaBaseService {
             String folder = FileUtils.generateDockerFolderName(idUser);
             dockerServiceForJava.executeDockerCommand(dockerServiceForJava.genTouchFolderCmd(folder));
             String filePathInContainer = folder + "/" + fileName;
+            dockerServiceForJava.deleteFile(filePathInContainer);
             String command = dockerServiceForJava.generateCopyFileToContainerCmd(path, filePathInContainer);
             dockerServiceForJava.executeDockerCommand(command);
             return filePathInContainer;

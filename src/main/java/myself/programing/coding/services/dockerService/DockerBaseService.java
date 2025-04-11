@@ -112,11 +112,20 @@ public class DockerBaseService {
 
     /**
      *
-     * @param fileName
+     * @param path
+     * @throws DockerExecuteException
+     */
+    public void deleteFile(String path) throws DockerExecuteException {
+        executeDockerCommand(genDeleteFileCmd(path));
+    }
+
+    /**
+     *
+     * @param path
      * @return String
      */
-    public String generateRemoveFileCmd(String fileName) {
-        return DOCKER_EXEC + " rm " + fileName;
+    public String genDeleteFileCmd(String path) {
+        return DOCKER_EXEC + " rm -f " + path;
     }
 
     /**
