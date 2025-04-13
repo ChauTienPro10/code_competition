@@ -5,8 +5,12 @@ import myself.programing.coding.dto.CompileRequestJavaDto;
 import myself.programing.coding.dto.CompileResponse;
 import myself.programing.coding.dto.HttpResponseApi;
 import myself.programing.coding.enums.API_RESPONSE_STATUS;
+import myself.programing.coding.repository.TestCaseRepository;
 import myself.programing.coding.services.javaCoding.JavaCompileService;
 import myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode;
+import myself.programing.coding.services.javaCoding.threads.ThreadsForJavaRunCode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,27 +20,65 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/java/compile")
 public class JavaCompileController {
+    @Autowired
+    TestCaseRepository testCaseRepository;
+
+    private final Logger logger = LoggerFactory.getLogger(JavaCompileController.class);
+
+    /**
+     *
+     * @param e
+     */
+    public void logInfo(String e) {
+        logger.info(e);
+    }
+
+    /**
+     *
+     * @param e
+     */
+    public void logError(Throwable e) {
+        logger.error(e.getMessage());
+    }
+
+    /**
+     *
+     * @param e
+     */
+    public void logError(String e) {
+        logger.error(e);
+    }
 
     @Autowired private JavaCompileService javaCompileService;
-    private final ThreadForJavaCompileCode threadForJavaCompileCode = new ThreadForJavaCompileCode();
 
+    /**
+     *
+     * @param request
+     * @return {@code HttpResponseApi<CompileResponse>}
+     */
     @PostMapping("/")
     public HttpResponseApi<CompileResponse> compile(@RequestBody CompileRequestJavaDto request) {
         try {
-            String resultCompile = threadForJavaCompileCode.compile(request.getCode());
+            logInfo("*****START COMPILING*****");
+            ThreadForJavaCompileCode threadForJavaCompileCode = new ThreadForJavaCompileCode();
+            String resultCompile = threadForJavaCompileCode.compile(request.getCode(), request.getIdUser());
             CompileResponse compileResponse = new CompileResponse(resultCompile);
-            return HttpResponseApi.<CompileResponse>builder()
+            HttpResponseApi<CompileResponse> result = HttpResponseApi.<CompileResponse>builder()
                     .message(API_RESPONSE_STATUS.SUCCESS.getMessage())
                     .code(API_RESPONSE_STATUS.SUCCESS.getCode())
                     .data(compileResponse)
                     .build();
+            logInfo("*****COMPILING SUCCESSFULLY*****");
+            return result;
         } catch (InterruptedException | ExecutionException e) {
+            logInfo("*****COMPILING FAIL: " + e.getMessage()+ "*****");
             return HttpResponseApi.<CompileResponse>builder()
                     .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
                     .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
-                    .data(new CompileResponse(this.getRightPartAfterLastColon(e.getMessage())))
+                    .data(new CompileResponse(this.getRightPartAfterFirstBracket(e.getMessage())))
                     .build();
         } catch (Exception e) {
+            logError("*****COMPILING FAIL BY ERROR SYSTEM: " + e.getMessage()+ "*****");
             return HttpResponseApi.<CompileResponse>builder()
                     .code(API_RESPONSE_STATUS.SERVER_ERROR.getCode())
                     .message(API_RESPONSE_STATUS.SERVER_ERROR.getMessage())
@@ -46,17 +88,52 @@ public class JavaCompileController {
     }
 
     /**
-     * String
-     * @param input
-     * @return
+     *
+     * @param request
+     * @return {@code HttpResponseApi<CompileResponse>}
      */
-    public String getRightPartAfterLastColon(String input) {
-        int lastColon = input.lastIndexOf(":");
-        if (lastColon != -1 && lastColon < input.length() - 1) {
-            return input.substring(lastColon + 1);
+    @PostMapping("/run")
+    public HttpResponseApi<CompileResponse> run(@RequestBody CompileRequestJavaDto request) {
+        try {
+            logInfo("*****START COMPILING AND RUN*****");
+            ThreadsForJavaRunCode threadsForJavaRunCode = new ThreadsForJavaRunCode();
+            String resultRun = threadsForJavaRunCode.runCode(request.getCode(), request.getIdUser(), testCaseRepository.findByChallengeId(request.getChallengeId()));
+            CompileResponse compileResponse = new CompileResponse(resultRun);
+            HttpResponseApi<CompileResponse> result = HttpResponseApi.<CompileResponse>builder()
+                    .message(API_RESPONSE_STATUS.SUCCESS.getMessage())
+                    .code(API_RESPONSE_STATUS.SUCCESS.getCode())
+                    .data(compileResponse)
+                    .build();
+            logInfo("*****RUN COMPETITION*****");
+            return result;
+        } catch (InterruptedException | ExecutionException e) {
+            logInfo("*****RUN FAIL: " + e.getMessage()+ "*****");
+            return HttpResponseApi.<CompileResponse>builder()
+                    .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
+                    .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
+                    .data(new CompileResponse(this.getRightPartAfterFirstBracket(e.getMessage())))
+                    .build();
+        } catch (Exception e) {
+            logError("*****RUN FAIL BY ERROR SYSTEM: " + e.getMessage() + "*****");
+            return HttpResponseApi.<CompileResponse>builder()
+                    .code(API_RESPONSE_STATUS.SERVER_ERROR.getCode())
+                    .message(API_RESPONSE_STATUS.SERVER_ERROR.getMessage())
+                    .data(null)
+                    .build();
+        }
+    }
+
+    /**
+     *
+     * @param input
+     * @return String
+     */
+    public String getRightPartAfterFirstBracket(String input) {
+        int index = input.indexOf("]");
+        if (index != -1 && index < input.length() - 1) {
+            return input.substring(index + 1).trim();
         } else {
             return input;
         }
     }
-
 }

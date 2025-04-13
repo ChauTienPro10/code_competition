@@ -1,0 +1,254 @@
+2025-04-12 12:37:33 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: Task java.util.concurrent.FutureTask@2ca4a59c[Not completed, task = myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode$$Lambda/0x0000024d2151ee10@289b3457] rejected from java.util.concurrent.ThreadPoolExecutor@3d19d85[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]*****
+2025-04-12 12:37:38 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: Task java.util.concurrent.FutureTask@67ee6597[Not completed, task = myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode$$Lambda/0x0000024d2151ee10@692996c2] rejected from java.util.concurrent.ThreadPoolExecutor@3d19d85[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]*****
+2025-04-12 12:37:39 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: Task java.util.concurrent.FutureTask@121e6935[Not completed, task = myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode$$Lambda/0x0000024d2151ee10@1cd984de] rejected from java.util.concurrent.ThreadPoolExecutor@3d19d85[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]*****
+2025-04-12 12:37:39 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: Task java.util.concurrent.FutureTask@290c1e47[Not completed, task = myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode$$Lambda/0x0000024d2151ee10@27cbf4ce] rejected from java.util.concurrent.ThreadPoolExecutor@3d19d85[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]*****
+2025-04-12 12:41:49 - INFO - Tomcat initialized with port 8080 (http)
+2025-04-12 12:41:49 - INFO - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-12 12:41:49 - INFO - Starting service [Tomcat]
+2025-04-12 12:41:49 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-12 12:41:49 - INFO - Initializing Spring embedded WebApplicationContext
+2025-04-12 12:41:49 - INFO - Root WebApplicationContext: initialization completed in 1042 ms
+2025-04-12 12:41:50 - INFO - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-12 12:41:50 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-04-12 12:41:59 - INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-12 12:41:59 - INFO - Initializing Servlet 'dispatcherServlet'
+2025-04-12 12:41:59 - INFO - Completed initialization in 0 ms
+2025-04-12 12:42:00 - ERROR - Execute fail: docker exec jdk21-container javac file_run_1002/Car.java with exit code 1
+2025-04-12 12:46:39 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-12 12:46:39 - INFO - Graceful shutdown complete
+2025-04-12 12:46:42 - INFO - Tomcat initialized with port 8080 (http)
+2025-04-12 12:46:42 - INFO - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-12 12:46:42 - INFO - Starting service [Tomcat]
+2025-04-12 12:46:42 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-12 12:46:42 - INFO - Initializing Spring embedded WebApplicationContext
+2025-04-12 12:46:42 - INFO - Root WebApplicationContext: initialization completed in 1016 ms
+2025-04-12 12:46:42 - INFO - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-12 12:46:42 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-04-12 12:46:47 - INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-12 12:46:47 - INFO - Initializing Servlet 'dispatcherServlet'
+2025-04-12 12:46:47 - INFO - Completed initialization in 0 ms
+2025-04-12 12:46:48 - ERROR - Execute fail: docker exec jdk21-container javac file_run_1002/Car.java with exit code 1
+2025-04-12 12:48:27 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-12 12:48:27 - INFO - Graceful shutdown complete
+2025-04-12 12:50:37 - ERROR - *****START COMPILING*****
+2025-04-12 12:53:26 - ERROR - *****START COMPILING*****
+2025-04-12 12:59:16 - INFO - *****START COMPILING*****
+2025-04-12 12:59:16 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Car.java file_run_1002/Car.java:4: error: ';' expected
+        System.out.println("hello car")
+                                       ^
+1 error
+*****
+2025-04-12 12:59:25 - INFO - *****START COMPILING*****
+2025-04-12 12:59:25 - INFO - *****START COMPILING*****
+2025-04-12 12:59:26 - INFO - *****START COMPILING*****
+2025-04-12 12:59:26 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Car.java file_run_1002/Car.java:4: error: ';' expected
+        System.out.println("hello car")
+                                       ^
+1 error
+*****
+2025-04-12 12:59:27 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Car.java file_run_1002/Car.java:4: error: ';' expected
+        System.out.println("hello car")
+                                       ^
+1 error
+*****
+2025-04-12 12:59:27 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Car.java file_run_1002/Car.java:4: error: ';' expected
+        System.out.println("hello car")
+                                       ^
+1 error
+*****
+2025-04-12 13:00:21 - INFO - *****START COMPILING*****
+2025-04-12 13:00:22 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Car.java file_run_1002/Car.java:4: error: ';' expected
+        System.out.println("hello car")
+                                       ^
+1 error
+*****
+2025-04-12 13:01:27 - INFO - *****START COMPILING*****
+2025-04-12 13:01:28 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Car.java file_run_1002/Car.java:4: error: ';' expected
+        System.out.println("hello car")
+                                       ^
+1 error
+*****
+2025-04-12 13:01:44 - INFO - *****START COMPILING*****
+2025-04-12 13:01:45 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 13:03:10 - INFO - *****START COMPILING*****
+2025-04-12 13:03:48 - INFO - *****START COMPILING*****
+2025-04-12 13:05:37 - INFO - *****START COMPILING*****
+2025-04-12 13:05:38 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Car.java file_run_1002/Car.java:4: error: ';' expected
+        System.out.println("hello car")
+                                       ^
+file_run_1002/Car.java:5: error: reached end of file while parsing
+}
+ ^
+2 errors
+*****
+2025-04-12 13:06:03 - INFO - *****START COMPILING*****
+2025-04-12 13:06:04 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 13:06:13 - INFO - *****START COMPILING*****
+2025-04-12 13:29:11 - INFO - *****START COMPILING*****
+2025-04-12 13:29:12 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Car.java file_run_1002/Car.java:4: error: ';' expected
+        System.out.println("hello car")
+                                       ^
+1 error
+*****
+2025-04-12 13:29:16 - INFO - *****START COMPILING*****
+2025-04-12 13:29:17 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 13:29:21 - INFO - *****START COMPILING*****
+2025-04-12 13:29:21 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Car.java file_run_1002/Car.java:4: error: ';' expected
+        System.out.println("hello car")
+                                       ^
+1 error
+*****
+2025-04-12 13:30:47 - INFO - *****START COMPILING*****
+2025-04-12 13:30:48 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Car.java file_run_1002/Car.java:9: error: <identifier> expected
+    public status void sum (int a, int b) {
+                 ^
+1 error
+*****
+2025-04-12 13:41:41 - INFO - *****START COMPILING*****
+2025-04-12 13:41:41 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Math.java file_run_1002/Math.java:9: error: <identifier> expected
+    public status int sum (int a, int b) {
+                 ^
+1 error
+*****
+2025-04-12 13:42:33 - INFO - *****START COMPILING*****
+2025-04-12 13:42:34 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 13:42:43 - INFO - *****START COMPILING*****
+2025-04-12 13:42:44 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Math.java file_run_1002/Math.java:9: error: cannot find symbol
+    public static intj sum (int a, int b) {
+                  ^
+  symbol:   class intj
+  location: class Math
+1 error
+*****
+2025-04-12 13:57:05 - INFO - *****START COMPILING*****
+2025-04-12 13:57:06 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Math.java] file_run_1002/Math.java:9: error: cannot find symbol
+    public static intj sum (int a, int b) {
+                  ^
+  symbol:   class intj
+  location: class Math
+1 error
+*****
+2025-04-12 13:57:22 - INFO - *****START COMPILING*****
+2025-04-12 13:57:23 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 15:53:36 - INFO - *****START COMPILING*****
+2025-04-12 15:53:37 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 16:01:29 - INFO - *****START COMPILING*****
+2025-04-12 16:01:30 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 16:02:36 - INFO - *****START COMPILING*****
+2025-04-12 16:02:37 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 16:03:16 - INFO - *****START COMPILING*****
+2025-04-12 16:03:17 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 16:03:36 - INFO - *****START COMPILING*****
+2025-04-12 16:03:37 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:1: error: '{' expected
+public class Main
+                 ^
+1 error
+*****
+2025-04-12 16:05:18 - INFO - *****START COMPILING*****
+2025-04-12 16:05:19 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:1: error: '{' expected
+public class Main
+                 ^
+1 error
+*****
+2025-04-12 16:11:11 - INFO - *****START COMPILING*****
+2025-04-12 16:11:11 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:1: error: '{' expected
+public class Main
+                 ^
+1 error
+*****
+2025-04-12 16:18:05 - INFO - *****START COMPILING*****
+2025-04-12 16:18:06 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] error: file not found: file_run_1002/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-04-12 16:23:18 - INFO - *****START COMPILING*****
+2025-04-12 16:23:18 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:1: error: '{' expected
+public class Main
+                 ^
+1 error
+*****
+2025-04-12 16:24:53 - INFO - *****START COMPILING*****
+2025-04-12 16:24:53 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:1: error: '{' expected
+public class Main
+                 ^
+1 error
+*****
+2025-04-12 16:25:17 - INFO - *****START COMPILING*****
+2025-04-12 16:25:18 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 16:41:01 - INFO - *****START COMPILING*****
+2025-04-12 16:41:01 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:4: error: ';' expected
+        System.out.println("3")
+                               ^
+1 error
+*****
+2025-04-12 16:41:06 - INFO - *****START COMPILING*****
+2025-04-12 16:41:07 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 17:08:26 - INFO - *****START COMPILING*****
+2025-04-12 17:08:27 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 17:30:36 - INFO - *****START COMPILING AND RUN*****
+2025-04-12 17:30:36 - INFO - *****RUN COMPETITION*****
+2025-04-12 17:30:40 - INFO - *****START COMPILING AND RUN*****
+2025-04-12 17:30:41 - INFO - *****RUN COMPETITION*****
+2025-04-12 17:31:47 - INFO - *****START COMPILING AND RUN*****
+2025-04-12 17:31:48 - INFO - *****RUN COMPETITION*****
+2025-04-12 17:33:30 - INFO - *****START COMPILING AND RUN*****
+2025-04-12 17:33:31 - INFO - *****RUN COMPETITION*****HttpResponseApi(code=200, message=Success, data=myself.programing.coding.dto.CompileResponse@6d3e466e)
+2025-04-12 17:35:36 - INFO - *****START COMPILING AND RUN*****
+2025-04-12 17:35:37 - INFO - *****RUN COMPETITION*****HttpResponseApi(code=200, message=Success, data=myself.programing.coding.dto.CompileResponse@207ff97)
+2025-04-12 17:36:45 - INFO - *****START COMPILING AND RUN*****
+2025-04-12 17:36:46 - INFO - *****RUN COMPETITION*****
+2025-04-12 17:38:57 - INFO - *****START COMPILING AND RUN*****
+2025-04-12 17:38:58 - INFO - *****RUN COMPETITION*****HttpResponseApi(code=200, message=Success, data=myself.programing.coding.dto.CompileResponse@c8886cf)
+2025-04-12 17:40:09 - INFO - *****START COMPILING AND RUN*****
+2025-04-12 17:40:10 - INFO - *****RUN COMPETITION*****HttpResponseApi(code=200, message=Success, data=myself.programing.coding.dto.CompileResponse@6d3e466e)
+2025-04-12 17:41:03 - INFO - *****START COMPILING AND RUN*****
+2025-04-12 17:41:04 - INFO - *****RUN COMPETITION*****HttpResponseApi(code=200, message=Success, data=myself.programing.coding.dto.CompileResponse@5b89235b)
+2025-04-12 17:41:22 - INFO - *****START COMPILING*****
+2025-04-12 17:41:23 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 17:53:16 - INFO - *****START COMPILING AND RUN*****
+2025-04-12 17:53:17 - INFO - *****RUN COMPETITION*****HttpResponseApi(code=200, message=Success, data=myself.programing.coding.dto.CompileResponse@29ee3026)
+2025-04-12 17:55:11 - INFO - *****START COMPILING AND RUN*****
+2025-04-12 17:55:12 - INFO - *****RUN COMPETITION*****HttpResponseApi(code=200, message=Success, data=myself.programing.coding.dto.CompileResponse@b660bfb)
+2025-04-12 17:55:39 - INFO - *****START COMPILING*****
+2025-04-12 17:55:40 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 17:57:28 - INFO - *****START COMPILING AND RUN*****
+2025-04-12 17:57:29 - INFO - *****RUN COMPETITION*****HttpResponseApi(code=200, message=Success, data=myself.programing.coding.dto.CompileResponse@b411f98)
+2025-04-12 17:59:51 - INFO - *****START COMPILING*****
+2025-04-12 17:59:52 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-12 17:59:53 - INFO - *****START COMPILING AND RUN*****
+2025-04-12 17:59:54 - INFO - *****RUN COMPETITION*****
+2025-04-13 12:58:42 - INFO - *****START COMPILING*****
+2025-04-13 12:58:43 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-13 12:58:44 - INFO - *****START COMPILING AND RUN*****
+2025-04-13 12:58:46 - INFO - *****RUN COMPETITION*****
+2025-04-13 13:28:07 - INFO - *****START COMPILING AND RUN*****
+2025-04-13 13:28:08 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Invalid file*****
+2025-04-13 13:28:13 - INFO - *****START COMPILING*****
+2025-04-13 13:28:14 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-13 13:28:16 - INFO - *****START COMPILING AND RUN*****
+2025-04-13 13:28:16 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Invalid file*****
+2025-04-13 13:34:33 - INFO - *****START COMPILING*****
+2025-04-13 13:34:34 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-13 13:34:35 - INFO - *****START COMPILING AND RUN*****
+2025-04-13 13:34:36 - INFO - *****RUN COMPETITION*****
+2025-04-13 13:38:38 - INFO - *****START COMPILING AND RUN*****
+2025-04-13 13:38:39 - INFO - *****RUN COMPETITION*****
+2025-04-13 17:11:02 - INFO - *****START COMPILING AND RUN*****
+2025-04-13 17:11:03 - INFO - *****RUN FAIL: java.lang.NullPointerException: Cannot invoke "myself.programing.coding.repository.TestCaseRepository.findByChallengeId(int)" because "this.testCaseRepository" is null*****
+2025-04-13 17:16:32 - INFO - *****START COMPILING*****
+2025-04-13 17:16:33 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-13 17:16:35 - INFO - *****START COMPILING AND RUN*****
+2025-04-13 17:17:22 - INFO - *****START COMPILING AND RUN*****
+2025-04-13 17:17:23 - INFO - *****RUN COMPETITION*****
+2025-04-13 17:19:05 - INFO - *****START COMPILING AND RUN*****
+2025-04-13 17:19:07 - INFO - *****RUN COMPETITION*****
+2025-04-13 17:21:38 - INFO - *****START COMPILING AND RUN*****
+2025-04-13 17:21:39 - INFO - *****RUN COMPETITION*****
+2025-04-13 17:22:29 - INFO - *****START COMPILING*****
+2025-04-13 17:22:30 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-13 17:22:31 - INFO - *****START COMPILING AND RUN*****
+2025-04-13 17:22:33 - INFO - *****RUN COMPETITION*****
+2025-04-13 17:23:48 - INFO - *****START COMPILING*****
+2025-04-13 17:23:49 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-13 17:25:46 - INFO - *****START COMPILING AND RUN*****
+2025-04-13 17:25:48 - INFO - *****RUN COMPETITION*****

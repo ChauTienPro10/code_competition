@@ -66,7 +66,7 @@ public class DockerBaseService {
                 return output.toString();
             } else {
                 logError("Execute fail: " + command + " with exit code " + exitCode);
-                throw new DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR.UNKNOWN_ERROR, "Can't finish: " + command + " " + output);
+                throw new DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR.UNKNOWN_ERROR, "[Can't finish: " + command + "] " + output);
             }
         } catch (IOException | InterruptedException e) {
             logError("Error executing Docker command: " + command + " - " + e.getMessage());

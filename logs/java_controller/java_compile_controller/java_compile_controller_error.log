@@ -1,0 +1,62 @@
+2025-04-12 12:37:33 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: Task java.util.concurrent.FutureTask@2ca4a59c[Not completed, task = myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode$$Lambda/0x0000024d2151ee10@289b3457] rejected from java.util.concurrent.ThreadPoolExecutor@3d19d85[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]*****
+2025-04-12 12:37:38 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: Task java.util.concurrent.FutureTask@67ee6597[Not completed, task = myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode$$Lambda/0x0000024d2151ee10@692996c2] rejected from java.util.concurrent.ThreadPoolExecutor@3d19d85[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]*****
+2025-04-12 12:37:39 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: Task java.util.concurrent.FutureTask@121e6935[Not completed, task = myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode$$Lambda/0x0000024d2151ee10@1cd984de] rejected from java.util.concurrent.ThreadPoolExecutor@3d19d85[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]*****
+2025-04-12 12:37:39 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: Task java.util.concurrent.FutureTask@290c1e47[Not completed, task = myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode$$Lambda/0x0000024d2151ee10@27cbf4ce] rejected from java.util.concurrent.ThreadPoolExecutor@3d19d85[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]*****
+2025-04-12 12:41:49 - INFO - Tomcat initialized with port 8080 (http)
+2025-04-12 12:41:49 - INFO - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-12 12:41:49 - INFO - Starting service [Tomcat]
+2025-04-12 12:41:49 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-12 12:41:49 - INFO - Initializing Spring embedded WebApplicationContext
+2025-04-12 12:41:49 - INFO - Root WebApplicationContext: initialization completed in 1042 ms
+2025-04-12 12:41:50 - INFO - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-12 12:41:50 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-04-12 12:41:59 - INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-12 12:41:59 - INFO - Initializing Servlet 'dispatcherServlet'
+2025-04-12 12:41:59 - INFO - Completed initialization in 0 ms
+2025-04-12 12:42:00 - ERROR - Execute fail: docker exec jdk21-container javac file_run_1002/Car.java with exit code 1
+2025-04-12 12:46:39 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-12 12:46:39 - INFO - Graceful shutdown complete
+2025-04-12 12:46:42 - INFO - Tomcat initialized with port 8080 (http)
+2025-04-12 12:46:42 - INFO - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-12 12:46:42 - INFO - Starting service [Tomcat]
+2025-04-12 12:46:42 - INFO - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-12 12:46:42 - INFO - Initializing Spring embedded WebApplicationContext
+2025-04-12 12:46:42 - INFO - Root WebApplicationContext: initialization completed in 1016 ms
+2025-04-12 12:46:42 - INFO - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-12 12:46:42 - INFO - Tomcat started on port 8080 (http) with context path '/'
+2025-04-12 12:46:47 - INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-12 12:46:47 - INFO - Initializing Servlet 'dispatcherServlet'
+2025-04-12 12:46:47 - INFO - Completed initialization in 0 ms
+2025-04-12 12:46:48 - ERROR - Execute fail: docker exec jdk21-container javac file_run_1002/Car.java with exit code 1
+2025-04-12 12:48:27 - INFO - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-12 12:48:27 - INFO - Graceful shutdown complete
+2025-04-12 12:50:37 - ERROR - *****START COMPILING*****
+2025-04-12 12:53:26 - ERROR - *****START COMPILING*****
+2025-04-12 12:59:16 - INFO - *****START COMPILING*****
+2025-04-12 12:59:16 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Car.java file_run_1002/Car.java:4: error: ';' expected
+        System.out.println("hello car")
+                                       ^
+1 error
+*****
+2025-04-12 12:59:25 - INFO - *****START COMPILING*****
+2025-04-12 12:59:25 - INFO - *****START COMPILING*****
+2025-04-12 12:59:26 - INFO - *****START COMPILING*****
+2025-04-12 12:59:26 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Car.java file_run_1002/Car.java:4: error: ';' expected
+        System.out.println("hello car")
+                                       ^
+1 error
+*****
+2025-04-12 12:59:27 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Car.java file_run_1002/Car.java:4: error: ';' expected
+        System.out.println("hello car")
+                                       ^
+1 error
+*****
+2025-04-12 12:59:27 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec jdk21-container javac file_run_1002/Car.java file_run_1002/Car.java:4: error: ';' expected
+        System.out.println("hello car")
+                                       ^
+1 error
+*****
+2025-04-12 13:03:10 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: Task java.util.concurrent.FutureTask@4d9ce1b6[Not completed, task = myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode$$Lambda/0x000001da01521818@49a36c5a] rejected from java.util.concurrent.ThreadPoolExecutor@58015e56[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 2]*****
+2025-04-12 13:03:48 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: Task java.util.concurrent.FutureTask@364c8e8b[Not completed, task = myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode$$Lambda/0x000001da01521818@388b77ea] rejected from java.util.concurrent.ThreadPoolExecutor@58015e56[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 2]*****
+2025-04-12 13:06:13 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: Task java.util.concurrent.FutureTask@18925402[Not completed, task = myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode$$Lambda/0x000001772851f450@1cadd34f] rejected from java.util.concurrent.ThreadPoolExecutor@141d3d43[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 2]*****
+2025-04-13 17:16:35 - ERROR - *****RUN FAIL BY ERROR SYSTEM: Cannot invoke "myself.programing.coding.repository.TestCaseRepository.findByChallengeId(int)" because "this.testCaseRepository" is null*****
