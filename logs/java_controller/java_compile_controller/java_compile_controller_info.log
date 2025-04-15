@@ -252,3 +252,52 @@ public class Main
 2025-04-13 17:23:49 - INFO - *****COMPILING SUCCESSFULLY*****
 2025-04-13 17:25:46 - INFO - *****START COMPILING AND RUN*****
 2025-04-13 17:25:48 - INFO - *****RUN COMPETITION*****
+2025-04-15 11:30:44 - INFO - *****START COMPILING*****
+2025-04-15 11:30:46 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-15 11:30:49 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:30:50 - INFO - *****RUN COMPETITION*****
+2025-04-15 11:31:01 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:31:02 - INFO - *****RUN COMPETITION*****
+2025-04-15 11:31:17 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:31:18 - INFO - *****RUN COMPETITION*****
+2025-04-15 11:32:44 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:32:45 - INFO - *****RUN COMPETITION*****
+2025-04-15 11:32:50 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:32:51 - INFO - *****RUN COMPETITION*****
+2025-04-15 11:37:10 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:37:11 - INFO - *****RUN COMPETITION*****
+2025-04-15 11:37:44 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:37:45 - INFO - *****RUN COMPETITION*****
+2025-04-15 11:38:19 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:38:20 - INFO - *****RUN COMPETITION*****
+2025-04-15 11:40:14 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:40:15 - INFO - *****RUN COMPETITION*****
+2025-04-15 11:41:53 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:41:54 - INFO - *****RUN COMPETITION*****
+2025-04-15 11:52:10 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:52:11 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: missing return statement
+    }
+    ^
+1 error
+*****
+2025-04-15 11:52:21 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:52:22 - INFO - *****RUN COMPETITION*****
+2025-04-15 11:54:19 - INFO - *****START COMPILING*****
+2025-04-15 11:54:20 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-15 11:54:26 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:54:27 - INFO - *****RUN COMPETITION*****
+2025-04-15 11:55:30 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:55:31 - INFO - *****RUN COMPETITION*****
+2025-04-15 11:55:34 - INFO - *****START COMPILING*****
+2025-04-15 11:55:35 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-15 11:55:37 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 11:55:38 - INFO - *****RUN COMPETITION*****
+2025-04-15 16:31:04 - INFO - *****START COMPILING*****
+2025-04-15 16:31:04 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Code is emmppty!*****
+2025-04-15 16:31:37 - INFO - *****START COMPILING*****
+2025-04-15 16:31:38 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-15 16:31:43 - INFO - *****START COMPILING AND RUN*****
+2025-04-15 16:31:44 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container java -cp file_run_1002 Main 2 3] Error: Main method not found in class Main, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+*****

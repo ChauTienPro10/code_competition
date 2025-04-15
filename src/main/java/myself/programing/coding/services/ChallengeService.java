@@ -3,8 +3,12 @@ package myself.programing.coding.services;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import myself.programing.coding.dto.ChallengeDto;
 import myself.programing.coding.entity.Challenge;
 import myself.programing.coding.entity.TestCase;
+import myself.programing.coding.enums.CHALLENGE_ERROR_TYPE;
+import myself.programing.coding.exception.ChallengeInfoException;
+import myself.programing.coding.mapper.ChallengeMapper;
 import myself.programing.coding.repository.ChallengeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +20,8 @@ import java.util.List;
 public class ChallengeService {
 
     @Autowired private ChallengeRepository challengeRepository;
+    @Autowired
+    private ChallengeMapper challengeMapper;
 
     /**
      *
@@ -61,5 +67,12 @@ public class ChallengeService {
                     .build());
         }
         return testcases;
+    }
+
+    public ChallengeDto getById(int id) throws ChallengeInfoException {
+        if (challengeRepository.findById(id).isEmpty()) {
+            throw new ChallengeInfoException(CHALLENGE_ERROR_TYPE.CHALLENGE_NOT_FOUND);
+        }
+        return challengeMapper.toDto(challengeRepository.findById(id).get());
     }
 }
