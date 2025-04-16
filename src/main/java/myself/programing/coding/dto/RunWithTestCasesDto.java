@@ -9,9 +9,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class CompileRequestJavaDto {
-    private String code;
-    private int idUser;
-    private String language;
-    private int challengeId;
+public class RunWithTestCasesDto {
+    private String input;
+    private String expectedResult;
+    private boolean status;
 }

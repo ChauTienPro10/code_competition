@@ -15,11 +15,11 @@ public class DockerExecuteException extends Throwable {
 
   /**
    *
-   * @param errorTyoe
+   * @param errorType
    * @param message
    * @param e
    */
-  public DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR errorTyoe, String message, Throwable e) {
+  public DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR errorType, String message, Throwable e) {
     super(message);
   }
 
