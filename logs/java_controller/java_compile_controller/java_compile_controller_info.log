@@ -301,3 +301,568 @@ public class Main
    public static void main(String[] args)
 or a JavaFX application class must extend javafx.application.Application
 *****
+2025-04-16 13:49:47 - INFO - *****START COMPILING*****
+2025-04-16 13:49:48 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 13:49:50 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 13:49:51 - INFO - *****RUN COMPETITION*****
+2025-04-16 13:51:16 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 13:51:18 - INFO - *****RUN COMPETITION*****
+2025-04-16 13:52:16 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 13:52:18 - INFO - *****RUN COMPETITION*****
+2025-04-16 13:52:26 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 13:52:27 - INFO - *****RUN COMPETITION*****
+2025-04-16 13:53:00 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 13:53:01 - INFO - *****RUN COMPETITION*****
+2025-04-16 14:12:35 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 14:12:37 - INFO - *****RUN COMPETITION*****
+2025-04-16 14:17:46 - INFO - *****START COMPILING*****
+2025-04-16 14:17:46 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: illegal start of expression
+        return a + ;
+                   ^
+1 error
+*****
+2025-04-16 14:17:49 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 14:17:50 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: illegal start of expression
+        return a + ;
+                   ^
+1 error
+*****
+2025-04-16 14:17:53 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 14:17:54 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: illegal start of expression
+        return a + ;
+                   ^
+1 error
+*****
+2025-04-16 14:17:56 - INFO - *****START COMPILING*****
+2025-04-16 14:17:57 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: illegal start of expression
+        return a + ;
+                   ^
+1 error
+*****
+2025-04-16 14:18:02 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 14:18:04 - INFO - *****RUN COMPETITION*****
+2025-04-16 14:18:07 - INFO - *****START COMPILING*****
+2025-04-16 14:18:08 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 14:19:37 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 14:19:38 - INFO - *****RUN COMPETITION*****
+2025-04-16 14:19:45 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 14:19:47 - INFO - *****RUN COMPETITION*****
+2025-04-16 14:20:51 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 14:20:52 - INFO - *****RUN COMPETITION*****
+2025-04-16 14:20:56 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 14:20:57 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:03:50 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:03:51 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:06:19 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:06:20 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:06:41 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:06:42 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:08:18 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:08:19 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:10:33 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:10:34 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:11:58 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:12:00 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:13:27 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:13:28 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:18:33 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:18:35 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:19:36 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:19:37 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:22:31 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:22:32 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:37:22 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:37:23 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:39:03 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:39:04 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:39:24 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:39:25 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:40:52 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:40:54 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:41:11 - INFO - *****START COMPILING*****
+2025-04-16 15:41:12 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 15:41:15 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:41:16 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:41:29 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:41:30 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:42:16 - INFO - *****START COMPILING*****
+2025-04-16 15:42:17 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 15:42:19 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:42:20 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:43:44 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:43:45 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:45:44 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:45:46 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:46:34 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:46:35 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:46:46 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:46:48 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:50:11 - INFO - *****START COMPILING*****
+2025-04-16 15:50:12 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:11: error: ';' expected
+        return a + b 
+                    ^
+1 error
+*****
+2025-04-16 15:50:18 - INFO - *****START COMPILING*****
+2025-04-16 15:50:18 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:11: error: ';' expected
+        return a + b 
+                    ^
+1 error
+*****
+2025-04-16 15:50:32 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:50:33 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:11: error: ';' expected
+        return a + b 
+                    ^
+1 error
+*****
+2025-04-16 15:50:44 - INFO - *****START COMPILING*****
+2025-04-16 15:50:45 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: missing return statement
+    }
+    ^
+1 error
+*****
+2025-04-16 15:50:48 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:50:49 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: missing return statement
+    }
+    ^
+1 error
+*****
+2025-04-16 15:50:52 - INFO - *****START COMPILING*****
+2025-04-16 15:50:53 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: missing return statement
+    }
+    ^
+1 error
+*****
+2025-04-16 15:51:13 - INFO - *****START COMPILING*****
+2025-04-16 15:51:14 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: incompatible types: missing return value
+        return ;
+        ^
+1 error
+*****
+2025-04-16 15:51:35 - INFO - *****START COMPILING*****
+2025-04-16 15:51:36 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 15:51:37 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:51:38 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 15:51:40 - INFO - *****START COMPILING*****
+2025-04-16 15:51:40 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 15:51:46 - INFO - *****START COMPILING*****
+2025-04-16 15:51:47 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 15:51:48 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 15:51:49 - INFO - *****RUN COMPETITION*****
+2025-04-16 15:51:52 - INFO - *****START COMPILING*****
+2025-04-16 15:51:53 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 15:51:55 - INFO - *****START COMPILING*****
+2025-04-16 15:51:56 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 15:51:57 - INFO - *****START COMPILING*****
+2025-04-16 15:51:57 - INFO - *****START COMPILING*****
+2025-04-16 15:51:58 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 15:51:58 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 15:52:00 - INFO - *****START COMPILING*****
+2025-04-16 15:52:01 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 15:52:03 - INFO - *****START COMPILING*****
+2025-04-16 15:52:03 - INFO - *****START COMPILING*****
+2025-04-16 15:52:04 - INFO - *****START COMPILING*****
+2025-04-16 15:52:04 - INFO - *****START COMPILING*****
+2025-04-16 15:52:04 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 15:52:05 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 15:52:05 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] error: file not found: file_run_1002/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-04-16 15:52:05 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] error: error reading file_run_1002/Main.java; /app/file_run_1002/Main.java
+1 error
+*****
+2025-04-16 16:05:59 - INFO - *****START COMPILING*****
+2025-04-16 16:06:00 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 16:06:29 - INFO - *****START COMPILING*****
+2025-04-16 16:06:30 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 16:06:38 - INFO - *****START COMPILING*****
+2025-04-16 16:06:39 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 16:09:08 - INFO - *****START COMPILING*****
+2025-04-16 16:09:08 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 16:09:14 - INFO - *****START COMPILING*****
+2025-04-16 16:09:15 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 16:10:32 - INFO - *****START COMPILING*****
+2025-04-16 16:10:33 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 16:11:02 - INFO - *****START COMPILING*****
+2025-04-16 16:11:02 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 16:11:36 - INFO - *****START COMPILING*****
+2025-04-16 16:11:37 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 16:14:08 - INFO - *****START COMPILING*****
+2025-04-16 16:14:09 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 16:17:31 - INFO - *****START COMPILING*****
+2025-04-16 16:17:32 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 16:18:03 - INFO - *****START COMPILING*****
+2025-04-16 16:18:04 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 16:19:10 - INFO - *****START COMPILING*****
+2025-04-16 16:19:11 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return 1
+                ^
+1 error
+*****
+2025-04-16 16:20:18 - INFO - *****START COMPILING*****
+2025-04-16 16:20:19 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 16:22:21 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 16:22:23 - INFO - *****RUN COMPETITION*****
+2025-04-16 16:23:05 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 16:23:07 - INFO - *****RUN COMPETITION*****
+2025-04-16 16:24:19 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 16:24:20 - INFO - *****RUN COMPETITION*****
+2025-04-16 16:24:43 - INFO - *****START COMPILING*****
+2025-04-16 16:24:44 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 16:25:30 - INFO - *****START COMPILING*****
+2025-04-16 16:25:31 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: missing return statement
+    }
+    ^
+1 error
+*****
+2025-04-16 16:27:02 - INFO - *****START COMPILING*****
+2025-04-16 16:27:03 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: missing return statement
+    }
+    ^
+1 error
+*****
+2025-04-16 16:27:06 - INFO - *****START COMPILING*****
+2025-04-16 16:27:06 - INFO - *****START COMPILING*****
+2025-04-16 16:27:06 - INFO - *****START COMPILING*****
+2025-04-16 16:27:07 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: missing return statement
+    }
+    ^
+1 error
+*****
+2025-04-16 16:27:08 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] (source unavailable)
+(source unavailable)
+(source unavailable)
+file_run_1002/Main.java:0: error: missing return statement
+1 error
+*****
+2025-04-16 16:27:08 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] error: error reading file_run_1002/Main.java; /app/file_run_1002/Main.java
+1 error
+*****
+2025-04-16 16:27:10 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 16:27:11 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: missing return statement
+    }
+    ^
+1 error
+*****
+2025-04-16 16:27:11 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 16:27:12 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: missing return statement
+    }
+    ^
+1 error
+*****
+2025-04-16 16:27:15 - INFO - *****START COMPILING*****
+2025-04-16 16:27:16 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: missing return statement
+    }
+    ^
+1 error
+*****
+2025-04-16 16:32:27 - INFO - *****START COMPILING*****
+2025-04-16 16:32:27 - INFO - *****START COMPILING*****
+2025-04-16 16:32:27 - INFO - *****START COMPILING*****
+2025-04-16 16:32:28 - INFO - *****START COMPILING*****
+2025-04-16 16:32:28 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] error: file not found: file_run_1002/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-04-16 16:32:28 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] (source unavailable)
+(source unavailable)
+(source unavailable)
+file_run_1002/Main.java:0: error: missing return statement
+1 error
+*****
+2025-04-16 16:32:28 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] error: file not found: file_run_1002/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-04-16 16:32:29 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] error: error reading file_run_1002/Main.java; /app/file_run_1002/Main.java
+1 error
+*****
+2025-04-16 16:34:08 - INFO - *****START COMPILING*****
+2025-04-16 16:34:09 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 16:34:15 - INFO - *****START COMPILING*****
+2025-04-16 16:34:16 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:37:15 - INFO - *****START COMPILING*****
+2025-04-16 16:37:16 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 16:37:24 - INFO - *****START COMPILING*****
+2025-04-16 16:37:24 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:37:39 - INFO - *****START COMPILING*****
+2025-04-16 16:37:39 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 16:37:44 - INFO - *****START COMPILING*****
+2025-04-16 16:37:45 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 16:37:50 - INFO - *****START COMPILING*****
+2025-04-16 16:37:51 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:38:26 - INFO - *****START COMPILING*****
+2025-04-16 16:38:26 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:43:27 - INFO - *****START COMPILING*****
+2025-04-16 16:43:28 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:44:37 - INFO - *****START COMPILING*****
+2025-04-16 16:44:37 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:45:45 - INFO - *****START COMPILING*****
+2025-04-16 16:45:45 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:47:16 - INFO - *****START COMPILING*****
+2025-04-16 16:47:16 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:47:31 - INFO - *****START COMPILING*****
+2025-04-16 16:47:32 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:47:59 - INFO - *****START COMPILING*****
+2025-04-16 16:48:00 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:48:31 - INFO - *****START COMPILING*****
+2025-04-16 16:48:32 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:49:27 - INFO - *****START COMPILING*****
+2025-04-16 16:49:28 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:49:33 - INFO - *****START COMPILING*****
+2025-04-16 16:49:34 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 16:51:54 - INFO - *****START COMPILING*****
+2025-04-16 16:51:55 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: missing return statement
+    }
+    ^
+1 error
+*****
+2025-04-16 16:52:02 - INFO - *****START COMPILING*****
+2025-04-16 16:52:03 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 16:52:09 - INFO - *****START COMPILING*****
+2025-04-16 16:52:09 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:53:48 - INFO - *****START COMPILING*****
+2025-04-16 16:53:49 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:54:00 - INFO - *****START COMPILING*****
+2025-04-16 16:54:01 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 16:54:05 - INFO - *****START COMPILING*****
+2025-04-16 16:54:06 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:54:12 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 16:54:13 - INFO - *****RUN COMPETITION*****
+2025-04-16 16:54:18 - INFO - *****START COMPILING*****
+2025-04-16 16:54:19 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:54:24 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 16:54:25 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:54:36 - INFO - *****START COMPILING*****
+2025-04-16 16:54:37 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 16:54:47 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 16:54:48 - INFO - *****RUN COMPETITION*****
+2025-04-16 16:55:40 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 16:55:41 - INFO - *****RUN COMPETITION*****
+2025-04-16 16:56:01 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 16:56:03 - INFO - *****RUN COMPETITION*****
+2025-04-16 16:56:05 - INFO - *****START COMPILING*****
+2025-04-16 16:56:06 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 16:56:21 - INFO - *****START COMPILING*****
+2025-04-16 16:56:21 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 16:56:23 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 16:56:24 - INFO - *****RUN COMPETITION*****
+2025-04-16 16:56:31 - INFO - *****START COMPILING*****
+2025-04-16 16:56:32 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 16:56:33 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 16:56:34 - INFO - *****RUN COMPETITION*****
+2025-04-16 16:58:30 - INFO - *****START COMPILING*****
+2025-04-16 16:58:31 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 17:01:00 - INFO - *****START COMPILING*****
+2025-04-16 17:01:01 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 17:01:04 - INFO - *****START COMPILING*****
+2025-04-16 17:01:04 - INFO - *****START COMPILING*****
+2025-04-16 17:01:04 - INFO - *****START COMPILING*****
+2025-04-16 17:01:04 - INFO - *****START COMPILING*****
+2025-04-16 17:01:04 - INFO - *****START COMPILING*****
+2025-04-16 17:01:05 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 17:01:05 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] error: file not found: file_run_1002/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-04-16 17:01:05 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 17:01:05 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] error: file not found: file_run_1002/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-04-16 17:01:05 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] error: error reading file_run_1002/Main.java; /app/file_run_1002/Main.java
+1 error
+*****
+2025-04-16 17:01:10 - INFO - *****START COMPILING*****
+2025-04-16 17:01:11 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 17:02:38 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 17:02:39 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 17:02:42 - INFO - *****START COMPILING*****
+2025-04-16 17:02:43 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_1002/Main.java] file_run_1002/Main.java:10: error: ';' expected
+        return a+b
+                  ^
+1 error
+*****
+2025-04-16 17:02:49 - INFO - *****START COMPILING*****
+2025-04-16 17:02:50 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 17:02:51 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 17:02:52 - INFO - *****RUN COMPETITION*****
+2025-04-16 17:04:50 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 17:04:51 - INFO - *****RUN COMPETITION*****
+2025-04-16 17:05:14 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 17:05:15 - INFO - *****RUN COMPETITION*****
+2025-04-16 17:05:18 - INFO - *****START COMPILING*****
+2025-04-16 17:05:18 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 17:05:20 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 17:05:21 - INFO - *****RUN COMPETITION*****
+2025-04-16 17:05:22 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 17:05:23 - INFO - *****RUN COMPETITION*****
+2025-04-16 17:05:45 - INFO - *****START COMPILING*****
+2025-04-16 17:05:45 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 17:06:56 - INFO - *****START COMPILING*****
+2025-04-16 17:06:57 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-04-16 17:07:02 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 17:07:03 - INFO - *****RUN COMPETITION*****
+2025-04-16 17:07:07 - INFO - *****START COMPILING AND RUN*****
+2025-04-16 17:07:08 - INFO - *****RUN COMPETITION*****

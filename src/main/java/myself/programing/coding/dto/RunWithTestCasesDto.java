@@ -10,6 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class RunWithTestCasesDto {
-    private String result;
+    private String input;
+    private String expectedResult;
     private boolean status;
 }

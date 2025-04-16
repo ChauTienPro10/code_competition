@@ -40,14 +40,13 @@ public class ThreadRunWithTestCases {
                 output = new StringBuilder(javaCompileService.doCompileToClassFile(filePath));
                 if(output.toString().contains(".class")) {
                     String classFilePath = output.toString();
-                    output = new StringBuilder();
                     for (TestCase testCase : testCases) {
                         String rsRun = javaRunCodeService.doRunJavaClass(classFilePath, testCase.getInput());
-                        if(rsRun.equals(testCase.getOutput())) {
-                            resultDtoList.add(new RunWithTestCasesDto(rsRun, true));
+                        if(rsRun.replace("\n", "").equals(testCase.getOutput())) {
+                            resultDtoList.add(new RunWithTestCasesDto(testCase.getInput(), testCase.getOutput(), true));
                             continue;
                         }
-                        resultDtoList.add(new RunWithTestCasesDto(rsRun, true));
+                        resultDtoList.add(new RunWithTestCasesDto(testCase.getInput(), testCase.getOutput(), false));
                     }
                 }
 
