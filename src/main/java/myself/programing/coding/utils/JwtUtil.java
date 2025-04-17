@@ -17,6 +17,11 @@ public class JwtUtil {
         return Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
     }
 
+    /**
+     *
+     * @param username
+     * @return String
+     */
     public String generateToken(String username) {
         return Jwts.builder()
                 .setSubject(username)
@@ -26,6 +31,11 @@ public class JwtUtil {
                 .compact();
     }
 
+    /**
+     *
+     * @param token
+     * @return String
+     */
     public String extractUsername(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(getSigningKey())
@@ -35,11 +45,30 @@ public class JwtUtil {
                 .getSubject();
     }
 
+    /**
+     *
+     * @param token
+     * @return boolean
+     */
+    public boolean isTokenExpired(String token) {
+        Date expiration = Jwts.parserBuilder()
+                .setSigningKey(getSigningKey())
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .getExpiration();
+        return expiration.before(new Date());
+    }
+
+    /**
+     *
+     * @param token
+     * @return boolean
+     */
     public boolean validateToken(String token) {
         try {
-            Jwts.parserBuilder().setSigningKey(getSigningKey()).build().parseClaimsJws(token);
-            return true;
-        } catch (JwtException e) {
+            return (!isTokenExpired(token));
+        } catch (JwtException | IllegalArgumentException e) {
             return false;
         }
     }

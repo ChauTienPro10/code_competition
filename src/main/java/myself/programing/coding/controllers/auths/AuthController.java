@@ -44,9 +44,17 @@ public class AuthController {
     @PostMapping("/login")
     public HttpResponseApi<UserDto> login(@RequestBody LoginDto request) {
         try {
-
-        } catch () {
-
+            return HttpResponseApi.<UserDto>builder()
+                    .code(200)
+                    .message("OK")
+                    .data(userService.login(request.getUsername(), request.getPassword()))
+                    .build();
+        } catch (UserInforException e) {
+            return HttpResponseApi.<UserDto>builder()
+                    .code(e.getErrorType().getCode())
+                    .message(e.getMessage())
+                    .data(null)
+                    .build();
         }
     }
 }

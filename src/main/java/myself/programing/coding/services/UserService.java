@@ -1,5 +1,6 @@
 package myself.programing.coding.services;
 
+import java.util.Optional;
 import myself.programing.coding.dto.UserDto;
 import myself.programing.coding.entity.Account;
 import myself.programing.coding.entity.User;
@@ -8,7 +9,9 @@ import myself.programing.coding.exception.UserInforException;
 import myself.programing.coding.mapper.UserMapper;
 import myself.programing.coding.repository.AccountRepository;
 import myself.programing.coding.repository.UserRepository;
+import myself.programing.coding.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +25,10 @@ public class UserService {
     @Autowired private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired private UserMapper userMapper;
+
+    @Autowired private CustomUserDetailsService userDetailsService;
+
+    @Autowired private JwtUtil jwtUtil;
 
     /**
      *
@@ -62,10 +69,35 @@ public class UserService {
         return password.length() < 6;
     }
 
+    /**
+     *
+     * @param username
+     * @param password
+     * @return UserDto
+     * @throws UserInforException
+     */
     public UserDto login(String username, String password) throws UserInforException {
-        if (accountRepository.findByUsername(username).isEmpty()) {
+        Optional<Account> account = accountRepository.findByUsername(username);
+        if (account.isEmpty()) {
             throw new UserInforException(USER_ERROR_TYPE.ERROR_INFO_LOGIN, "Username was wrong!");
         }
+        if (!bCryptPasswordEncoder.matches(password, account.get().getPassword())) {
+            throw new UserInforException(USER_ERROR_TYPE.ERROR_INFO_LOGIN, "Password was wrong!");
+        }
 
+        UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+
+        User user = userRepository.findByAccount(account.get());
+        if (user == null) {
+            throw new UserInforException(USER_ERROR_TYPE.ERROR_INFO_LOGIN, "User not found!");
+        }
+
+        UserDto userDto = userMapper.toDto(user);
+
+        String jwt = jwtUtil.generateToken(userDetails.getUsername());
+        userDto.setJwt(jwt);
+
+        return userDto;
     }
+
 }
