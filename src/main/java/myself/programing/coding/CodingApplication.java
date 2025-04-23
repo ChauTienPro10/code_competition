@@ -1,5 +1,6 @@
 package myself.programing.coding;
 
+import myself.programing.coding.config.ReadConfig;
 import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.services.ChallengeService;
 import org.springframework.boot.CommandLineRunner;
@@ -15,6 +16,7 @@ public class CodingApplication {
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(CodingApplication.class, args);
 	}
+
 //	@Bean
 //	public CommandLineRunner run(ChallengeService challengeService) {
 //		return args -> {
