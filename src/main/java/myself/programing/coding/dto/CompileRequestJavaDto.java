@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 public class CompileRequestJavaDto {
     private String code;
-    private int idUser;
+    private Long idUser;
     private String language;
-    private int challengeId;
+    private Long challengeId;
 }

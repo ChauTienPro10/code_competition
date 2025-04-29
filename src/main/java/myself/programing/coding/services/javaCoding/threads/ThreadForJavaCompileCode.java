@@ -16,7 +16,7 @@ public class ThreadForJavaCompileCode {
      * @throws InterruptedException
      * @throws ExecutionException
      */
-    public String compile(String code, int idUser) throws InterruptedException, ExecutionException {
+    public String compile(String code, Long idUser) throws InterruptedException, ExecutionException {
 
         Callable<String> compileTask = () -> {
             JavaCompileService javaCompileService = new JavaCompileService();

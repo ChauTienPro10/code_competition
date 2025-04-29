@@ -185,7 +185,7 @@ public class JavaCompileController {
     }
 
     @GetMapping("/challenge/{id}")
-    public HttpResponseApi<ChallengeDto> getChallenge(@PathVariable int id) {
+    public HttpResponseApi<ChallengeDto> getChallenge(@PathVariable Long id) {
         try {
             ChallengeDto challenge = challengeService.getById(id);
             return HttpResponseApi.<ChallengeDto>builder()

@@ -28,7 +28,7 @@ public class FileUtils {
      * @param idUser
      * @return idUser
      */
-    public static String generateDockerFolderName(int idUser) {
+    public static String generateDockerFolderName(Long idUser) {
         return "file_run_" + idUser;
     }
 

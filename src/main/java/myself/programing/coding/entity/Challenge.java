@@ -15,13 +15,14 @@ import java.util.List;
 public class Challenge {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "challenge_seq_gen")
+    @SequenceGenerator(name = "challenge_seq_gen", sequenceName = "challenge_seq", allocationSize = 1)
+    private Long id;
 
-    @Column(name = "content", columnDefinition = "LONGTEXT")
+    @Column(name = "content", columnDefinition = "CLOB")
     private String content;
 
-    @Column(name = "template", columnDefinition = "LONGTEXT")
+    @Column(name = "template", columnDefinition = "CLOB")
     private String template;
 
     private String simpleInput;

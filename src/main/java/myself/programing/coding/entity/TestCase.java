@@ -13,8 +13,10 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class TestCase {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "test_case_seq_gen")
+    @SequenceGenerator(name = "test_case_seq_gen", sequenceName = "test_case_seq", allocationSize = 1)
     private int id;
 
     private String input;

@@ -20,7 +20,7 @@ public class ThreadsForJavaRunCode {
      * @throws ExecutionException
      * @throws InterruptedException
      */
-    public String runCode(String code, int idUser, List<TestCase> testCases) throws ExecutionException, InterruptedException {
+    public String runCode(String code, Long idUser, List<TestCase> testCases) throws ExecutionException, InterruptedException {
         Callable<String> runTask = () -> {
             StringBuilder output;
             JavaCompileService javaCompileService = new JavaCompileService();

@@ -25,7 +25,7 @@ public class ThreadRunWithTestCases {
      * @throws ExecutionException
      * @throws InterruptedException
      */
-    public List<RunWithTestCasesDto> runWithTest(String code, int idUser, List<TestCase> testCases) throws ExecutionException, InterruptedException {
+    public List<RunWithTestCasesDto> runWithTest(String code, Long idUser, List<TestCase> testCases) throws ExecutionException, InterruptedException {
         Callable<List<RunWithTestCasesDto>> runTask = () -> {
             StringBuilder output;
             JavaCompileService javaCompileService = new JavaCompileService();

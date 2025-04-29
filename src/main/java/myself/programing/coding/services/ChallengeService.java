@@ -69,7 +69,7 @@ public class ChallengeService {
         return testcases;
     }
 
-    public ChallengeDto getById(int id) throws ChallengeInfoException {
+    public ChallengeDto getById(Long id) throws ChallengeInfoException {
         if (challengeRepository.findById(id).isEmpty()) {
             throw new ChallengeInfoException(CHALLENGE_ERROR_TYPE.CHALLENGE_NOT_FOUND);
         }

@@ -35,7 +35,7 @@ public class JavaBaseService {
      * @return Path
      * @throws IOException
      */
-    public String generateJavaFile(String className, String codeString, int idUser) throws IOException {
+    public String generateJavaFile(String className, String codeString, Long idUser) throws IOException {
         String filePath = "/fileStorage/java/" + idUser + "/" + className + ".java";
         return FileUtils.generateFile(codeString, filePath).toAbsolutePath().toString();
     }
@@ -73,7 +73,7 @@ public class JavaBaseService {
      * @param path
      * @return String
      */
-    public String doCopyFileToContainer(String path, int idUser) throws DockerExecuteException {
+    public String doCopyFileToContainer(String path, Long idUser) throws DockerExecuteException {
             if (path == null || path.isEmpty()) {
                 logError("Invalid path : " + path);
                 throw new DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR.UNKNOWN_ERROR, " Invalid: " + path);
