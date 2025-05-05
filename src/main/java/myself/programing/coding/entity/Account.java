@@ -24,7 +24,7 @@ import org.springframework.stereotype.Component;
 @Getter
 @Setter
 @Component
-@Table(name = "account")
+@Table(name = "accounts")
 public class Account {
 
     @Id
