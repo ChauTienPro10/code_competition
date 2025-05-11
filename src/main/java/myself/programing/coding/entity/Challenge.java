@@ -29,6 +29,10 @@ public class Challenge {
 
     private String simpleOutput;
 
+    private Integer type;
+
+    private Integer challenge_level;
+
     @OneToMany(mappedBy = "challenge", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<TestCase> testCase;
 }

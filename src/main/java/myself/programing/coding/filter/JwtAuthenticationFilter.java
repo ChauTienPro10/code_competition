@@ -5,8 +5,11 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Enumeration;
+
 import myself.programing.coding.services.CustomUserDetailsService;
 import myself.programing.coding.utils.JwtUtil;
+import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -43,11 +46,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request,
             HttpServletResponse response,
             FilterChain filterChain) throws ServletException, IOException {
-
         String token = extractToken(request);
         if (token != null) {
             String username = jwtUtil.extractUsername(token);
-
             if (username != null && jwtUtil.validateToken(token)
                     && SecurityContextHolder.getContext().getAuthentication() == null) {
 

@@ -132,3 +132,8 @@
 2025-04-16 17:01:11 - ERROR - Execute fail: docker exec jdk21-container javac file_run_1002/Main.java with exit code 1
 2025-04-16 17:02:39 - ERROR - Execute fail: docker exec jdk21-container javac file_run_1002/Main.java with exit code 1
 2025-04-16 17:02:43 - ERROR - Execute fail: docker exec jdk21-container javac file_run_1002/Main.java with exit code 1
+2025-05-11 13:20:26 - ERROR - Execute fail: docker exec jdk21-container javac file_run_1002/Main.java with exit code 1
+2025-05-11 14:00:57 - ERROR - Execute fail: docker exec jdk21-container javac file_run_21/Main.java with exit code 1
+2025-05-11 15:13:03 - ERROR - Execute fail: docker exec jdk21-container javac file_run_21/Main.java with exit code 1
+2025-05-11 15:13:36 - ERROR - Execute fail: docker exec jdk21-container javac file_run_21/Main.java with exit code 1
+2025-05-11 15:33:07 - ERROR - Execute fail: docker exec jdk21-container javac file_run_21/Main.java with exit code 1

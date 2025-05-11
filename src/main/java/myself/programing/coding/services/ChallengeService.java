@@ -7,6 +7,7 @@ import myself.programing.coding.dto.ChallengeDto;
 import myself.programing.coding.entity.Challenge;
 import myself.programing.coding.entity.TestCase;
 import myself.programing.coding.enums.CHALLENGE_ERROR_TYPE;
+import myself.programing.coding.enums.CHALLENGE_TYPE;
 import myself.programing.coding.exception.ChallengeInfoException;
 import myself.programing.coding.mapper.ChallengeMapper;
 import myself.programing.coding.repository.ChallengeRepository;
@@ -69,10 +70,28 @@ public class ChallengeService {
         return testcases;
     }
 
+    /**
+     *
+     * @param id
+     * @return ChallengeDto
+     * @throws ChallengeInfoException
+     */
     public ChallengeDto getById(Long id) throws ChallengeInfoException {
         if (challengeRepository.findById(id).isEmpty()) {
             throw new ChallengeInfoException(CHALLENGE_ERROR_TYPE.CHALLENGE_NOT_FOUND);
         }
         return challengeMapper.toDto(challengeRepository.findById(id).get());
+    }
+
+    /**
+     *
+     * @param type
+     * @return @code{List<ChallengeDto>}
+     */
+    public List<ChallengeDto> getByType(int type) {
+        if (CHALLENGE_TYPE.invalidType(type)) {
+            throw new ChallengeInfoException(CHALLENGE_ERROR_TYPE.CHALLENG_TYPE_ERROR);
+        }
+        return challengeMapper.toDtoList(challengeRepository.findByType(type));
     }
 }

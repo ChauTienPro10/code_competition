@@ -11,4 +11,5 @@ public interface ChallengeMapper {
     ChallengeDto toDto(Challenge challenge);
 
     List<ChallengeDto> toDtoList(List<Challenge> challenges);
+
 }
