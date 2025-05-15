@@ -7,4 +7,6 @@ public class ReadConfig {
     static ConfigLoader configLoader = new ConfigLoader();
 
     public static String REACT_CLIENT = configLoader.get("REACT_CLIENT");
+    public static String AUTHORIZATION = configLoader.get("AUTHORIZATION");
+    public static String AUTH_PREFIX = configLoader.get("Bearer");
 }

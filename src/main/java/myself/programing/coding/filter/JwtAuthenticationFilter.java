@@ -5,11 +5,10 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Enumeration;
 
+import myself.programing.coding.config.ReadConfig;
 import myself.programing.coding.services.CustomUserDetailsService;
 import myself.programing.coding.utils.JwtUtil;
-import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -64,9 +63,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
+    /**
+     *
+     * @param request
+     * @return String
+     */
     private String extractToken(HttpServletRequest request) {
-        String bearerToken = request.getHeader("Authorization");
-        if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
+        String bearerToken = request.getHeader(ReadConfig.AUTHORIZATION);
+        if (bearerToken != null && bearerToken.startsWith(ReadConfig.AUTH_PREFIX + " ")) {
             return bearerToken.substring(7);
         }
         return null;

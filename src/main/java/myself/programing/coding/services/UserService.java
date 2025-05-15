@@ -1,6 +1,8 @@
 package myself.programing.coding.services;
 
+import java.util.Arrays;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import myself.programing.coding.dto.UserDto;
 import myself.programing.coding.entity.Account;
 import myself.programing.coding.entity.User;
@@ -47,7 +49,7 @@ public class UserService {
         }
 
         User user = User.builder()
-                .name(name)
+                .name(formatName(name))
                 .account(null)
                 .build();
         Account account = Account.builder()
@@ -58,6 +60,17 @@ public class UserService {
         account.setUser(user);
         user.setAccount(account);
         return userMapper.toDto(userRepository.save(user));
+    }
+
+    /**
+     *
+     * @param name
+     * @return String
+     */
+    public String formatName(String name) {
+        return Arrays.stream(name.trim().toLowerCase().split("\\s+"))
+                .map(word -> word.substring(0, 1).toUpperCase() + word.substring(1))
+                .collect(Collectors.joining(" "));
     }
 
     /**
