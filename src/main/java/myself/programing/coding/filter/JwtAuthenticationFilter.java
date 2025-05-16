@@ -1,5 +1,6 @@
 package myself.programing.coding.filter;
 
+import io.jsonwebtoken.JwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -42,25 +43,39 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
      * @throws IOException
      */
     @Override
-    protected void doFilterInternal(HttpServletRequest request,
-            HttpServletResponse response,
-            FilterChain filterChain) throws ServletException, IOException {
-        String token = extractToken(request);
-        if (token != null) {
-            String username = jwtUtil.extractUsername(token);
-            if (username != null && jwtUtil.validateToken(token)
-                    && SecurityContextHolder.getContext().getAuthentication() == null) {
-
-                UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
-                UsernamePasswordAuthenticationToken authentication =
-                        new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-
-                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                SecurityContextHolder.getContext().setAuthentication(authentication);
-            }
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
+            System.out.println("OPTIONS request - Skipping JwtAuthenticationFilter");
+            response.setStatus(HttpServletResponse.SC_OK);
+            filterChain.doFilter(request, response);
+            return;
         }
+        try {
+            String token = extractToken(request);
+            if (token != null) {
+                String username = jwtUtil.extractUsername(token);
+                if (username != null && jwtUtil.validateToken(token)
+                        && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-        filterChain.doFilter(request, response);
+                    UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
+                    UsernamePasswordAuthenticationToken authentication =
+                            new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+
+                    authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                    SecurityContextHolder.getContext().setAuthentication(authentication);
+                }
+            }
+
+            filterChain.doFilter(request, response);
+        } catch (JwtException e) {
+            response.setHeader("Access-Control-Allow-Origin", ReadConfig.REACT_CLIENT);
+            response.setHeader("Access-Control-Allow-Credentials", "true");
+            response.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
+            response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+            response.setHeader("Access-Control-Expose-Headers", "Authorization");
+
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+        }
     }
 
     /**
