@@ -45,7 +45,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
-            System.out.println("OPTIONS request - Skipping JwtAuthenticationFilter");
             response.setStatus(HttpServletResponse.SC_OK);
             filterChain.doFilter(request, response);
             return;
@@ -85,9 +84,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
      */
     private String extractToken(HttpServletRequest request) {
         String bearerToken = request.getHeader(ReadConfig.AUTHORIZATION);
-        if (bearerToken != null && bearerToken.startsWith(ReadConfig.AUTH_PREFIX + " ")) {
-            return bearerToken.substring(7);
-        }
-        return null;
+        return JwtUtil.getFromStringBearer(bearerToken);
     }
 }

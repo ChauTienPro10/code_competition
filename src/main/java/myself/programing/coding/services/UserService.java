@@ -5,15 +5,21 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import myself.programing.coding.dto.UserDto;
 import myself.programing.coding.entity.Account;
+import myself.programing.coding.entity.TokenInvalid;
 import myself.programing.coding.entity.User;
 import myself.programing.coding.enums.USER_ERROR_TYPE;
 import myself.programing.coding.exception.UserInforException;
 import myself.programing.coding.mapper.UserMapper;
+import myself.programing.coding.model.CustomUserDetails;
 import myself.programing.coding.repository.AccountRepository;
+import myself.programing.coding.repository.TokenInvalidRepository;
 import myself.programing.coding.repository.UserRepository;
 import myself.programing.coding.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +37,8 @@ public class UserService {
     @Autowired private CustomUserDetailsService userDetailsService;
 
     @Autowired private JwtUtil jwtUtil;
+
+    @Autowired TokenInvalidRepository tokenInvalidRepository;
 
     /**
      *
@@ -83,34 +91,52 @@ public class UserService {
     }
 
     /**
-     *
+     * userDetail is account
      * @param username
      * @param password
      * @return UserDto
      * @throws UserInforException
      */
     public UserDto login(String username, String password) throws UserInforException {
-        Optional<Account> account = accountRepository.findByUsername(username);
-        if (account.isEmpty()) {
+        try {
+            CustomUserDetails userDetails = (CustomUserDetails) userDetailsService.loadUserByUsername(username);
+            if (!bCryptPasswordEncoder.matches(password, userDetails.getPassword())) {
+                throw new UserInforException(USER_ERROR_TYPE.ERROR_INFO_LOGIN, "Password was wrong!");
+            }
+            User user = userRepository.findByAccount(userDetails.getAccount());
+            if (user == null) {
+                throw new UserInforException(USER_ERROR_TYPE.ERROR_INFO_LOGIN, "User not found!");
+            }
+            UserDto userDto = userMapper.toDto(user);
+            String jwt = jwtUtil.generateToken(userDetails.getUsername(), userDetails.getAuthorities());
+            userDto.setJwt(jwt);
+            UsernamePasswordAuthenticationToken authentication =
+                    new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            return userDto;
+        } catch (UsernameNotFoundException e) {
             throw new UserInforException(USER_ERROR_TYPE.ERROR_INFO_LOGIN, "Username was wrong!");
         }
-        if (!bCryptPasswordEncoder.matches(password, account.get().getPassword())) {
-            throw new UserInforException(USER_ERROR_TYPE.ERROR_INFO_LOGIN, "Password was wrong!");
-        }
-
-        UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-
-        User user = userRepository.findByAccount(account.get());
-        if (user == null) {
-            throw new UserInforException(USER_ERROR_TYPE.ERROR_INFO_LOGIN, "User not found!");
-        }
-
-        UserDto userDto = userMapper.toDto(user);
-
-        String jwt = jwtUtil.generateToken(userDetails.getUsername());
-        userDto.setJwt(jwt);
-
-        return userDto;
     }
 
+    /**
+     *
+     * @param bearerToken
+     */
+    public void logout(String bearerToken) {
+        try {
+            String token = JwtUtil.getFromStringBearer(bearerToken);
+            if (tokenInvalidRepository.findByToken(token).isPresent()) {
+                return;
+            }
+            TokenInvalid tokenInvalid = new TokenInvalid();
+            tokenInvalid.setToken(token);
+            tokenInvalidRepository.save(tokenInvalid);
+            SecurityContextHolder.clearContext();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Logout failed", e);
+        }
+    }
 }

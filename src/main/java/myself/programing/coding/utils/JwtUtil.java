@@ -5,7 +5,12 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import java.security.Key;
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
+
+import myself.programing.coding.config.ReadConfig;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -22,9 +27,10 @@ public class JwtUtil {
      * @param username
      * @return String
      */
-    public String generateToken(String username) {
+    public String generateToken(String username, Collection<? extends GrantedAuthority> roles) {
         return Jwts.builder()
                 .setSubject(username)
+                .claim("roles", roles)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(getSigningKey(), SignatureAlgorithm.HS256)
@@ -71,5 +77,17 @@ public class JwtUtil {
         } catch (JwtException | IllegalArgumentException e) {
             return false;
         }
+    }
+
+    /**
+     *
+     * @param bearerToken
+     * @return String
+     */
+    public static String getFromStringBearer(String bearerToken) {
+        if (bearerToken != null && bearerToken.startsWith(ReadConfig.AUTH_PREFIX + " ")) {
+            return bearerToken.substring(7);
+        }
+        return null;
     }
 }

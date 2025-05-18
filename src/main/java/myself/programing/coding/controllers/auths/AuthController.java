@@ -7,10 +7,7 @@ import myself.programing.coding.dto.UserDto;
 import myself.programing.coding.exception.UserInforException;
 import myself.programing.coding.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
@@ -54,6 +51,28 @@ public class AuthController {
                     .code(e.getErrorType().getCode())
                     .message(e.getMessage())
                     .data(null)
+                    .build();
+        }
+    }
+
+    /**
+     *
+     * @param bearerToken
+     * @return {@code HttpResponseApi<String>}
+     */
+    @PostMapping("/logout")
+    public HttpResponseApi<String> logout(@RequestHeader("Authorization") String bearerToken) {
+        try {
+            userService.logout(bearerToken);
+            return HttpResponseApi.<String>builder()
+                    .code(HttpResponseApi.API_RESPONSE_CODE.OK.getCode())
+                    .message(HttpResponseApi.API_RESPONSE_CODE.OK.getMessage())
+                    .build();
+        } catch (Exception e) {
+            // ghi log
+            return HttpResponseApi.<String>builder()
+                    .code(HttpResponseApi.API_RESPONSE_CODE.BAD_REQUEST.getCode())
+                    .message(HttpResponseApi.API_RESPONSE_CODE.BAD_REQUEST.getMessage())
                     .build();
         }
     }
