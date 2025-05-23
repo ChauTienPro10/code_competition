@@ -1026,3 +1026,32 @@ use --help for a list of possible options
 2025-05-15 20:47:41 - INFO - *****RUN COMPETITION*****
 2025-05-15 20:47:43 - INFO - *****START COMPILING AND RUN*****
 2025-05-15 20:47:46 - INFO - *****RUN COMPETITION*****
+2025-05-23 15:42:28 - INFO - *****START COMPILING*****
+2025-05-23 15:42:29 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-23 15:42:33 - INFO - *****START COMPILING*****
+2025-05-23 15:42:34 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-23 15:42:35 - INFO - *****START COMPILING AND RUN*****
+2025-05-23 15:42:36 - INFO - *****RUN COMPETITION*****
+2025-05-23 15:42:40 - INFO - *****START COMPILING AND RUN*****
+2025-05-23 15:42:41 - INFO - *****RUN COMPETITION*****
+2025-05-23 15:43:12 - INFO - *****START COMPILING AND RUN*****
+2025-05-23 15:43:14 - INFO - *****RUN COMPETITION*****
+2025-05-23 16:04:19 - INFO - *****START COMPILING AND RUN*****
+2025-05-23 16:04:21 - INFO - *****RUN COMPETITION*****
+2025-05-23 16:04:26 - INFO - *****START COMPILING AND RUN*****
+2025-05-23 16:04:28 - INFO - *****RUN COMPETITION*****
+2025-05-23 16:04:32 - INFO - *****START COMPILING*****
+2025-05-23 16:04:33 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-23 16:04:35 - INFO - *****START COMPILING*****
+2025-05-23 16:04:36 - INFO - *****START COMPILING*****
+2025-05-23 16:04:36 - INFO - *****START COMPILING*****
+2025-05-23 16:04:36 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_27/Main.java] error: file not found: file_run_27/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-23 16:04:37 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-23 16:04:37 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-23 16:04:39 - INFO - *****START COMPILING*****
+2025-05-23 16:04:39 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-23 16:04:41 - INFO - *****START COMPILING AND RUN*****
+2025-05-23 16:04:42 - INFO - *****RUN COMPETITION*****

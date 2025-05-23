@@ -4,6 +4,7 @@ import myself.programing.coding.dto.HttpResponseApi;
 import myself.programing.coding.dto.LoginDto;
 import myself.programing.coding.dto.SignUpDto;
 import myself.programing.coding.dto.UserDto;
+import myself.programing.coding.enums.API_RESPONSE_STATUS;
 import myself.programing.coding.exception.UserInforException;
 import myself.programing.coding.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,8 @@ public class AuthController {
         try {
             UserDto user = userService.signUp(request.getName(), request.getUsername(), request.getPassword());
             return HttpResponseApi.<UserDto>builder()
-                    .code(200)
-                    .message("OK")
+                    .code(API_RESPONSE_STATUS.SUCCESS.getCode())
+                    .message(API_RESPONSE_STATUS.SUCCESS.getMessage())
                     .data(user)
                     .build();
         } catch (UserInforException e) {
@@ -38,12 +39,17 @@ public class AuthController {
         }
     }
 
+    /**
+     *
+     * @param request
+     * @return {@code HttpResponseApi<UserDto> }
+     */
     @PostMapping("/login")
     public HttpResponseApi<UserDto> login(@RequestBody LoginDto request) {
         try {
             return HttpResponseApi.<UserDto>builder()
-                    .code(200)
-                    .message("OK")
+                    .code(API_RESPONSE_STATUS.SUCCESS.getCode())
+                    .message(API_RESPONSE_STATUS.SUCCESS.getMessage())
                     .data(userService.login(request.getUsername(), request.getPassword()))
                     .build();
         } catch (UserInforException e) {
@@ -69,7 +75,7 @@ public class AuthController {
                     .message(HttpResponseApi.API_RESPONSE_CODE.OK.getMessage())
                     .build();
         } catch (Exception e) {
-            // ghi log
+            // them ghi log
             return HttpResponseApi.<String>builder()
                     .code(HttpResponseApi.API_RESPONSE_CODE.BAD_REQUEST.getCode())
                     .message(HttpResponseApi.API_RESPONSE_CODE.BAD_REQUEST.getMessage())
