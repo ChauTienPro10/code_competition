@@ -18,14 +18,11 @@ public class Oauth2GithubController {
         response.sendRedirect("/oauth2/authorization/github");
     }
 
-    /**
-     *
-     * @param principal
-     * @return
-     */
     @GetMapping("/callback")
-    public Map<String, Object> callback(@AuthenticationPrincipal OAuth2User principal) {
-        System.out.println(principal.getAttributes().get("login"));
-        return principal.getAttributes();
+    public Map<String, Object> currentUser(@AuthenticationPrincipal OAuth2User principal) {
+        if (principal == null) {
+            return Map.of("error", "User not authenticated");
+        }
+        return principal.getAttributes();  // Trả về thông tin user từ GitHub
     }
 }

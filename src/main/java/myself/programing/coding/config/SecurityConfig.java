@@ -30,6 +30,8 @@ public class SecurityConfig {
 
     @Autowired CustomUserDetailsService customUserDetailsService;
 
+    @Autowired CustomOAuth2SuccessHandler customOAuth2SuccessHandler;
+
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -76,7 +78,7 @@ public class SecurityConfig {
                 )
                 .oauth2Login(oauth2 -> oauth2
                         .loginPage("/oauth/github/authorize")
-                        .defaultSuccessUrl("/oauth/github/callback", true)
+                        .successHandler(customOAuth2SuccessHandler)
                         .userInfoEndpoint(userInfo -> userInfo
                                 .userService(customOAuth2UserService)
                         )
