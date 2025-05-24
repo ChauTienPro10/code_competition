@@ -13,4 +13,19 @@ public class ChallengeDto {
     private String template;
     private String simpleInput;
     private String simpleOutput;
+    private String level;
+
+    public void setLevel(int level) {
+        switch (level) {
+            case 1:
+                this.level = "Easy";
+                break;
+            case 2:
+                this.level = "Medium";
+                break;
+            case 3:
+                this.level = "Hard";
+                break;
+        }
+    }
 }

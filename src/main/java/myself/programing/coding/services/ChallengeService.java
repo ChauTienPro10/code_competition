@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ChallengeService {
@@ -44,7 +45,7 @@ public class ChallengeService {
                 .simpleInput(simpleInput)
                 .simpleOutput(simpleOutput)
                 .type(type)
-                .challenge_level(level)
+                .challengeLevel(level)
                 .build();
         for (TestCase testCase : testcases) {
             testCase.setChallenge(challenge);
@@ -96,6 +97,12 @@ public class ChallengeService {
         if (CHALLENGE_TYPE.invalidType(type)) {
             throw new ChallengeInfoException(CHALLENGE_ERROR_TYPE.CHALLENG_TYPE_ERROR);
         }
-        return challengeMapper.toDtoList(challengeRepository.findByType(type));
+        return challengeRepository.findByType(type).stream()
+                .map(challenge -> {
+                    ChallengeDto dto = challengeMapper.toDto(challenge);
+                    dto.setLevel((challenge.getChallengeLevel()));
+                    return dto;
+                })
+                .toList();
     }
 }

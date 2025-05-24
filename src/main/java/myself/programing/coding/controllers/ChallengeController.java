@@ -21,8 +21,8 @@ public class ChallengeController {
     public HttpResponseApi<List<ChallengeDto>> getByType(@PathVariable int type) {
         try {
             return HttpResponseApi.<List<ChallengeDto>>builder()
-                    .code(200)
-                    .message("OK")
+                    .code(API_RESPONSE_STATUS.SUCCESS.getCode())
+                    .message(API_RESPONSE_STATUS.SUCCESS.getMessage())
                     .data(challengeService.getByType(type))
                     .build();
         } catch (ChallengeInfoException e) {

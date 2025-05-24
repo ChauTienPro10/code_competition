@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum API_RESPONSE_STATUS {
-    SUCCESS(200, "Success"),
+    SUCCESS(200, "OK"),
     ERROR_COMPILE(3001, "Error"),
     RUN_FAIL(3002, "Fail"),
     UNAUTHORIZED(401, "Unauthorized"),

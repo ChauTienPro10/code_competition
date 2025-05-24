@@ -31,7 +31,8 @@ public class Challenge {
 
     private Integer type;
 
-    private Integer challenge_level;
+    @Column(name = "challenge_level")
+    private Integer challengeLevel;
 
     @OneToMany(mappedBy = "challenge", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<TestCase> testCase;

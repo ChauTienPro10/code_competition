@@ -1055,3 +1055,35 @@ use --help for a list of possible options
 2025-05-23 16:04:39 - INFO - *****COMPILING SUCCESSFULLY*****
 2025-05-23 16:04:41 - INFO - *****START COMPILING AND RUN*****
 2025-05-23 16:04:42 - INFO - *****RUN COMPETITION*****
+2025-05-24 13:42:09 - INFO - *****START COMPILING*****
+2025-05-24 13:42:10 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_41/Main.java] file_run_41/Main.java:11: error: cannot find symbol
+        System.out.println(Arrays.toString(output));
+                           ^
+  symbol:   variable Arrays
+  location: class Main
+1 error
+*****
+2025-05-24 13:43:25 - INFO - *****START COMPILING*****
+2025-05-24 13:43:26 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-24 13:43:29 - INFO - *****START COMPILING AND RUN*****
+2025-05-24 13:43:30 - INFO - *****RUN COMPETITION*****
+2025-05-24 13:44:23 - INFO - *****START COMPILING*****
+2025-05-24 13:44:24 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_41/Main.java] file_run_41/Main.java:18: error: ']' expected
+        return new int[2,4]; // placeholder
+                        ^
+1 error
+*****
+2025-05-24 13:45:02 - INFO - *****START COMPILING*****
+2025-05-24 13:45:03 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-24 13:45:04 - INFO - *****START COMPILING AND RUN*****
+2025-05-24 13:45:05 - INFO - *****RUN COMPETITION*****
+2025-05-24 13:45:08 - INFO - *****START COMPILING AND RUN*****
+2025-05-24 13:45:09 - INFO - *****RUN COMPETITION*****
+2025-05-24 13:45:30 - INFO - *****START COMPILING AND RUN*****
+2025-05-24 13:45:31 - INFO - *****RUN COMPETITION*****
+2025-05-24 13:45:42 - INFO - *****START COMPILING AND RUN*****
+2025-05-24 13:45:43 - INFO - *****RUN COMPETITION*****
+2025-05-24 13:45:47 - INFO - *****START COMPILING AND RUN*****
+2025-05-24 13:45:48 - INFO - *****RUN COMPETITION*****
+2025-05-24 13:46:19 - INFO - *****START COMPILING AND RUN*****
+2025-05-24 13:46:20 - INFO - *****RUN COMPETITION*****
