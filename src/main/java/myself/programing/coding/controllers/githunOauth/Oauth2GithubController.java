@@ -17,12 +17,4 @@ public class Oauth2GithubController {
     public void login(HttpServletResponse response) throws IOException {
         response.sendRedirect("/oauth2/authorization/github");
     }
-
-    @GetMapping("/callback")
-    public Map<String, Object> currentUser(@AuthenticationPrincipal OAuth2User principal) {
-        if (principal == null) {
-            return Map.of("error", "User not authenticated");
-        }
-        return principal.getAttributes();  // Trả về thông tin user từ GitHub
-    }
 }

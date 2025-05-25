@@ -1,12 +1,15 @@
 package myself.programing.coding.services;
 
 import java.util.Arrays;
-import java.util.Optional;
 import java.util.stream.Collectors;
+
+import myself.programing.coding.config.PasswordEncoderConfig;
+import myself.programing.coding.config.ReadConfig;
 import myself.programing.coding.dto.UserDto;
 import myself.programing.coding.entity.Account;
 import myself.programing.coding.entity.TokenInvalid;
 import myself.programing.coding.entity.User;
+import myself.programing.coding.enums.PLATFORM_OAUTH;
 import myself.programing.coding.enums.USER_ERROR_TYPE;
 import myself.programing.coding.exception.UserInforException;
 import myself.programing.coding.mapper.UserMapper;
@@ -18,9 +21,7 @@ import myself.programing.coding.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -30,15 +31,13 @@ public class UserService {
 
     @Autowired private AccountRepository accountRepository;
 
-    @Autowired private BCryptPasswordEncoder bCryptPasswordEncoder;
+    @Autowired private PasswordEncoderConfig passwordEncoderConfig;
 
     @Autowired private UserMapper userMapper;
 
-    @Autowired private CustomUserDetailsService userDetailsService;
-
-    @Autowired private JwtUtil jwtUtil;
-
     @Autowired TokenInvalidRepository tokenInvalidRepository;
+
+    @Autowired CustomUserDetailsService userDetailsService;
 
     /**
      *
@@ -47,12 +46,12 @@ public class UserService {
      * @param password
      * @return User
      */
-    public UserDto signUp(String name, String username, String password) throws UserInforException {
+    public UserDto signUp(String name, String username, String password , String accessToken, String platform) throws UserInforException {
         if (accountRepository.findByUsername(username).isPresent()) {
             throw new UserInforException(USER_ERROR_TYPE.ERROR_CREATE_USER, "This username is used");
         }
 
-        if (invalidPassword(password)) {
+        if (platform == null && invalidPassword(password)) {
             throw new UserInforException(USER_ERROR_TYPE.ERROR_CREATE_ACCOUNT, "Invalid password");
         }
 
@@ -62,10 +61,12 @@ public class UserService {
                 .build();
         Account account = Account.builder()
                 .username(username)
-                .password(bCryptPasswordEncoder.encode(password))
-                .user(null)
+                .password(passwordEncoderConfig.passwordEncoder().encode(password != null ? password :
+                        ReadConfig.PASSWORD_DEFAULF_FOR_OAUTH))
+                .accessToken(accessToken)
+                .platform(PLATFORM_OAUTH.getPlatformFromString(platform) != null ?
+                        PLATFORM_OAUTH.getPlatformFromString(platform).getId() : null)
                 .build();
-        account.setUser(user);
         user.setAccount(account);
         return userMapper.toDto(userRepository.save(user));
     }
@@ -99,8 +100,9 @@ public class UserService {
      */
     public UserDto login(String username, String password) throws UserInforException {
         try {
+            JwtUtil jwtUtil = new JwtUtil();
             CustomUserDetails userDetails = (CustomUserDetails) userDetailsService.loadUserByUsername(username);
-            if (!bCryptPasswordEncoder.matches(password, userDetails.getPassword())) {
+            if (!passwordEncoderConfig.passwordEncoder().matches(password, userDetails.getPassword())) {
                 throw new UserInforException(USER_ERROR_TYPE.ERROR_INFO_LOGIN, "Password was wrong!");
             }
             User user = userRepository.findByAccount(userDetails.getAccount());
@@ -138,5 +140,9 @@ public class UserService {
             e.printStackTrace();
             throw new RuntimeException("Logout failed", e);
         }
+    }
+
+    public User findByUsername(String username) {
+        return userRepository.findByAccount(accountRepository.findByUsername(username).get());
     }
 }

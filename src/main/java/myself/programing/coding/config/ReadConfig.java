@@ -10,4 +10,5 @@ public class ReadConfig {
     public static String AUTHORIZATION = configLoader.get("AUTHORIZATION");
     public static String AUTH_PREFIX = configLoader.get("BEARER");
     public static String TEST_URL = configLoader.get("TEST_URL");
+    public static String PASSWORD_DEFAULF_FOR_OAUTH = configLoader.get("PASSWORD_DEFAULF_FOR_OAUTH");
 }

@@ -36,8 +36,7 @@ public class Account {
 
     private String password;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    @JsonBackReference
-    private User user;
+    private String accessToken;
+
+    private Integer platform;;
 }

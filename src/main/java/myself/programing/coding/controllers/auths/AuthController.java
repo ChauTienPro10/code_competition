@@ -24,7 +24,7 @@ public class AuthController {
     @PostMapping("/sign_up")
     public HttpResponseApi<UserDto> signUp(@RequestBody SignUpDto request) {
         try {
-            UserDto user = userService.signUp(request.getName(), request.getUsername(), request.getPassword());
+            UserDto user = userService.signUp(request.getName(), request.getUsername(), request.getPassword(), null, null);
             return HttpResponseApi.<UserDto>builder()
                     .code(API_RESPONSE_STATUS.SUCCESS.getCode())
                     .message(API_RESPONSE_STATUS.SUCCESS.getMessage())

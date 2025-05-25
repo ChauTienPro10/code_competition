@@ -32,10 +32,7 @@ public class SecurityConfig {
 
     @Autowired CustomOAuth2SuccessHandler customOAuth2SuccessHandler;
 
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+    @Autowired PasswordEncoderConfig passwordEncoderConfig;
 
     /**
      *
@@ -46,7 +43,7 @@ public class SecurityConfig {
     public AuthenticationProvider authenticationProvider(CustomUserDetailsService userDetailsService) {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(userDetailsService);
-        provider.setPasswordEncoder(passwordEncoder());
+        provider.setPasswordEncoder(passwordEncoderConfig.passwordEncoder());
         return provider;
     }
 
@@ -77,7 +74,6 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 )
                 .oauth2Login(oauth2 -> oauth2
-                        .loginPage("/oauth/github/authorize")
                         .successHandler(customOAuth2SuccessHandler)
                         .userInfoEndpoint(userInfo -> userInfo
                                 .userService(customOAuth2UserService)
