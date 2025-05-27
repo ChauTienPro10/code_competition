@@ -102,6 +102,9 @@ public class UserService {
         try {
             JwtUtil jwtUtil = new JwtUtil();
             CustomUserDetails userDetails = (CustomUserDetails) userDetailsService.loadUserByUsername(username);
+            if (userDetails.getAccount().getPlatform() != null) {
+                throw new UsernameNotFoundException("invalid method for platform!");
+            }
             if (!passwordEncoderConfig.passwordEncoder().matches(password, userDetails.getPassword())) {
                 throw new UserInforException(USER_ERROR_TYPE.ERROR_INFO_LOGIN, "Password was wrong!");
             }

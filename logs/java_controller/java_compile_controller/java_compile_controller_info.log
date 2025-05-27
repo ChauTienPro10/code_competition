@@ -1091,3 +1091,251 @@ use --help for a list of possible options
 2025-05-25 15:46:51 - INFO - *****RUN COMPETITION*****
 2025-05-25 15:46:53 - INFO - *****START COMPILING AND RUN*****
 2025-05-25 15:46:55 - INFO - *****RUN COMPETITION*****
+2025-05-26 08:51:56 - INFO - *****START COMPILING AND RUN*****
+2025-05-26 08:51:56 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Class name invalid!*****
+2025-05-26 08:52:14 - INFO - *****START COMPILING*****
+2025-05-26 08:52:14 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Class name invalid!*****
+2025-05-26 08:54:34 - INFO - *****START COMPILING AND RUN*****
+2025-05-26 08:54:36 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] file_run_28/Main.java:18: error: ']' expected
+        return new int[0, 1]; // placeholder
+                        ^
+1 error
+*****
+2025-05-26 08:54:38 - INFO - *****START COMPILING*****
+2025-05-26 08:54:39 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] file_run_28/Main.java:18: error: ']' expected
+        return new int[0, 1]; // placeholder
+                        ^
+1 error
+*****
+2025-05-26 08:54:52 - INFO - *****START COMPILING AND RUN*****
+2025-05-26 08:54:53 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] file_run_28/Main.java:18: error: array creation with both dimension expression and initialization is illegal
+        return new int[0]{1, 2}; // placeholder
+                         ^
+1 error
+*****
+2025-05-26 08:54:55 - INFO - *****START COMPILING*****
+2025-05-26 08:54:56 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] file_run_28/Main.java:18: error: array creation with both dimension expression and initialization is illegal
+        return new int[0]{1, 2}; // placeholder
+                         ^
+1 error
+*****
+2025-05-26 08:55:05 - INFO - *****START COMPILING*****
+2025-05-26 08:55:06 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-26 08:55:08 - INFO - *****START COMPILING AND RUN*****
+2025-05-26 08:55:09 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container java -cp file_run_28 Main "2,5,4,1,3" 7] Exception in thread "main" java.lang.NumberFormatException: For input string: ""2"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:648)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Main.main(Main.java:8)
+*****
+2025-05-26 08:55:11 - INFO - *****START COMPILING*****
+2025-05-26 08:55:12 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-26 08:55:13 - INFO - *****START COMPILING AND RUN*****
+2025-05-26 08:55:14 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container java -cp file_run_28 Main "2,5,4,1,3" 7] Exception in thread "main" java.lang.NumberFormatException: For input string: ""2"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:648)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Main.main(Main.java:8)
+*****
+2025-05-26 08:57:39 - INFO - *****START COMPILING AND RUN*****
+2025-05-26 08:57:40 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container java -cp file_run_28 Main "2,5,4,1,3" 7] Exception in thread "main" java.lang.NumberFormatException: For input string: ""2"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:648)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Main.main(Main.java:8)
+*****
+2025-05-26 08:57:42 - INFO - *****START COMPILING*****
+2025-05-26 08:57:43 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-26 08:57:44 - INFO - *****START COMPILING AND RUN*****
+2025-05-26 08:57:45 - INFO - *****RUN FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container java -cp file_run_28 Main "2,5,4,1,3" 7] Exception in thread "main" java.lang.NumberFormatException: For input string: ""2"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:648)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at Main.main(Main.java:8)
+*****
+2025-05-26 09:01:39 - INFO - *****START COMPILING*****
+2025-05-26 09:01:40 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-26 09:01:42 - INFO - *****START COMPILING AND RUN*****
+2025-05-26 09:01:43 - INFO - *****RUN COMPETITION*****
+2025-05-26 09:01:45 - INFO - *****START COMPILING AND RUN*****
+2025-05-26 09:01:46 - INFO - *****RUN COMPETITION*****
+2025-05-26 14:35:37 - INFO - *****START COMPILING*****
+2025-05-26 14:35:38 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-26 14:35:39 - INFO - *****START COMPILING*****
+2025-05-26 14:35:39 - INFO - *****START COMPILING*****
+2025-05-26 14:35:40 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-26 14:35:41 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-26 14:35:42 - INFO - *****START COMPILING*****
+2025-05-26 14:35:42 - INFO - *****START COMPILING*****
+2025-05-26 14:35:42 - INFO - *****START COMPILING*****
+2025-05-26 14:35:43 - INFO - *****START COMPILING*****
+2025-05-26 14:35:43 - INFO - *****START COMPILING*****
+2025-05-26 14:35:43 - INFO - *****START COMPILING*****
+2025-05-26 14:35:43 - INFO - *****START COMPILING*****
+2025-05-26 14:35:43 - INFO - *****START COMPILING*****
+2025-05-26 14:35:44 - INFO - *****START COMPILING*****
+2025-05-26 14:35:44 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-26 14:35:44 - INFO - *****START COMPILING*****
+2025-05-26 14:35:45 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: file not found: file_run_28/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-26 14:35:45 - INFO - *****START COMPILING*****
+2025-05-26 14:35:45 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: file not found: file_run_28/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-26 14:35:45 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: error reading file_run_28/Main.java; /app/file_run_28/Main.java
+1 error
+*****
+2025-05-26 14:35:45 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: error reading file_run_28/Main.java; /app/file_run_28/Main.java
+1 error
+*****
+2025-05-26 14:35:45 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: file not found: file_run_28/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-26 14:35:45 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: file not found: file_run_28/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-26 14:35:46 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-26 14:35:46 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: file not found: file_run_28/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-26 14:35:46 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: error reading file_run_28/Main.java; /app/file_run_28/Main.java
+1 error
+*****
+2025-05-26 14:35:46 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: file not found: file_run_28/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-26 14:35:48 - INFO - *****START COMPILING*****
+2025-05-26 14:35:49 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:26:25 - INFO - *****START COMPILING*****
+2025-05-27 10:26:26 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:26:29 - INFO - *****START COMPILING*****
+2025-05-27 10:26:29 - INFO - *****START COMPILING*****
+2025-05-27 10:26:29 - INFO - *****START COMPILING*****
+2025-05-27 10:26:30 - INFO - *****START COMPILING*****
+2025-05-27 10:26:31 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:26:32 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:26:32 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:26:32 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:28:08 - INFO - *****START COMPILING*****
+2025-05-27 10:28:09 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:28:11 - INFO - *****START COMPILING*****
+2025-05-27 10:28:13 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:28:43 - INFO - *****START COMPILING*****
+2025-05-27 10:28:44 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:28:45 - INFO - *****START COMPILING*****
+2025-05-27 10:28:46 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:28:53 - INFO - *****START COMPILING*****
+2025-05-27 10:28:54 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:42:50 - INFO - *****START COMPILING*****
+2025-05-27 10:42:51 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:42:54 - INFO - *****START COMPILING*****
+2025-05-27 10:42:54 - INFO - *****START COMPILING*****
+2025-05-27 10:42:54 - INFO - *****START COMPILING*****
+2025-05-27 10:42:54 - INFO - *****START COMPILING*****
+2025-05-27 10:42:54 - INFO - *****START COMPILING*****
+2025-05-27 10:42:55 - INFO - *****START COMPILING*****
+2025-05-27 10:42:55 - INFO - *****START COMPILING*****
+2025-05-27 10:42:56 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: file not found: file_run_28/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-27 10:42:56 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: error reading file_run_28/Main.java; /app/file_run_28/Main.java
+1 error
+*****
+2025-05-27 10:42:56 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: file not found: file_run_28/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-27 10:42:56 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:42:56 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: file not found: file_run_28/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-27 10:42:56 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: error reading file_run_28/Main.java; /app/file_run_28/Main.java
+1 error
+*****
+2025-05-27 10:42:56 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: file not found: file_run_28/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-27 10:43:01 - INFO - *****START COMPILING*****
+2025-05-27 10:43:02 - INFO - *****START COMPILING*****
+2025-05-27 10:43:02 - INFO - *****START COMPILING*****
+2025-05-27 10:43:02 - INFO - *****START COMPILING*****
+2025-05-27 10:43:02 - INFO - *****START COMPILING*****
+2025-05-27 10:43:02 - INFO - *****START COMPILING*****
+2025-05-27 10:43:03 - INFO - *****START COMPILING*****
+2025-05-27 10:43:03 - INFO - *****START COMPILING*****
+2025-05-27 10:43:04 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: error reading file_run_28/Main.java; /app/file_run_28/Main.java
+1 error
+*****
+2025-05-27 10:43:04 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: file not found: file_run_28/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-27 10:43:04 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: error reading file_run_28/Main.java; /app/file_run_28/Main.java
+1 error
+*****
+2025-05-27 10:43:04 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: file not found: file_run_28/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-27 10:43:04 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: file not found: file_run_28/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-27 10:43:04 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: file not found: file_run_28/Main.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+*****
+2025-05-27 10:43:05 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: error reading file_run_28/Main.java; /app/file_run_28/Main.java
+1 error
+*****
+2025-05-27 10:43:05 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:44:12 - INFO - *****START COMPILING*****
+2025-05-27 10:44:13 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:44:14 - INFO - *****START COMPILING*****
+2025-05-27 10:44:14 - INFO - *****START COMPILING*****
+2025-05-27 10:44:14 - INFO - *****START COMPILING*****
+2025-05-27 10:44:15 - INFO - *****START COMPILING*****
+2025-05-27 10:44:15 - INFO - *****START COMPILING*****
+2025-05-27 10:44:15 - INFO - *****START COMPILING*****
+2025-05-27 10:44:16 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: error reading file_run_28/Main.java; /app/file_run_28/Main.java
+1 error
+*****
+2025-05-27 10:44:17 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:44:17 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:44:17 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: error reading file_run_28/Main.java; /app/file_run_28/Main.java
+1 error
+*****
+2025-05-27 10:44:17 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:44:17 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_28/Main.java] error: error reading file_run_28/Main.java; /app/file_run_28/Main.java
+1 error
+*****
+2025-05-27 10:48:31 - INFO - *****START COMPILING*****
+2025-05-27 10:48:32 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:48:37 - INFO - *****START COMPILING*****
+2025-05-27 10:48:38 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:51:54 - INFO - *****START COMPILING*****
+2025-05-27 10:51:54 - INFO - *****START COMPILING*****
+2025-05-27 10:51:54 - INFO - *****START COMPILING*****
+2025-05-27 10:51:54 - INFO - *****START COMPILING*****
+2025-05-27 10:51:55 - INFO - *****START COMPILING*****
+2025-05-27 10:51:57 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:51:58 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:51:58 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:51:58 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:51:58 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:52:09 - INFO - *****START COMPILING*****
+2025-05-27 10:52:10 - INFO - *****START COMPILING*****
+2025-05-27 10:52:10 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:52:11 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 10:52:20 - INFO - *****START COMPILING*****
+2025-05-27 10:52:21 - INFO - *****COMPILING SUCCESSFULLY*****

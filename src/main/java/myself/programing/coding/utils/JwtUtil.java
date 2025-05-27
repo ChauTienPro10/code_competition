@@ -4,6 +4,8 @@ import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import java.security.Key;
 import java.util.Collection;
 import java.util.Date;
@@ -89,5 +91,22 @@ public class JwtUtil {
             return bearerToken.substring(7);
         }
         return null;
+    }
+
+    /**
+     *
+     * @param request
+     * @return String
+     */
+    public String extractJwtFromRequest(ServletRequest request) {
+        if (request instanceof HttpServletRequest) {
+            HttpServletRequest httpRequest = (HttpServletRequest) request;
+            String authHeader = httpRequest.getHeader("Authorization");
+
+            if (authHeader != null && authHeader.startsWith("Bearer ")) {
+                return authHeader.substring(7); // Bỏ phần "Bearer "
+            }
+        }
+        return null; // Không có token
     }
 }

@@ -18,9 +18,6 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Account account = accountRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-        if (account.getPlatform() != null) {
-            throw new UsernameNotFoundException("invalid method for platform!");
-        }
         return new CustomUserDetails(account);
     }
 }

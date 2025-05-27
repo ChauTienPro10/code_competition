@@ -1,5 +1,6 @@
 package myself.programing.coding.filter;
 
+import io.github.bucket4j.Bucket;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -7,11 +8,13 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 
-@WebFilter("/java/compile/*")
 public class CompileJavaFilter implements Filter {
 
+    private final Map<String, Bucket> cache = new ConcurrentHashMap<>();
     private static final List<Pattern> DANGEROUS_PATTERNS = List.of(
             Pattern.compile("Runtime\\.getRuntime\\(\\)\\.exec\\(", Pattern.CASE_INSENSITIVE),
             Pattern.compile("ProcessBuilder\\(", Pattern.CASE_INSENSITIVE),
@@ -65,20 +68,25 @@ public class CompileJavaFilter implements Filter {
      */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
+        System.out.println("compile ne may!");
 
-        HttpServletRequest httpRequest = (HttpServletRequest) request;
-
-        CachedBodyHttpServletRequestWrapper wrappedRequest = new CachedBodyHttpServletRequestWrapper(httpRequest);
+        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+        HttpServletResponse httpServletResponse = (HttpServletResponse) response;
+        if ("OPTIONS".equalsIgnoreCase((httpServletRequest.getMethod()))) {
+            httpServletResponse.setStatus(HttpServletResponse.SC_OK);
+            filterChain.doFilter(request, response);
+            return;
+        }
+        CachedBodyHttpServletRequestWrapper wrappedRequest = new CachedBodyHttpServletRequestWrapper(httpServletRequest);
 
         String requestBody = wrappedRequest.getBody();
         if (containsDangerousCode(requestBody)) {
-            HttpServletResponse httpResponse = (HttpServletResponse) response;
-            httpResponse.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-            httpResponse.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-            httpResponse.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-            httpResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            httpResponse.setContentType("application/json");
-            httpResponse.getWriter().write("{\"error\": \"Bad Request: Dangerous code detected!\"}");
+            httpServletResponse.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+            httpServletResponse.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+            httpServletResponse.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+            httpServletResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            httpServletResponse.setContentType("application/json");
+            httpServletResponse.getWriter().write("{\"error\": \"Bad Request: Dangerous code detected!\"}");
             return;
         }
 
