@@ -44,6 +44,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
      */
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+
         if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
             response.setStatus(HttpServletResponse.SC_OK);
             filterChain.doFilter(request, response);
@@ -77,8 +78,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             response.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
             response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
             response.setHeader("Access-Control-Expose-Headers", "Authorization");
-
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 

@@ -1339,3 +1339,81 @@ use --help for a list of possible options
 2025-05-27 10:52:11 - INFO - *****COMPILING SUCCESSFULLY*****
 2025-05-27 10:52:20 - INFO - *****START COMPILING*****
 2025-05-27 10:52:21 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 14:12:56 - INFO - *****START COMPILING*****
+2025-05-27 14:12:56 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Class name invalid!*****
+2025-05-27 14:13:09 - INFO - *****START COMPILING*****
+2025-05-27 14:13:11 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_48/Main.java] file_run_48/Main.java:10: error: missing return statement
+    }
+    ^
+1 error
+*****
+2025-05-27 14:51:18 - INFO - *****START COMPILING*****
+2025-05-27 14:51:18 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Class name invalid!*****
+2025-05-27 14:51:27 - INFO - *****START COMPILING*****
+2025-05-27 14:51:28 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_49/Main.java] file_run_49/Main.java:10: error: missing return statement
+    }
+    ^
+1 error
+*****
+2025-05-27 14:51:33 - INFO - *****START COMPILING*****
+2025-05-27 14:51:35 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec jdk21-container javac file_run_49/Main.java] file_run_49/Main.java:10: error: missing return statement
+    }
+    ^
+1 error
+*****
+2025-05-27 14:51:49 - INFO - *****START COMPILING*****
+2025-05-27 14:51:50 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 14:51:52 - INFO - *****START COMPILING*****
+2025-05-27 14:51:53 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 14:51:56 - INFO - *****START COMPILING*****
+2025-05-27 14:51:57 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 14:55:55 - INFO - *****START COMPILING*****
+2025-05-27 14:55:56 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 14:56:04 - INFO - *****START COMPILING*****
+2025-05-27 14:56:05 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 14:56:06 - INFO - *****START COMPILING*****
+2025-05-27 14:56:07 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 14:58:26 - INFO - *****START COMPILING*****
+2025-05-27 14:58:27 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 14:58:31 - INFO - *****START COMPILING*****
+2025-05-27 14:58:32 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 15:11:38 - INFO - *****START COMPILING*****
+2025-05-27 15:11:39 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 15:11:44 - INFO - *****START COMPILING*****
+2025-05-27 15:11:45 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 15:11:48 - INFO - *****START COMPILING AND RUN*****
+2025-05-27 15:11:50 - INFO - *****RUN COMPETITION*****
+2025-05-27 15:11:55 - INFO - *****START COMPILING*****
+2025-05-27 15:11:56 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 15:11:58 - INFO - *****START COMPILING AND RUN*****
+2025-05-27 15:11:59 - INFO - *****RUN COMPETITION*****
+2025-05-27 15:12:09 - INFO - *****START COMPILING AND RUN*****
+2025-05-27 15:12:10 - INFO - *****RUN COMPETITION*****
+2025-05-27 15:12:17 - INFO - *****START COMPILING AND RUN*****
+2025-05-27 15:12:19 - INFO - *****RUN COMPETITION*****
+2025-05-27 15:16:00 - INFO - *****START COMPILING*****
+2025-05-27 15:16:01 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 15:16:04 - INFO - *****START COMPILING AND RUN*****
+2025-05-27 15:16:06 - INFO - *****RUN COMPETITION*****
+2025-05-27 15:16:09 - INFO - *****START COMPILING AND RUN*****
+2025-05-27 15:16:10 - INFO - *****RUN COMPETITION*****
+2025-05-27 16:31:58 - INFO - *****START COMPILING*****
+2025-05-27 16:32:00 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 16:32:08 - INFO - *****START COMPILING*****
+2025-05-27 16:32:09 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 16:32:09 - INFO - *****START COMPILING*****
+2025-05-27 16:32:10 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 16:32:11 - INFO - *****START COMPILING*****
+2025-05-27 16:32:12 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 16:32:12 - INFO - *****START COMPILING*****
+2025-05-27 16:32:13 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 16:32:13 - INFO - *****START COMPILING*****
+2025-05-27 16:32:14 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-27 16:34:11 - INFO - *****START COMPILING AND RUN*****
+2025-05-27 16:34:12 - INFO - *****RUN COMPETITION*****
+2025-05-27 16:34:12 - INFO - *****START COMPILING AND RUN*****
+2025-05-27 16:34:14 - INFO - *****RUN COMPETITION*****
+2025-05-27 16:34:14 - INFO - *****START COMPILING AND RUN*****
+2025-05-27 16:34:15 - INFO - *****RUN COMPETITION*****
+2025-05-27 16:34:17 - INFO - *****START COMPILING AND RUN*****
+2025-05-27 16:34:19 - INFO - *****RUN COMPETITION*****

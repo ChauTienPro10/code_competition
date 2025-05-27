@@ -7,7 +7,6 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
-import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -32,14 +31,23 @@ public class RateLimitFilter implements Filter {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
         if ("OPTIONS".equalsIgnoreCase((httpServletRequest.getMethod()))) {
+            System.out.println("op san ");
             httpServletResponse.setStatus(HttpServletResponse.SC_OK);
             filterChain.doFilter(request, response);
             return;
         }
-        if (!rateLimiterService.doRateLimitFilter(request, response, filterChain)) {
-            httpServletResponse.setStatus(429);
-            httpServletResponse.getWriter().write("Too many requests - please slow down.");
-            return;
+        if (httpServletRequest.getRequestURI().startsWith("/auth/") || httpServletRequest.getRequestURI().startsWith("/oauth/")) {
+            if (!rateLimiterService.doRateLimitFilterForAuth(httpServletRequest)) {
+                httpServletResponse.setStatus(429);
+                httpServletResponse.getWriter().write("Too many requests - please slow down.");
+                return;
+            }
+        } else {
+            if (!rateLimiterService.doRateLimitFilter(request)) {
+                httpServletResponse.setStatus(429);
+                httpServletResponse.getWriter().write("Too many requests - please slow down.");
+                return;
+            }
         }
         filterChain.doFilter(request, response);
     }

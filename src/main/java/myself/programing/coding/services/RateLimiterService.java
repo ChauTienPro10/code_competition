@@ -5,11 +5,9 @@ import io.github.bucket4j.Bucket;
 import io.github.bucket4j.BucketConfiguration;
 import io.github.bucket4j.Refill;
 import io.github.bucket4j.distributed.proxy.ProxyManager;
-import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
-import jakarta.servlet.ServletResponse;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.time.Duration;
 import myself.programing.coding.utils.JwtUtil;
@@ -23,17 +21,24 @@ public class RateLimiterService {
     @Autowired
     private ProxyManager<String> buckets;
 
-
-    public Bucket resolveBucket(String jwtAsKey) {
-        Supplier<BucketConfiguration> configSupplier = getConfigSupplierForUser(jwtAsKey);
-        return buckets.builder().build(jwtAsKey, configSupplier);
+    /**
+     *
+     * @param key
+     * @return Bucket
+     */
+    public Bucket resolveBucket(String key) {
+        Supplier<BucketConfiguration> configSupplier = getConfigSupplierForUser(key);
+        return buckets.builder().build(key, configSupplier);
     }
 
-    private Supplier<BucketConfiguration> getConfigSupplierForUser(String jwt) {
-        JwtUtil jwtUtil = new JwtUtil();
-        String username = jwtUtil.extractUsername(jwt);
-        Refill refill = Refill.intervally(1, Duration.ofSeconds(5));
-        Bandwidth limit = Bandwidth.classic(1, refill);
+    /**
+     *
+     * @param key
+     * @return {@code Supplier<BucketConfiguration>}
+     */
+    private Supplier<BucketConfiguration> getConfigSupplierForUser(String key) {
+        Refill refill = Refill.intervally(1000, Duration.ofSeconds(3600));
+        Bandwidth limit = Bandwidth.classic(1000, refill);
         return () -> (BucketConfiguration.builder()
                 .addLimit(limit)
                 .build());
@@ -42,20 +47,34 @@ public class RateLimiterService {
     /**
      *
      * @param request
-     * @param response
-     * @param filterChain
      * @throws IOException
      * @throws ServletException
      */
-    public boolean doRateLimitFilter(
-            ServletRequest request, ServletResponse response, FilterChain filterChain)
-            throws IOException, ServletException {
+    public boolean doRateLimitFilter(ServletRequest request) {
         JwtUtil jwtUtil = new JwtUtil();
         String jwt = jwtUtil.extractJwtFromRequest(request);
         Bucket bucket = resolveBucket(jwt);
+        System.out.println(buckets.getClass().getName());
         if (bucket.tryConsume(1)) {
             return true; // pass filter
         }
         return false; // dont pass rate limit
     }
+
+    /**
+     *
+     * @param request
+     * @return Boolean
+     */
+    public Boolean doRateLimitFilterForAuth(HttpServletRequest request) {
+            String ip = request.getRemoteAddr();
+            Bucket bucket = resolveBucket(ip);
+            if (bucket.tryConsume(1)) {
+                return true;
+            }
+            return false;
+    }
 }
+
+
+

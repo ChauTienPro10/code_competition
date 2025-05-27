@@ -68,8 +68,6 @@ public class CompileJavaFilter implements Filter {
      */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println("compile ne may!");
-
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
         if ("OPTIONS".equalsIgnoreCase((httpServletRequest.getMethod()))) {
