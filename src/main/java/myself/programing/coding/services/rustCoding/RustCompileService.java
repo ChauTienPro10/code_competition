@@ -1,14 +1,14 @@
-package myself.programing.coding.services.javaCoding;
+package myself.programing.coding.services.rustCoding;
 
 import myself.programing.coding.enums.DOCKER_EXECUTE_TYPE_ERROR;
 import myself.programing.coding.exception.DockerExecuteException;
-import myself.programing.coding.services.dockerService.DockerServiceForJava;
+import myself.programing.coding.services.dockerService.DockerServiceForRust;
 import org.springframework.stereotype.Service;
 
 @Service
-public class JavaCompileService extends JavaBaseService{
+public class RustCompileService extends RustBaseService {
 
-    public JavaCompileService(DockerServiceForJava dockerService) {
+    public RustCompileService(DockerServiceForRust dockerService) {
         super(dockerService);
     }
 
@@ -26,11 +26,12 @@ public class JavaCompileService extends JavaBaseService{
             String command = dockerService.genCompileFileCmd(pathInContainer);
             String result = dockerService.executeDockerCommandHasResult(command);
             if(result.isEmpty()) {
-                return pathInContainer.replace(".java", ".class");
+                return pathInContainer.replace(".rs", ".exe");
             }
             return result;
         } finally {
             dockerService.deleteFile(pathInContainer);
         }
     }
+
 }

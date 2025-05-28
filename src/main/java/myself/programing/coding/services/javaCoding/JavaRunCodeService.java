@@ -28,7 +28,7 @@ public class JavaRunCodeService extends JavaBaseService{
         if (javaFilePath.isEmpty()) {
             throw new DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR.FILE_NOT_FOUND, "Invalid file");
         }
-        String command = dockerService.genRunFileJavaCmd(javaFilePath);
+        String command = dockerService.genRunFileCmd(javaFilePath);
         return dockerService.executeDockerCommandHasResult(command + " " + input);
     }
 }

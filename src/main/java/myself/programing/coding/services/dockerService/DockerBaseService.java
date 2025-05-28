@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
 public class DockerBaseService {
     //    dockerBaseService Logger
     private final Logger logger = LoggerFactory.getLogger(DockerBaseService.class);
-    protected final String DOCKER_EXEC = "docker exec " + CONFIG.JDK_CONTAINER_NAME;
+    protected final String DOCKER_EXEC = "docker exec ";
     protected final String BASH = "bash";
     protected final String WORKSPACE = ":/app";
 
@@ -103,15 +103,6 @@ public class DockerBaseService {
 
     /**
      *
-     * @param folder
-     * @return String
-     */
-    public String genTouchFolderCmd(String folder) {
-        return DOCKER_EXEC + " mkdir -p " + "/app/" + folder;
-    }
-
-    /**
-     *
      * @param path
      * @throws DockerExecuteException
      */
@@ -125,7 +116,7 @@ public class DockerBaseService {
      * @return String
      */
     public String genDeleteFileCmd(String path) {
-        return DOCKER_EXEC + " rm -f " + path;
+        return DOCKER_EXEC + CONFIG.JDK_CONTAINER_NAME + " rm -f " + path;
     }
 
     /**

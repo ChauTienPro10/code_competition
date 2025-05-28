@@ -10,5 +10,10 @@ public interface IDockerService {
 
     void deleteFile(String path) throws DockerExecuteException;
 
-    String generateCopyFileToContainerCmd(String srcPath, String destPath) ;
+    String generateCopyFileToContainerCmd(String srcPath, String destPath);
+
+    String genCompileFileCmd(String filePath);
+
+    String genRunFileCmd(String filePath);
+
 }
