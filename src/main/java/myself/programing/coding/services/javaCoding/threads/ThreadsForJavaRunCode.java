@@ -2,6 +2,7 @@ package myself.programing.coding.services.javaCoding.threads;
 
 import myself.programing.coding.entity.TestCase;
 import myself.programing.coding.exception.DockerExecuteException;
+import myself.programing.coding.services.dockerService.DockerServiceForJava;
 import myself.programing.coding.services.javaCoding.JavaCompileService;
 import myself.programing.coding.services.javaCoding.JavaRunCodeService;
 
@@ -23,12 +24,13 @@ public class ThreadsForJavaRunCode {
     public String runCode(String code, Long idUser, List<TestCase> testCases) throws ExecutionException, InterruptedException {
         Callable<String> runTask = () -> {
             StringBuilder output;
-            JavaCompileService javaCompileService = new JavaCompileService();
-            JavaRunCodeService javaRunCodeService = new JavaRunCodeService();
+            DockerServiceForJava dockerServiceForJava = new DockerServiceForJava();
+            JavaCompileService javaCompileService = new JavaCompileService(dockerServiceForJava);
+            JavaRunCodeService javaRunCodeService = new JavaRunCodeService(dockerServiceForJava);
             try {
                 String nameClass = javaCompileService.detectFileName(code);
                 String filePath = javaCompileService.doCopyFileToContainer(
-                        javaCompileService.generateJavaFile(nameClass, code, idUser),
+                        javaCompileService.generateCodeFile(nameClass, code, idUser),
                         idUser
                 );
                 output = new StringBuilder(javaCompileService.doCompileToClassFile(filePath));

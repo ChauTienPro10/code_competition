@@ -3,7 +3,7 @@ package myself.programing.coding.services.dockerService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DockerServiceForJava extends DockerBaseService{
+public class DockerServiceForJava extends DockerBaseService implements IDockerService{
 
     /**
      *

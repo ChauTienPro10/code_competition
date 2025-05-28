@@ -4,38 +4,30 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import myself.programing.coding.enums.DOCKER_EXECUTE_TYPE_ERROR;
 import myself.programing.coding.exception.DockerExecuteException;
+import myself.programing.coding.services.AbstractCodingService;
 import myself.programing.coding.services.dockerService.DockerServiceForJava;
 import myself.programing.coding.utils.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.nio.file.FileVisitResult;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.SimpleFileVisitor;
-import java.nio.file.attribute.BasicFileAttributes;
 
 @Service
-public class JavaBaseService {
+public class JavaBaseService extends AbstractCodingService<DockerServiceForJava> {
 
     //    dockerBaseService Logger
     private final Logger logger = LoggerFactory.getLogger(JavaBaseService.class);
 
-    @Autowired
-    protected DockerServiceForJava dockerServiceForJava  = new DockerServiceForJava();
+    public JavaBaseService(DockerServiceForJava dockerService) {
+        super(dockerService);
+    }
 
     /**
-     *
-     * @param className
-     * @param codeString
-     * @param idUser
-     * @return Path
-     * @throws IOException
+     * {@inheritDoc}
      */
-    public String generateJavaFile(String className, String codeString, Long idUser) throws IOException {
+    @Override
+    public String generateCodeFile(String className, String codeString, Long idUser) throws IOException {
         String filePath = "/fileStorage/java/" + idUser + "/" + className + ".java";
         return FileUtils.generateFile(codeString, filePath).toAbsolutePath().toString();
     }
@@ -45,6 +37,7 @@ public class JavaBaseService {
      * @param code
      * @return
      */
+    @Override
     public String detectFileName(String code) throws DockerExecuteException {
         if (code == null || code.isEmpty()) {
             throw new DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR.UNKNOWN_ERROR, "Code is emmppty!");
@@ -67,25 +60,6 @@ public class JavaBaseService {
         }
 
         throw new DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR.COMMAND_FAILED, "Class name invalid!");
-    }
-
-    /**
-     * @param path
-     * @return String
-     */
-    public String doCopyFileToContainer(String path, Long idUser) throws DockerExecuteException {
-            if (path == null || path.isEmpty()) {
-                logError("Invalid path : " + path);
-                throw new DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR.UNKNOWN_ERROR, " Invalid: " + path);
-            }
-            String fileName = FileUtils.getFileNameFromPath(path);
-            String folder = FileUtils.generateDockerFolderName(idUser);
-            dockerServiceForJava.executeDockerCommand(dockerServiceForJava.genTouchFolderCmd(folder));
-            String filePathInContainer = folder + "/" + fileName;
-            dockerServiceForJava.deleteFile(filePathInContainer);
-            String command = dockerServiceForJava.generateCopyFileToContainerCmd(path, filePathInContainer);
-            dockerServiceForJava.executeDockerCommand(command);
-            return filePathInContainer;
     }
 
     /**
