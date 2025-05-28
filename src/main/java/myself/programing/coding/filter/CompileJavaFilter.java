@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
+import myself.programing.coding.config.ReadConfig;
 
 public class CompileJavaFilter implements Filter {
 
@@ -79,7 +80,7 @@ public class CompileJavaFilter implements Filter {
 
         String requestBody = wrappedRequest.getBody();
         if (containsDangerousCode(requestBody)) {
-            httpServletResponse.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+            httpServletResponse.setHeader("Access-Control-Allow-Origin", ReadConfig.CLIENT);
             httpServletResponse.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
             httpServletResponse.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
             httpServletResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);

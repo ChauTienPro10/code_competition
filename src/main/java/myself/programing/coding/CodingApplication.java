@@ -1,5 +1,6 @@
 package myself.programing.coding;
 
+import myself.programing.coding.config.ReadConfig;
 import myself.programing.coding.enums.CHALLENGE_LEVEL;
 import myself.programing.coding.enums.CHALLENGE_TYPE;
 import myself.programing.coding.services.ChallengeService;
@@ -17,9 +18,10 @@ public class CodingApplication {
 		SpringApplication.run(CodingApplication.class, args);
 	}
 
-//	@Bean
-//	public CommandLineRunner run(ChallengeService challengeService) {
-//		return args -> {
+	@Bean
+	public CommandLineRunner run(ChallengeService challengeService) {
+		return args -> {
+			System.out.println(ReadConfig.CLIENT);
 //			String testCasesJson = "["
 //					+ "{\"input\": \"\\\"2,5,4,1,3\\\" 7\", \"output\": \"[2,4]\"},"
 //					+ "{\"input\": \"\\\"10,5,199,1,3\\\" 200\", \"output\": \"[2,3]\"},"
@@ -53,6 +55,6 @@ public class CodingApplication {
 //			String simpleOutput = "[0,1]";
 //
 //			challengeService.addChallenge(testCasesJson, template, simpleInput, simpleOutput, content, CHALLENGE_TYPE.LEET_CODE.getType(), CHALLENGE_LEVEL.EASY.getLevel());
-//		};
-//	}
+		};
+	}
 }

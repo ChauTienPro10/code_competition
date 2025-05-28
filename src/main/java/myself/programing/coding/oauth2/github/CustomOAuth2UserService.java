@@ -17,7 +17,6 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
      */
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
-        System.out.println(userRequest.getAccessToken().getExpiresAt());
         return super.loadUser(userRequest);
     }
 }

@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import myself.programing.coding.config.ReadConfig;
 import myself.programing.coding.services.CustomUserDetailsService;
+import myself.programing.coding.utils.HttpUtils;
 import myself.programing.coding.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -45,6 +46,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
+        response = HttpUtils.addHeaderResponse(response);
         if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
             response.setStatus(HttpServletResponse.SC_OK);
             filterChain.doFilter(request, response);
@@ -70,16 +72,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     SecurityContextHolder.getContext().setAuthentication(authentication);
                 }
             }
-
             filterChain.doFilter(request, response);
         } catch (JwtException e) {
-            response.setHeader("Access-Control-Allow-Origin", ReadConfig.REACT_CLIENT);
-            response.setHeader("Access-Control-Allow-Credentials", "true");
-            response.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
-            response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-            response.setHeader("Access-Control-Expose-Headers", "Authorization");
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
-            System.out.println(e.getMessage());
         }
     }
 

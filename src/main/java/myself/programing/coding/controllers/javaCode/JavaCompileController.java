@@ -109,7 +109,6 @@ public class JavaCompileController {
         try {
             logInfo("*****START COMPILING AND RUN*****");
             ThreadsForJavaRunCode threadsForJavaRunCode = new ThreadsForJavaRunCode();
-            System.out.println(testCaseRepository.findByChallengeId(request.getChallengeId()).size());
             String resultRun = threadsForJavaRunCode.runCode(request.getCode(), request.getIdUser(), testCaseRepository.findByChallengeId(request.getChallengeId()));
             CompileResponse compileResponse = new CompileResponse(resultRun);
             HttpResponseApi<CompileResponse> result = HttpResponseApi.<CompileResponse>builder()
@@ -118,7 +117,6 @@ public class JavaCompileController {
                     .data(compileResponse)
                     .build();
             logInfo("*****RUN COMPETITION*****");
-            System.out.println(result.getData().getResult());
             return result;
         } catch (InterruptedException | ExecutionException e) {
             logInfo("*****RUN FAIL: " + e.getMessage()+ "*****");

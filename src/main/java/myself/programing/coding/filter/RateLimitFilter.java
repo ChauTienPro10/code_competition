@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import myself.programing.coding.services.RateLimiterService;
+import myself.programing.coding.utils.HttpUtils;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -29,11 +30,10 @@ public class RateLimitFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
             throws IOException, ServletException {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        HttpServletResponse httpServletResponse = (HttpServletResponse) response;
+        HttpServletResponse httpServletResponse = HttpUtils.addHeaderResponse((HttpServletResponse) response);
         if ("OPTIONS".equalsIgnoreCase((httpServletRequest.getMethod()))) {
-            System.out.println("op san ");
             httpServletResponse.setStatus(HttpServletResponse.SC_OK);
-            filterChain.doFilter(request, response);
+            filterChain.doFilter(httpServletRequest, httpServletResponse);
             return;
         }
         if (httpServletRequest.getRequestURI().startsWith("/auth/") || httpServletRequest.getRequestURI().startsWith("/oauth/")) {
@@ -49,7 +49,7 @@ public class RateLimitFilter implements Filter {
                 return;
             }
         }
-        filterChain.doFilter(request, response);
+        filterChain.doFilter(httpServletRequest, httpServletResponse);
     }
 
     @Override

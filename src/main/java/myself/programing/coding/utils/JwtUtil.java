@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import java.security.Key;
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import myself.programing.coding.config.ReadConfig;
 import org.springframework.security.core.GrantedAuthority;

@@ -79,7 +79,7 @@ public class CustomOAuth2SuccessHandler implements AuthenticationSuccessHandler 
         } catch (Exception e) {
             // Them xu ly ghi log o day
             e.printStackTrace();
-            String redirectUrl = ReadConfig.REACT_CLIENT + FAIL_AUTH_ENPOINT + e.getMessage();
+            String redirectUrl = ReadConfig.CLIENT + FAIL_AUTH_ENPOINT + e.getMessage();
             redirectStrategy.sendRedirect(request, response, redirectUrl);
         }
     }
@@ -143,7 +143,7 @@ public class CustomOAuth2SuccessHandler implements AuthenticationSuccessHandler 
         }
         String token = jwtService.generateToken(username,  List.of(new SimpleGrantedAuthority("ROLE_USER")));
         String infoUser = "&id=" + user.getId() + "&name=" + user.getName();
-        return ReadConfig.REACT_CLIENT + SUCCESS_ENDPOINT + token + infoUser ;
+        return ReadConfig.CLIENT + SUCCESS_ENDPOINT + token + infoUser ;
     }
 
 }
