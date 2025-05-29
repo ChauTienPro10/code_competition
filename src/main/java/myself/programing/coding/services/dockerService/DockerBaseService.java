@@ -88,22 +88,6 @@ public class DockerBaseService {
     /**
      *
      * @param path
-     * @param filePath
-     * @return String
-     */
-    public String generateCopyFileToContainerCmd(String path, String filePath) {
-        return "docker cp "
-                + path
-                + " "
-                + CONFIG.JDK_CONTAINER_NAME
-                + WORKSPACE
-                + "/"
-                + filePath;
-    }
-
-    /**
-     *
-     * @param path
      * @throws DockerExecuteException
      */
     public void deleteFile(String path) throws DockerExecuteException {

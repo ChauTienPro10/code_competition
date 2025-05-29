@@ -176,3 +176,9 @@
 2025-05-27 14:13:10 - ERROR - Execute fail: docker exec jdk21-container javac file_run_48/Main.java with exit code 1
 2025-05-27 14:51:27 - ERROR - Execute fail: docker exec jdk21-container javac file_run_49/Main.java with exit code 1
 2025-05-27 14:51:34 - ERROR - Execute fail: docker exec jdk21-container javac file_run_49/Main.java with exit code 1
+2025-05-29 09:57:21 - ERROR - Execute fail: docker exec rust-container rustc file_run_28/Main.rs with exit code 1
+2025-05-29 10:00:47 - ERROR - Execute fail: docker exec rust-container rustc file_run_28/Main.rs with exit code 1
+2025-05-29 10:02:05 - ERROR - Execute fail: docker exec rust-container rustc file_run_28/Main.rs with exit code 1
+2025-05-29 10:16:13 - ERROR - Execute fail: docker exec rust-container rustc file_run_28/Main.rs with exit code 1
+2025-05-29 10:17:31 - ERROR - Execute fail: docker exec rust-container rustc file_run_28/Main.rs with exit code 1
+2025-05-29 10:21:23 - ERROR - Execute fail : docker exec rust-container mkdir -p /app/file_run_28

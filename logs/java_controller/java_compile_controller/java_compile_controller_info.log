@@ -1447,3 +1447,43 @@ use --help for a list of possible options
 2025-05-28 23:47:25 - INFO - *****RUN COMPETITION*****
 2025-05-28 23:49:05 - INFO - *****START COMPILING AND RUN*****
 2025-05-28 23:49:06 - INFO - *****RUN COMPETITION*****
+2025-05-29 09:30:24 - INFO - *****START COMPILING*****
+2025-05-29 09:30:25 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-29 09:30:29 - INFO - *****START COMPILING*****
+2025-05-29 09:30:30 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-29 09:57:20 - INFO - *****START COMPILING*****
+2025-05-29 09:57:21 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec rust-container rustc file_run_28/Main.rs] error: couldn't read `file_run_28/Main.rs`: No such file or directory (os error 2)
+
+error: aborting due to 1 previous error
+
+*****
+2025-05-29 09:59:50 - INFO - *****START COMPILING*****
+2025-05-29 10:00:47 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec rust-container rustc file_run_28/Main.rs] error: couldn't read `file_run_28/Main.rs`: No such file or directory (os error 2)
+
+error: aborting due to 1 previous error
+
+*****
+2025-05-29 10:01:32 - INFO - *****START COMPILING*****
+2025-05-29 10:02:05 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec rust-container rustc file_run_28/Main.rs] error: couldn't read `file_run_28/Main.rs`: No such file or directory (os error 2)
+
+error: aborting due to 1 previous error
+
+*****
+2025-05-29 10:02:24 - INFO - *****START COMPILING*****
+2025-05-29 10:16:14 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec rust-container rustc file_run_28/Main.rs] error: couldn't read `file_run_28/Main.rs`: No such file or directory (os error 2)
+
+error: aborting due to 1 previous error
+
+*****
+2025-05-29 10:16:25 - INFO - *****START COMPILING*****
+2025-05-29 10:17:31 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: [Can't finish: docker exec rust-container rustc file_run_28/Main.rs] error: couldn't read `file_run_28/Main.rs`: No such file or directory (os error 2)
+
+error: aborting due to 1 previous error
+
+*****
+2025-05-29 10:21:17 - INFO - *****START COMPILING*****
+2025-05-29 10:21:23 - INFO - *****COMPILING FAIL: java.lang.RuntimeException: myself.programing.coding.exception.DockerExecuteException: Can't finish: docker exec rust-container mkdir -p /app/file_run_28*****
+2025-05-29 10:21:57 - INFO - *****START COMPILING*****
+2025-05-29 10:21:57 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-05-29 10:27:12 - INFO - *****START COMPILING*****
+2025-05-29 10:28:33 - INFO - *****COMPILING SUCCESSFULLY*****

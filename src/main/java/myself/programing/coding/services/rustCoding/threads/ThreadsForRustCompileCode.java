@@ -1,10 +1,10 @@
 package myself.programing.coding.services.rustCoding.threads;
 
 import myself.programing.coding.exception.DockerExecuteException;
-import myself.programing.coding.services.dockerService.DockerServiceForJava;
-import myself.programing.coding.services.javaCoding.JavaCompileService;
+import myself.programing.coding.services.dockerService.DockerServiceForRust;
 
 import java.util.concurrent.*;
+import myself.programing.coding.services.rustCoding.RustCompileService;
 
 public class ThreadsForRustCompileCode {
 
@@ -13,14 +13,14 @@ public class ThreadsForRustCompileCode {
     public String compile(String code, Long idUser) throws InterruptedException, ExecutionException {
 
         Callable<String> compileTask = () -> {
-            JavaCompileService javaCompileService = new JavaCompileService(new DockerServiceForJava());
+            RustCompileService rustCompileService = new RustCompileService(new DockerServiceForRust());
             try {
-                String nameClass = javaCompileService.detectFileName(code);
-                String filePath = javaCompileService.doCopyFileToContainer(
-                        javaCompileService.generateCodeFile(nameClass, code, idUser),
+                String nameClass = rustCompileService.detectFileName(code);
+                String filePath = rustCompileService.doCopyFileToContainer(
+                        rustCompileService.generateCodeFile(nameClass, code, idUser),
                         idUser
                 );
-                return javaCompileService.doCompileToClassFile(filePath);
+                return rustCompileService.doCompileToClassFile(filePath);
             } catch (DockerExecuteException e) {
                 throw new RuntimeException(e);
             }

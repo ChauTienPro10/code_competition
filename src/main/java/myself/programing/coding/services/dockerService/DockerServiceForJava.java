@@ -34,4 +34,20 @@ public class DockerServiceForJava extends DockerBaseService implements IDockerSe
         String className = filePath.substring(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('.'));
         return DOCKER_EXEC + CONFIG.JDK_CONTAINER_NAME + " java -cp " + folder + " " + className;
     }
+
+    /**
+     *
+     * @param path
+     * @param filePath
+     * @return String
+     */
+    public String generateCopyFileToContainerCmd(String path, String filePath) {
+        return "docker cp "
+                + path
+                + " "
+                + CONFIG.JDK_CONTAINER_NAME
+                + WORKSPACE
+                + "/"
+                + filePath;
+    }
 }
