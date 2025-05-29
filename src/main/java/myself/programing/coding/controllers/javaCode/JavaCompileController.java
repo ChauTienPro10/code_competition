@@ -2,14 +2,11 @@ package myself.programing.coding.controllers.javaCode;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-import myself.programing.coding.dto.ChallengeDto;
-import myself.programing.coding.dto.CompileRequestJavaDto;
+import myself.programing.coding.dto.CompileRequestDto;
 import myself.programing.coding.dto.CompileResponse;
 import myself.programing.coding.dto.HttpResponseApi;
 import myself.programing.coding.dto.RunWithTestCasesDto;
 import myself.programing.coding.enums.API_RESPONSE_STATUS;
-import myself.programing.coding.enums.CHALLENGE_ERROR_TYPE;
-import myself.programing.coding.exception.ChallengeInfoException;
 import myself.programing.coding.repository.TestCaseRepository;
 import myself.programing.coding.services.ChallengeService;
 import myself.programing.coding.services.javaCoding.JavaCompileService;
@@ -20,8 +17,6 @@ import myself.programing.coding.utils.HandleStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -70,7 +65,7 @@ public class JavaCompileController {
      * @return {@code HttpResponseApi<CompileResponse>}
      */
     @PostMapping("/")
-    public HttpResponseApi<CompileResponse> compile(@RequestBody CompileRequestJavaDto request) {
+    public HttpResponseApi<CompileResponse> compile(@RequestBody CompileRequestDto request) {
         try {
             logInfo("*****START COMPILING*****");
             ThreadForJavaCompileCode threadForJavaCompileCode = new ThreadForJavaCompileCode();
@@ -106,7 +101,7 @@ public class JavaCompileController {
      * @return {@code HttpResponseApi<CompileResponse>}
      */
     @PostMapping("/run")
-    public HttpResponseApi<CompileResponse> run(@RequestBody CompileRequestJavaDto request) {
+    public HttpResponseApi<CompileResponse> run(@RequestBody CompileRequestDto request) {
         try {
             logInfo("*****START COMPILING AND RUN*****");
             ThreadsForJavaRunCode threadsForJavaRunCode = new ThreadsForJavaRunCode();
@@ -142,7 +137,7 @@ public class JavaCompileController {
      * @return {@code HttpResponseApi<List<RunWithTestCasesDto>>}
      */
     @PostMapping("/runWithTestcases")
-    public HttpResponseApi<List<RunWithTestCasesDto>> runWithTests(@RequestBody CompileRequestJavaDto request) {
+    public HttpResponseApi<List<RunWithTestCasesDto>> runWithTests(@RequestBody CompileRequestDto request) {
         try {
             logInfo("*****START COMPILING AND RUN*****");
             ThreadRunWithTestCases threadRunWithTestCases = new ThreadRunWithTestCases();

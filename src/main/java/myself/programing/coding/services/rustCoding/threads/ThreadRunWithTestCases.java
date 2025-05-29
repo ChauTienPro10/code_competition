@@ -1,4 +1,4 @@
-package myself.programing.coding.services.javaCoding.threads;
+package myself.programing.coding.services.rustCoding.threads;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,12 +11,14 @@ import myself.programing.coding.dto.RunWithTestCasesDto;
 import myself.programing.coding.entity.TestCase;
 import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.services.dockerService.DockerServiceForJava;
+import myself.programing.coding.services.dockerService.DockerServiceForRust;
 import myself.programing.coding.services.javaCoding.JavaCompileService;
 import myself.programing.coding.services.javaCoding.JavaRunCodeService;
+import myself.programing.coding.services.rustCoding.RustCompileService;
+import myself.programing.coding.services.rustCoding.RustRunCodeService;
 
 public class ThreadRunWithTestCases {
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
-
     /**
      *
      * @param code
@@ -29,21 +31,21 @@ public class ThreadRunWithTestCases {
     public List<RunWithTestCasesDto> runWithTest(String code, Long idUser, List<TestCase> testCases) throws ExecutionException, InterruptedException {
         Callable<List<RunWithTestCasesDto>> runTask = () -> {
             StringBuilder output;
-            DockerServiceForJava dockerServiceForJava = new DockerServiceForJava();
-            JavaCompileService javaCompileService = new JavaCompileService(dockerServiceForJava);
-            JavaRunCodeService javaRunCodeService = new JavaRunCodeService(dockerServiceForJava);
+            DockerServiceForRust dockerServiceForRust = new DockerServiceForRust();
+            RustCompileService rustCompileService = new RustCompileService(dockerServiceForRust);
+            RustRunCodeService rustRunCodeService = new RustRunCodeService(dockerServiceForRust);
             try {
-                String nameClass = javaCompileService.detectFileName(code);
-                String filePath = javaCompileService.doCopyFileToContainer(
-                        javaCompileService.generateCodeFile(nameClass, code, idUser),
+                String nameClass = rustCompileService.detectFileName(code);
+                String filePath = rustCompileService.doCopyFileToContainer(
+                        rustCompileService.generateCodeFile(nameClass, code, idUser),
                         idUser
                 );
                 List<RunWithTestCasesDto> resultDtoList = new ArrayList<>();
-                output = new StringBuilder(javaCompileService.doCompileToClassFile(filePath));
-                if(output.toString().contains(".class")) {
+                output = new StringBuilder(rustCompileService.doCompileToClassFile(filePath));
+                if(output.toString().contains(".exe")) {
                     String classFilePath = output.toString();
                     for (TestCase testCase : testCases) {
-                        String rsRun = javaRunCodeService.doRunFile(classFilePath, testCase.getInput());
+                        String rsRun = rustRunCodeService.doRunFile(classFilePath, testCase.getInput());
                         if(rsRun.replace("\n", "").equals(testCase.getOutput())) {
                             resultDtoList.add(new RunWithTestCasesDto(testCase.getInput(), testCase.getOutput(), true));
                             continue;

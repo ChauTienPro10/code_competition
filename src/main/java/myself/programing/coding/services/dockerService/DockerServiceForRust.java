@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 public class DockerServiceForRust extends DockerBaseService implements IDockerService {
     @Override
     public String genCompileFileCmd(String filePath) {
-        return DOCKER_EXEC + CONFIG.RUST_CONTAINER_NAME + " rustc " + filePath;
+        return DOCKER_EXEC + CONFIG.RUST_CONTAINER_NAME + " rustc " + filePath + " -o" + filePath.replace(".rs", ".exe");
     }
 
     @Override
     public String genRunFileCmd(String filePath) {
-        return "";
+        return DOCKER_EXEC + CONFIG.RUST_CONTAINER_NAME  + " " + filePath;
     }
 
     /**

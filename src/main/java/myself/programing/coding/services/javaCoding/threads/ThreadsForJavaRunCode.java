@@ -38,7 +38,7 @@ public class ThreadsForJavaRunCode {
                     String classFilePath = output.toString();
                     output = new StringBuilder();
                     for (TestCase testCase : testCases) {
-                        output.append(" ").append(javaRunCodeService.doRunJavaClass(classFilePath, testCase.getInput()));
+                        output.append(" ").append(javaRunCodeService.doRunFile(classFilePath, testCase.getInput()));
                     }
                 }
 

@@ -9,7 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class CompileRequestJavaDto {
+public class CompileRequestDto {
     private String code;
     private Long idUser;
     private String language;

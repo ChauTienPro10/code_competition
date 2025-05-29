@@ -28,7 +28,8 @@ public class ChallengeService {
     /**
      *
      * @param testCasesJson
-     * @param template
+     * @param templateJava
+     * @param templateRust
      * @param simpleInput
      * @param simpleOutput
      * @param content
@@ -36,11 +37,19 @@ public class ChallengeService {
      * @param level
      * @throws JsonProcessingException
      */
-    public void addChallenge(String testCasesJson, String template, String simpleInput, String simpleOutput, String content, Integer type, Integer level) throws JsonProcessingException {
+    public void addChallenge(String testCasesJson,
+            String templateJava,
+            String templateRust,
+            String simpleInput,
+            String simpleOutput,
+            String content,
+            Integer type,
+            Integer level) throws JsonProcessingException {
         List<TestCase> testcases = getTestCaseFormJsonArray(testCasesJson);
         Challenge challenge = Challenge.builder()
                 .content(content)
-                .template(template)
+                .templateJava(templateJava)
+                .templateRust(templateRust)
                 .testCase(new ArrayList<>())
                 .simpleInput(simpleInput)
                 .simpleOutput(simpleOutput)

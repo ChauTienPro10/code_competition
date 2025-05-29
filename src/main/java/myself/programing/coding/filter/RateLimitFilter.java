@@ -33,7 +33,6 @@ public class RateLimitFilter implements Filter {
         HttpServletResponse httpServletResponse = HttpUtils.addHeaderResponse((HttpServletResponse) response);
         if ("OPTIONS".equalsIgnoreCase((httpServletRequest.getMethod()))) {
             httpServletResponse.setStatus(HttpServletResponse.SC_OK);
-            filterChain.doFilter(httpServletRequest, httpServletResponse);
             return;
         }
         if (httpServletRequest.getRequestURI().startsWith("/auth/") || httpServletRequest.getRequestURI().startsWith("/oauth/")) {

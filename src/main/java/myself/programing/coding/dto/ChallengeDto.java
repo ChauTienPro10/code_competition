@@ -10,7 +10,8 @@ import lombok.Setter;
 public class ChallengeDto {
     private int id;
     private String content;
-    private String template;
+    private String templateJava;
+    private String templateRust;
     private String simpleInput;
     private String simpleOutput;
     private String level;

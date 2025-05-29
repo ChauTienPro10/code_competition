@@ -22,8 +22,11 @@ public class Challenge {
     @Column(name = "content", columnDefinition = "CLOB")
     private String content;
 
-    @Column(name = "template", columnDefinition = "CLOB")
-    private String template;
+    @Column(name = "template_java", columnDefinition = "CLOB")
+    private String templateJava;
+
+    @Column(name = "template_rust", columnDefinition = "CLOB")
+    private String templateRust;
 
     private String simpleInput;
 
