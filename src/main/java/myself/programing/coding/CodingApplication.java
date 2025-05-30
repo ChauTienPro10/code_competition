@@ -21,7 +21,7 @@ public class CodingApplication {
 	@Bean
 	public CommandLineRunner run(ChallengeService challengeService) {
 		return args -> {
-			System.out.println(ReadConfig.CLIENT);
+			System.out.println("Client: " + ReadConfig.CLIENT);
 //			String testCasesJson = "["
 //					+ "{\"input\": \"\\\"2,5,4,1,3\\\" 7\", \"output\": \"[2,4]\"},"
 //					+ "{\"input\": \"\\\"10,5,199,1,3\\\" 200\", \"output\": \"[2,3]\"},"

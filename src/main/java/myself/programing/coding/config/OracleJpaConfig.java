@@ -1,5 +1,6 @@
 package myself.programing.coding.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -14,10 +15,14 @@ import java.util.Properties;
 @Configuration
 @EnableJpaRepositories(basePackages = "myself.programing.coding.repository")
 public class OracleJpaConfig {
+
+    @Value("${oracle.host}")
+    private String oracleHost;
+
     @Bean
     public DataSource dataSource() throws SQLException {
         OracleDataSource ods = new OracleDataSource();
-        ods.setURL("jdbc:oracle:thin:@localhost:1521/FREEPDB1");
+        ods.setURL("jdbc:oracle:thin:@" + oracleHost + "/FREEPDB1");
         ods.setUser("developer");
         ods.setPassword("tien22012003");
         return ods;
