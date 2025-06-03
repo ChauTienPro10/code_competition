@@ -1,5 +1,6 @@
 package myself.programing.coding.controllers.auths;
 
+import jakarta.validation.Valid;
 import myself.programing.coding.dto.HttpResponseApi;
 import myself.programing.coding.dto.LoginDto;
 import myself.programing.coding.dto.SignUpDto;
@@ -22,7 +23,7 @@ public class AuthController {
      * @return {@code HttpResponseApi<User>}
      */
     @PostMapping("/sign_up")
-    public HttpResponseApi<UserDto> signUp(@RequestBody SignUpDto request) {
+    public HttpResponseApi<UserDto> signUp(@RequestBody @Valid SignUpDto request) {
         try {
             UserDto user = userService.signUp(request.getName(), request.getUsername(), request.getPassword(), null, null);
             return HttpResponseApi.<UserDto>builder()

@@ -51,10 +51,6 @@ public class UserService {
             throw new UserInforException(USER_ERROR_TYPE.ERROR_CREATE_USER, "This username is used");
         }
 
-        if (platform == null && invalidPassword(password)) {
-            throw new UserInforException(USER_ERROR_TYPE.ERROR_CREATE_ACCOUNT, "Invalid password");
-        }
-
         User user = User.builder()
                 .name(formatName(name))
                 .account(null)
@@ -80,15 +76,6 @@ public class UserService {
         return Arrays.stream(name.trim().toLowerCase().split("\\s+"))
                 .map(word -> word.substring(0, 1).toUpperCase() + word.substring(1))
                 .collect(Collectors.joining(" "));
-    }
-
-    /**
-     *
-     * @param password
-     * @return boolean
-     */
-    public boolean invalidPassword(String password) {
-        return password.length() < 6;
     }
 
     /**
