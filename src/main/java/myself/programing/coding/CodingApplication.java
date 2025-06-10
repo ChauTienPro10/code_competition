@@ -14,6 +14,7 @@ import java.util.Arrays;
 
 @SpringBootApplication
 public class CodingApplication {
+
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(CodingApplication.class, args);
 	}
@@ -22,6 +23,10 @@ public class CodingApplication {
 	public CommandLineRunner run(ChallengeService challengeService) {
 		return args -> {
 			System.out.println("Client: " + ReadConfig.CLIENT);
+			TestCallCLib testCallCLib = new TestCallCLib();
+			System.out.println(testCallCLib.fib(10));
+			System.out.println(testCallCLib.factorial(5));
+
 //			String testCasesJson = "["
 //					+ "{\"input\": \"\\\"2,5,4,1,3\\\" 7\", \"output\": \"[2,4]\"},"
 //					+ "{\"input\": \"\\\"10,5,199,1,3\\\" 200\", \"output\": \"[2,3]\"},"
