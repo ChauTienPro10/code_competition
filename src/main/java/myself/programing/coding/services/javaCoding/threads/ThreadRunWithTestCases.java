@@ -13,25 +13,29 @@ import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.services.dockerService.DockerServiceForJava;
 import myself.programing.coding.services.javaCoding.JavaCompileService;
 import myself.programing.coding.services.javaCoding.JavaRunCodeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ThreadRunWithTestCases {
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
+
+    @Autowired JavaCompileService javaCompileService;
+    @Autowired JavaRunCodeService javaRunCodeService;
 
     /**
      *
      * @param code
      * @param idUser
-     * @param testCases
+     * @param challengeId
      * @return String
      * @throws ExecutionException
      * @throws InterruptedException
      */
-    public List<RunWithTestCasesDto> runWithTest(String code, Long idUser, List<TestCase> testCases) throws ExecutionException, InterruptedException {
+    public List<RunWithTestCasesDto> runWithTest(String code, Long idUser, Long challengeId) throws ExecutionException, InterruptedException {
         Callable<List<RunWithTestCasesDto>> runTask = () -> {
             StringBuilder output;
-            DockerServiceForJava dockerServiceForJava = new DockerServiceForJava();
-            JavaCompileService javaCompileService = new JavaCompileService(dockerServiceForJava);
-            JavaRunCodeService javaRunCodeService = new JavaRunCodeService(dockerServiceForJava);
+
             try {
                 String nameClass = javaCompileService.detectFileName(code);
                 String filePath = javaCompileService.doCopyFileToContainer(
@@ -39,9 +43,10 @@ public class ThreadRunWithTestCases {
                         idUser
                 );
                 List<RunWithTestCasesDto> resultDtoList = new ArrayList<>();
-                output = new StringBuilder(javaCompileService.doCompileToClassFile(filePath));
+                output = new StringBuilder(javaCompileService.doCompile(filePath));
                 if(output.toString().contains(".class")) {
                     String classFilePath = output.toString();
+                    List<TestCase> testCases = javaRunCodeService.findAllTestCase(challengeId);
                     for (TestCase testCase : testCases) {
                         String rsRun = javaRunCodeService.doRunFile(classFilePath, testCase.getInput());
                         if(rsRun.replace("\n", "").equals(testCase.getOutput())) {

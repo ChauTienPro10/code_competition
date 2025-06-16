@@ -28,6 +28,9 @@ public class Challenge {
     @Column(name = "template_rust", columnDefinition = "CLOB")
     private String templateRust;
 
+    @Column(name = "template_python", columnDefinition = "CLOB")
+    private String templatePython;
+
     private String simpleInput;
 
     private String simpleOutput;

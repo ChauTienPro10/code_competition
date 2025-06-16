@@ -23,9 +23,6 @@ public class CodingApplication {
 	public CommandLineRunner run(ChallengeService challengeService) {
 		return args -> {
 			System.out.println("Client: " + ReadConfig.CLIENT);
-			TestCallCLib testCallCLib = new TestCallCLib();
-			System.out.println(testCallCLib.fib(10));
-			System.out.println(testCallCLib.factorial(5));
 
 //			String testCasesJson = "["
 //					+ "{\"input\": \"\\\"2,5,4,1,3\\\" 7\", \"output\": \"[2,4]\"},"

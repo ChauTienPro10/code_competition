@@ -1,37 +1,32 @@
-package myself.programing.coding.controllers.javaCode;
+package myself.programing.coding.controllers.pythonCode;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import myself.programing.coding.controllers.ICompileController;
+import myself.programing.coding.controllers.javaCode.JavaCompileController;
 import myself.programing.coding.dto.CompileRequestDto;
 import myself.programing.coding.dto.CompileResponse;
 import myself.programing.coding.dto.HttpResponseApi;
 import myself.programing.coding.dto.RunWithTestCasesDto;
 import myself.programing.coding.enums.API_RESPONSE_STATUS;
-import myself.programing.coding.repository.TestCaseRepository;
-import myself.programing.coding.services.ChallengeService;
-import myself.programing.coding.services.javaCoding.JavaCompileService;
-import myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode;
-import myself.programing.coding.services.javaCoding.threads.ThreadRunWithTestCases;
-import myself.programing.coding.services.javaCoding.threads.ThreadsForJavaRunCode;
+import myself.programing.coding.services.pythonCoding.threads.ThreadForPythonCompileCode;
+import myself.programing.coding.services.pythonCoding.threads.ThreadForPythonRunCode;
 import myself.programing.coding.utils.HandleStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/compile/java")
-public class JavaCompileController implements ICompileController {
+@RequestMapping("/compile/python")
+public class PythonCompileController implements ICompileController {
 
     @Autowired
-    ThreadForJavaCompileCode threadForJavaCompileCode;
+    ThreadForPythonRunCode threadForPythonRunCode;
 
-    @Autowired ThreadsForJavaRunCode threadsForJavaRunCode;
-
-    @Autowired ThreadRunWithTestCases threadRunWithTestCases;
+    @Autowired
+    ThreadForPythonCompileCode threadForPythonCompileCode;
 
     private final Logger logger = LoggerFactory.getLogger(JavaCompileController.class);
 
@@ -59,15 +54,11 @@ public class JavaCompileController implements ICompileController {
         logger.error(e);
     }
 
-    /**
-     *
-     * @param request
-     * @return {@code HttpResponseApi<CompileResponse>}
-     */
-    public HttpResponseApi<CompileResponse> compile(@RequestBody CompileRequestDto request) {
+    @Override
+    public HttpResponseApi<CompileResponse> compile(CompileRequestDto request) {
         try {
             logInfo("*****START COMPILING*****");
-            String resultCompile = threadForJavaCompileCode.compile(request.getCode(), request.getIdUser());
+            String resultCompile = threadForPythonCompileCode.compile(request.getCode(), request.getIdUser());
             CompileResponse compileResponse = new CompileResponse(resultCompile);
             HttpResponseApi<CompileResponse> result = HttpResponseApi.<CompileResponse>builder()
                     .message(API_RESPONSE_STATUS.SUCCESS.getMessage())
@@ -93,15 +84,11 @@ public class JavaCompileController implements ICompileController {
         }
     }
 
-    /**
-     *
-     * @param request
-     * @return {@code HttpResponseApi<CompileResponse>}
-     */
-    public HttpResponseApi<CompileResponse> run(@RequestBody CompileRequestDto request) {
+    @Override
+    public HttpResponseApi<CompileResponse> run(CompileRequestDto request) {
         try {
             logInfo("*****START COMPILING AND RUN*****");
-            String resultRun = threadsForJavaRunCode.runCode(request.getCode(), request.getIdUser(), request.getChallengeId());
+            String resultRun = threadForPythonRunCode.runCode(request.getCode(), request.getIdUser(), request.getChallengeId());
             CompileResponse compileResponse = new CompileResponse(resultRun);
             HttpResponseApi<CompileResponse> result = HttpResponseApi.<CompileResponse>builder()
                     .message(API_RESPONSE_STATUS.SUCCESS.getMessage())
@@ -127,36 +114,8 @@ public class JavaCompileController implements ICompileController {
         }
     }
 
-    /**
-     *
-     * @param request
-     * @return {@code HttpResponseApi<List<RunWithTestCasesDto>>}
-     */
-    public HttpResponseApi<List<RunWithTestCasesDto>> runWithTests(@RequestBody CompileRequestDto request) {
-        try {
-            logInfo("*****START COMPILING AND RUN*****");
-            List<RunWithTestCasesDto> resultRun = threadRunWithTestCases.runWithTest(request.getCode(), request.getIdUser(), request.getChallengeId());
-            HttpResponseApi<List<RunWithTestCasesDto>> result = HttpResponseApi.<List<RunWithTestCasesDto>>builder()
-                    .message(API_RESPONSE_STATUS.SUCCESS.getMessage())
-                    .code(API_RESPONSE_STATUS.SUCCESS.getCode())
-                    .data(resultRun)
-                    .build();
-            logInfo("*****RUN COMPETITION*****");
-            return result;
-        } catch (InterruptedException | ExecutionException e) {
-            logInfo("*****RUN FAIL: " + e.getMessage()+ "*****");
-            return HttpResponseApi.<List<RunWithTestCasesDto>>builder()
-                    .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
-                    .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
-                    .data(null)
-                    .build();
-        } catch (Exception e) {
-            logError("*****RUN FAIL BY ERROR SYSTEM: " + e.getMessage() + "*****");
-            return HttpResponseApi.<List<RunWithTestCasesDto>>builder()
-                    .code(API_RESPONSE_STATUS.SERVER_ERROR.getCode())
-                    .message(API_RESPONSE_STATUS.SERVER_ERROR.getMessage())
-                    .data(null)
-                    .build();
-        }
+    @Override
+    public HttpResponseApi<List<RunWithTestCasesDto>> runWithTests(CompileRequestDto request) {
+        return null;
     }
 }

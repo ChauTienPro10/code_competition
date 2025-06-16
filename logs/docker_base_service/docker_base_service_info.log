@@ -190,3 +190,20 @@
 2025-05-29 14:34:28 - ERROR - Execute fail: docker exec rust-container rustc file_run_48/Main.rs -ofile_run_48/Main.exe with exit code 1
 2025-05-29 14:51:08 - ERROR - Execute fail: docker exec rust-container rustc file_run_28/Main.rs -ofile_run_28/Main.exe with exit code 1
 2025-05-29 14:51:46 - ERROR - Execute fail: docker exec rust-container rustc file_run_28/Main.rs -ofile_run_28/Main.exe with exit code 1
+2025-06-16 13:38:01 - ERROR - Execute fail: docker exec python-runner python3 -m compileall file_run_28/Main.py with exit code 1
+2025-06-16 13:48:23 - ERROR - Execute fail: docker exec python-runner python3 -m compileall file_run_28/Main.py with exit code 1
+2025-06-16 13:56:06 - ERROR - Execute fail: docker exec python-runner python3 -m compileall file_run_28/Main.py with exit code 1
+2025-06-16 14:19:40 - ERROR - Execute fail: docker exec python-runner python3 -m compileall file_run_28/Main.py with exit code 1
+2025-06-16 14:29:49 - ERROR - Execute fail: docker exec python-runner python3 -m compileall -q file_run_28/Main.py with exit code 1
+2025-06-16 14:30:31 - ERROR - Execute fail: docker exec python-runner python3 file_run_28/Main.pyc 2,5,4,1,3 7 with exit code 2
+2025-06-16 14:30:44 - ERROR - Execute fail: docker exec python-runner python3 -m compileall -q file_run_28/Main.py with exit code 1
+2025-06-16 14:31:55 - ERROR - Execute fail: docker exec python-runner python3 -m compileall -q file_run_28/Main.py with exit code 1
+2025-06-16 14:32:43 - ERROR - Execute fail: docker exec python-runner python3 -m compileall -q file_run_28/Main.py with exit code 1
+2025-06-16 14:40:02 - ERROR - Execute fail: docker exec python-runner python3 file_run_28/Main.pyc 2,5,4,1,3 7 with exit code 2
+2025-06-16 14:44:01 - ERROR - Execute fail: docker exec python-runner python3 file_run_28/Main.py 2,5,4,1,3 7 with exit code 1
+2025-06-16 14:44:23 - ERROR - Execute fail: docker exec python-runner python3 file_run_28/Main.py 2,5,4,1,3 7 with exit code 1
+2025-06-16 14:44:26 - ERROR - Execute fail: docker exec python-runner python3 file_run_28/Main.py 2,5,4,1,3 7 with exit code 1
+2025-06-16 16:36:00 - ERROR - Execute fail : docker exec jdk21-container rm -f file_run_28/Main.rs
+2025-06-16 16:37:21 - ERROR - Execute fail : docker exec jdk21-container rm -f file_run_28/Main.rs
+2025-06-16 16:59:00 - ERROR - Execute fail: docker exec rust-container rustc file_run_28/Main.rs -o file_run_28/Main.exe with exit code 1
+2025-06-16 16:59:00 - ERROR - Execute fail: docker exec rust-container rustc file_run_28/Main.rs -o file_run_28/Main.exe with exit code 1

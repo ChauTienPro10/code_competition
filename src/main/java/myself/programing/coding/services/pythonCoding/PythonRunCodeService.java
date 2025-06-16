@@ -1,32 +1,28 @@
-package myself.programing.coding.services.javaCoding;
+package myself.programing.coding.services.pythonCoding;
 
 import java.util.List;
 import myself.programing.coding.entity.TestCase;
 import myself.programing.coding.enums.DOCKER_EXECUTE_TYPE_ERROR;
 import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.repository.TestCaseRepository;
-import myself.programing.coding.services.dockerService.DockerServiceForJava;
+import myself.programing.coding.services.dockerService.DockerServiceForPython;
 import myself.programing.coding.services.interfaces.IRun;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
 @Service
-public class JavaRunCodeService extends JavaBaseService implements IRun {
+public class PythonRunCodeService extends PythonBaseService implements IRun {
 
-
-    public JavaRunCodeService(DockerServiceForJava dockerService) {
+    public PythonRunCodeService(
+            DockerServiceForPython dockerService) {
         super(dockerService);
     }
 
     @Autowired
-    TestCaseRepository testCaseRepository;
+    private TestCaseRepository testCaseRepository;
 
-    /**
-     *
-     * @param javaFilePath
-     * @return String
-     * @throws DockerExecuteException
-     */
+    @Override
     public String doRunFile(String javaFilePath, String input) throws DockerExecuteException {
         if (javaFilePath.isEmpty()) {
             throw new DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR.FILE_NOT_FOUND, "Invalid file");
@@ -35,7 +31,6 @@ public class JavaRunCodeService extends JavaBaseService implements IRun {
         return dockerService.executeDockerCommandHasResult(command + " " + input);
     }
 
-    @Override
     public List<TestCase> findAllTestCase(Long challengeId) {
         return testCaseRepository.findByChallengeId(challengeId);
     }

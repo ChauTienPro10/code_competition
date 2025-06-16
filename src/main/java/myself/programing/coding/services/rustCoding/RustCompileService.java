@@ -3,10 +3,11 @@ package myself.programing.coding.services.rustCoding;
 import myself.programing.coding.enums.DOCKER_EXECUTE_TYPE_ERROR;
 import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.services.dockerService.DockerServiceForRust;
+import myself.programing.coding.services.interfaces.ICompile;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RustCompileService extends RustBaseService {
+public class RustCompileService extends RustBaseService implements ICompile {
 
     public RustCompileService(DockerServiceForRust dockerService) {
         super(dockerService);
@@ -18,7 +19,7 @@ public class RustCompileService extends RustBaseService {
      * @return String
      * @throws DockerExecuteException
      */
-    public String doCompileToClassFile(String pathInContainer) throws DockerExecuteException {
+    public String doCompile(String pathInContainer) throws DockerExecuteException {
         if (pathInContainer.isEmpty()) {
             throw new DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR.UNKNOWN_ERROR, " Invalid path: " + pathInContainer);
         }

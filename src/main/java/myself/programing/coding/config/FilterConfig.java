@@ -12,7 +12,7 @@ public class FilterConfig {
     public FilterRegistrationBean<CompileJavaFilter> loggingCompileFilter() {
         FilterRegistrationBean<CompileJavaFilter> registrationBean = new FilterRegistrationBean<>();
         registrationBean.setFilter(new CompileJavaFilter());
-        registrationBean.addUrlPatterns("/java/compile/*");
+        registrationBean.addUrlPatterns("/compile/*");
         registrationBean.setOrder(2);
         return registrationBean;
     }

@@ -3,7 +3,8 @@ package myself.programing.coding.services;
 import lombok.AllArgsConstructor;
 import myself.programing.coding.enums.DOCKER_EXECUTE_TYPE_ERROR;
 import myself.programing.coding.exception.DockerExecuteException;
-import myself.programing.coding.services.dockerService.IDockerService;
+import myself.programing.coding.services.dockerService.IDockerServiceForCompileProcess;
+import myself.programing.coding.services.dockerService.IDockerServiceForFileProcess;
 import myself.programing.coding.utils.FileUtils;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.io.IOException;
 
 @Service
 @AllArgsConstructor
-public abstract class AbstractCodingService<T extends IDockerService> {
+public abstract class AbstractCodingService<T extends IDockerServiceForCompileProcess & IDockerServiceForFileProcess> {
 
     protected T dockerService;
 

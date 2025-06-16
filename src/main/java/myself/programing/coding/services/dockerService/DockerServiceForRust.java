@@ -4,10 +4,12 @@ import myself.programing.coding.consts.CONFIG;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DockerServiceForRust extends DockerBaseService implements IDockerService {
+public class DockerServiceForRust extends DockerBaseService implements
+        IDockerServiceForCompileProcess, IDockerServiceForFileProcess {
     @Override
     public String genCompileFileCmd(String filePath) {
-        return DOCKER_EXEC + CONFIG.RUST_CONTAINER_NAME + " rustc " + filePath + " -o" + filePath.replace(".rs", ".exe");
+        return STR."\{DOCKER_EXEC}\{CONFIG.RUST_CONTAINER_NAME} rustc \{filePath} -o \{filePath.replace(
+                ".rs", ".exe")}";
     }
 
     @Override
@@ -31,12 +33,6 @@ public class DockerServiceForRust extends DockerBaseService implements IDockerSe
      * @return String
      */
     public String generateCopyFileToContainerCmd(String path, String filePath) {
-        return "docker cp "
-                + path
-                + " "
-                + CONFIG.RUST_CONTAINER_NAME
-                + WORKSPACE
-                + "/"
-                + filePath;
+        return STR."docker cp \{path} \{CONFIG.RUST_CONTAINER_NAME}\{WORKSPACE}/\{filePath}";
     }
 }

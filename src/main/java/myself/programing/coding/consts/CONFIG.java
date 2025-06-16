@@ -8,4 +8,5 @@ public class CONFIG {
     public static final String DOCKER_JD21K_SANDBOX_HOST = "localhost:";
     public static final String JDK_CONTAINER_NAME = "jdk21-container";
     public static final String RUST_CONTAINER_NAME = "rust-container";
+    public static final String PYTHON_CONTAINER_NAME = "python-runner";
 }

@@ -1,37 +1,33 @@
 package myself.programing.coding.services.rustCoding.threads;
 
+import java.io.IOException;
 import myself.programing.coding.exception.DockerExecuteException;
-import myself.programing.coding.services.dockerService.DockerServiceForRust;
 
 import java.util.concurrent.*;
 import myself.programing.coding.services.rustCoding.RustCompileService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ThreadsForRustCompileCode {
 
-    private final ExecutorService executorService = Executors.newSingleThreadExecutor();
+    @Autowired
+    RustCompileService rustCompileService;
 
-    public String compile(String code, Long idUser) throws InterruptedException, ExecutionException {
-
-        Callable<String> compileTask = () -> {
-            RustCompileService rustCompileService = new RustCompileService(new DockerServiceForRust());
-            try {
-                String nameClass = rustCompileService.detectFileName(code);
-                String filePath = rustCompileService.doCopyFileToContainer(
-                        rustCompileService.generateCodeFile(nameClass, code, idUser),
-                        idUser
-                );
-                return rustCompileService.doCompileToClassFile(filePath);
-            } catch (DockerExecuteException e) {
-                throw new RuntimeException(e);
-            }
-        };
-        Future<String> future = executorService.submit(compileTask);
-        String result = future.get();
-        shutdown();
-        return result;
+    @Async("taskExecutor")
+    public CompletableFuture<String> compile(String code, Long idUser) {
+        try {
+            String nameClass = rustCompileService.detectFileName(code);
+            String filePath = rustCompileService.doCopyFileToContainer(
+                    rustCompileService.generateCodeFile(nameClass, code, idUser),
+                    idUser
+            );
+            String result = rustCompileService.doCompile(filePath);
+            return CompletableFuture.completedFuture(result);
+        } catch (DockerExecuteException | IOException e) {
+            return CompletableFuture.failedFuture(e);
+        }
     }
 
-    public void shutdown() {
-        executorService.shutdown();
-    }
 }

@@ -4,7 +4,8 @@ import myself.programing.coding.consts.CONFIG;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DockerServiceForJava extends DockerBaseService implements IDockerService{
+public class DockerServiceForJava extends DockerBaseService implements
+        IDockerServiceForCompileProcess, IDockerServiceForFileProcess{
 
     /**
      *
@@ -12,7 +13,7 @@ public class DockerServiceForJava extends DockerBaseService implements IDockerSe
      * @return String
      */
     public String genCompileFileCmd(String filePath) {
-        return DOCKER_EXEC + CONFIG.JDK_CONTAINER_NAME + " javac " + filePath;
+        return STR."\{DOCKER_EXEC}\{CONFIG.JDK_CONTAINER_NAME} javac \{filePath}";
     }
 
     /**
@@ -21,7 +22,7 @@ public class DockerServiceForJava extends DockerBaseService implements IDockerSe
      * @return String
      */
     public String genTouchFolderCmd(String folder) {
-        return DOCKER_EXEC + CONFIG.JDK_CONTAINER_NAME + " mkdir -p " + "/app/" + folder;
+        return STR."\{DOCKER_EXEC}\{CONFIG.JDK_CONTAINER_NAME} mkdir -p /app/\{folder}";
     }
 
     /**
@@ -32,7 +33,7 @@ public class DockerServiceForJava extends DockerBaseService implements IDockerSe
     public String genRunFileCmd(String filePath) {
         String folder = filePath.substring(0, filePath.lastIndexOf('/'));
         String className = filePath.substring(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('.'));
-        return DOCKER_EXEC + CONFIG.JDK_CONTAINER_NAME + " java -cp " + folder + " " + className;
+        return STR."\{DOCKER_EXEC}\{CONFIG.JDK_CONTAINER_NAME} java -cp \{folder} \{className}";
     }
 
     /**
@@ -42,12 +43,6 @@ public class DockerServiceForJava extends DockerBaseService implements IDockerSe
      * @return String
      */
     public String generateCopyFileToContainerCmd(String path, String filePath) {
-        return "docker cp "
-                + path
-                + " "
-                + CONFIG.JDK_CONTAINER_NAME
-                + WORKSPACE
-                + "/"
-                + filePath;
+        return STR."docker cp \{path} \{CONFIG.JDK_CONTAINER_NAME}\{WORKSPACE}/\{filePath}";
     }
 }

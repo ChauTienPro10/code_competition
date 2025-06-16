@@ -1,24 +1,21 @@
-package myself.programing.coding.services.javaCoding;
+package myself.programing.coding.services.pythonCoding;
 
 import myself.programing.coding.enums.DOCKER_EXECUTE_TYPE_ERROR;
 import myself.programing.coding.exception.DockerExecuteException;
-import myself.programing.coding.services.dockerService.DockerServiceForJava;
+import myself.programing.coding.services.dockerService.DockerServiceForPython;
 import myself.programing.coding.services.interfaces.ICompile;
 import org.springframework.stereotype.Service;
 
 @Service
-public class JavaCompileService extends JavaBaseService implements ICompile {
+public class PythonCompileService extends PythonBaseService implements ICompile {
 
-    public JavaCompileService(DockerServiceForJava dockerService) {
+    public PythonCompileService(
+            DockerServiceForPython dockerService) {
         super(dockerService);
     }
 
-    /**
-     *
-     * @param pathInContainer
-     * @return String
-     * @throws DockerExecuteException
-     */
+
+    @Override
     public String doCompile(String pathInContainer) throws DockerExecuteException {
         if (pathInContainer.isEmpty()) {
             throw new DockerExecuteException(DOCKER_EXECUTE_TYPE_ERROR.UNKNOWN_ERROR, " Invalid path: " + pathInContainer);
@@ -27,7 +24,7 @@ public class JavaCompileService extends JavaBaseService implements ICompile {
             String command = dockerService.genCompileFileCmd(pathInContainer);
             String result = dockerService.executeDockerCommandHasResult(command);
             if(result.isEmpty()) {
-                return pathInContainer.replace(".java", ".class");
+                return pathInContainer.replace(".py", ".pyc");
             }
             return result;
         } finally {
