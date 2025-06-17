@@ -12,6 +12,7 @@ import myself.programing.coding.enums.API_RESPONSE_STATUS;
 import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.services.pythonCoding.threads.ThreadForPythonCompileCode;
 import myself.programing.coding.services.pythonCoding.threads.ThreadForPythonRunCode;
+import myself.programing.coding.utils.HandleExeptionUtils;
 import myself.programing.coding.utils.HandleStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -69,13 +70,22 @@ public class PythonCompileController implements ICompileController {
                     .build();
             logInfo("*****COMPILING SUCCESSFULLY*****");
             return result;
-        } catch (DockerExecuteException e) {
+        } catch (ExecutionException e) {
+            Throwable actual = HandleExeptionUtils.unwrap(e);
             logInfo("*****COMPILING FAIL: " + e.getMessage()+ "*****");
-            return HttpResponseApi.<CompileResponse>builder()
-                    .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
-                    .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
-                    .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(e.getMessage())))
-                    .build();
+            if (actual instanceof DockerExecuteException dex) {
+                return HttpResponseApi.<CompileResponse>builder()
+                        .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
+                        .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
+                        .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(dex.getMessage())))
+                        .build();
+            } else {
+                return HttpResponseApi.<CompileResponse>builder()
+                        .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
+                        .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
+                        .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(actual.getMessage())))
+                        .build();
+            }
         } catch (Exception e) {
             logError("*****COMPILING FAIL BY ERROR SYSTEM: " + e.getMessage()+ "*****");
             return HttpResponseApi.<CompileResponse>builder()
@@ -100,13 +110,22 @@ public class PythonCompileController implements ICompileController {
                     .build();
             logInfo("*****RUN COMPETITION*****");
             return result;
-        } catch (DockerExecuteException e) {
+        } catch (ExecutionException e) {
+            Throwable actual = HandleExeptionUtils.unwrap(e);
             logInfo("*****RUN FAIL: " + e.getMessage()+ "*****");
-            return HttpResponseApi.<CompileResponse>builder()
-                    .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
-                    .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
-                    .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(e.getMessage())))
-                    .build();
+            if (actual instanceof DockerExecuteException dex) {
+                return HttpResponseApi.<CompileResponse>builder()
+                        .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
+                        .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
+                        .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(dex.getMessage())))
+                        .build();
+            } else {
+                return HttpResponseApi.<CompileResponse>builder()
+                        .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
+                        .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
+                        .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(actual.getMessage())))
+                        .build();
+            }
         } catch (Exception e) {
             logError("*****RUN FAIL BY ERROR SYSTEM: " + e.getMessage() + "*****");
             return HttpResponseApi.<CompileResponse>builder()

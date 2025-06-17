@@ -2,6 +2,7 @@ package myself.programing.coding.services.pythonCoding.threads;
 
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.services.pythonCoding.PythonCompileService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,18 +19,21 @@ public class ThreadForPythonCompileCode {
      * @param code
      * @param idUser
      * @return {@code CompletableFuture<String>}
-     * @throws DockerExecuteException
-     * @throws IOException
+     * @throws ExecutionException
      */
     @Async("taskExecutor")
-    public CompletableFuture<String> compile(String code, Long idUser)
-            throws DockerExecuteException, IOException {
-        String nameClass = pythonCompileService.detectFileName(code);
-        String filePath = pythonCompileService.doCopyFileToContainer(
-                pythonCompileService.generateCodeFile(nameClass, code, idUser),
-                idUser
-        );
-        String rs = pythonCompileService.doCompile(filePath);
-        return CompletableFuture.completedFuture(rs);
+    public CompletableFuture<String> compile(String code, Long idUser) throws ExecutionException {
+        try {
+            String nameClass = pythonCompileService.detectFileName(code);
+            String filePath = pythonCompileService.doCopyFileToContainer(
+                    pythonCompileService.generateCodeFile(nameClass, code, idUser),
+                    idUser
+            );
+            String rs = pythonCompileService.doCompile(filePath);
+            return CompletableFuture.completedFuture(rs);
+        } catch (Throwable e) {
+            throw new ExecutionException(e);
+        }
+
     }
 }

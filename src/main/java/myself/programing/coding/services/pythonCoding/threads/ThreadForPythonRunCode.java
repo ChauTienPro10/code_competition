@@ -3,6 +3,7 @@ package myself.programing.coding.services.pythonCoding.threads;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import myself.programing.coding.entity.TestCase;
@@ -26,12 +27,12 @@ public class ThreadForPythonRunCode {
      * @param idUser
      * @param challengeId
      * @return {@code CompletableFuture<String>}
-     * @throws DockerExecuteException
-     * @throws IOException
+     * @throws ExecutionException
      */
     @Async("taskExecutor")
     public CompletableFuture<String> runCode(String code, Long idUser, Long challengeId)
-            throws DockerExecuteException, IOException {
+            throws ExecutionException {
+        try {
             StringBuilder output;
             String nameClass = pythonCompileService.detectFileName(code);
             String filePath = pythonCompileService.doCopyFileToContainer(
@@ -48,5 +49,9 @@ public class ThreadForPythonRunCode {
                 }
             }
             return CompletableFuture.completedFuture(output.toString());
+        } catch (Throwable e) {
+            throw new ExecutionException(e);
+        }
+
     }
 }
