@@ -9,9 +9,6 @@ import myself.programing.coding.dto.HttpResponseApi;
 import myself.programing.coding.dto.RunWithTestCasesDto;
 import myself.programing.coding.enums.API_RESPONSE_STATUS;
 import myself.programing.coding.exception.DockerExecuteException;
-import myself.programing.coding.repository.TestCaseRepository;
-import myself.programing.coding.services.ChallengeService;
-import myself.programing.coding.services.javaCoding.JavaCompileService;
 import myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode;
 import myself.programing.coding.services.javaCoding.threads.ThreadRunWithTestCases;
 import myself.programing.coding.services.javaCoding.threads.ThreadsForJavaRunCode;
@@ -103,7 +100,8 @@ public class JavaCompileController implements ICompileController {
     public HttpResponseApi<CompileResponse> run(@RequestBody CompileRequestDto request) {
         try {
             logInfo("*****START COMPILING AND RUN*****");
-            String resultRun = threadsForJavaRunCode.runCode(request.getCode(), request.getIdUser(), request.getChallengeId());
+            String resultRun = String.valueOf(
+                    threadsForJavaRunCode.runCode(request.getCode(), request.getIdUser(), request.getChallengeId()).get());
             CompileResponse compileResponse = new CompileResponse(resultRun);
             HttpResponseApi<CompileResponse> result = HttpResponseApi.<CompileResponse>builder()
                     .message(API_RESPONSE_STATUS.SUCCESS.getMessage())
@@ -112,7 +110,7 @@ public class JavaCompileController implements ICompileController {
                     .build();
             logInfo("*****RUN COMPETITION*****");
             return result;
-        } catch (InterruptedException | ExecutionException e) {
+        } catch (DockerExecuteException e) {
             logInfo("*****RUN FAIL: " + e.getMessage()+ "*****");
             return HttpResponseApi.<CompileResponse>builder()
                     .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())

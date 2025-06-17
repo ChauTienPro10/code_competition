@@ -90,7 +90,8 @@ public class PythonCompileController implements ICompileController {
     public HttpResponseApi<CompileResponse> run(CompileRequestDto request) {
         try {
             logInfo("*****START COMPILING AND RUN*****");
-            String resultRun = threadForPythonRunCode.runCode(request.getCode(), request.getIdUser(), request.getChallengeId());
+            String resultRun = String.valueOf(
+                    threadForPythonRunCode.runCode(request.getCode(), request.getIdUser(), request.getChallengeId()).get());
             CompileResponse compileResponse = new CompileResponse(resultRun);
             HttpResponseApi<CompileResponse> result = HttpResponseApi.<CompileResponse>builder()
                     .message(API_RESPONSE_STATUS.SUCCESS.getMessage())
@@ -99,7 +100,7 @@ public class PythonCompileController implements ICompileController {
                     .build();
             logInfo("*****RUN COMPETITION*****");
             return result;
-        } catch (InterruptedException | ExecutionException e) {
+        } catch (DockerExecuteException e) {
             logInfo("*****RUN FAIL: " + e.getMessage()+ "*****");
             return HttpResponseApi.<CompileResponse>builder()
                     .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
