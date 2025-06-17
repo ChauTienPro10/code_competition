@@ -1,14 +1,9 @@
 package myself.programing.coding.services.rustCoding.threads;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 import myself.programing.coding.dto.RunWithTestCasesDto;
 import myself.programing.coding.entity.TestCase;
@@ -24,17 +19,18 @@ public class ThreadRunWithTestCaseRust {
 
     @Autowired RustCompileService rustCompileService;
     @Autowired RustRunCodeService rustRunCodeService;
+
     /**
      *
      * @param code
      * @param idUser
      * @param challengeId
-     * @return String
-     * @throws ExecutionException
-     * @throws InterruptedException
+     * @return {@code CompletableFuture<List<RunWithTestCasesDto>>}
+     * @throws DockerExecuteException
      */
     @Async("taskExecutor")
-    public CompletableFuture<List<RunWithTestCasesDto>> runWithTest(String code, Long idUser, Long challengeId) {
+    public CompletableFuture<List<RunWithTestCasesDto>> runWithTest(String code, Long idUser, Long challengeId)
+            throws DockerExecuteException {
         try {
             String nameClass = rustCompileService.detectFileName(code);
             String filePath = rustCompileService.doCopyFileToContainer(
@@ -72,11 +68,8 @@ public class ThreadRunWithTestCaseRust {
                             .map(CompletableFuture::join)
                             .collect(Collectors.toList())
             );
-
         } catch (Exception e) {
             return CompletableFuture.failedFuture(e);
-        } catch (DockerExecuteException e) {
-            throw new RuntimeException(e);
         }
     }
 

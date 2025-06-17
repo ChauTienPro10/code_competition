@@ -9,6 +9,7 @@ import myself.programing.coding.dto.CompileResponse;
 import myself.programing.coding.dto.HttpResponseApi;
 import myself.programing.coding.dto.RunWithTestCasesDto;
 import myself.programing.coding.enums.API_RESPONSE_STATUS;
+import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.services.pythonCoding.threads.ThreadForPythonCompileCode;
 import myself.programing.coding.services.pythonCoding.threads.ThreadForPythonRunCode;
 import myself.programing.coding.utils.HandleStringUtils;
@@ -58,7 +59,8 @@ public class PythonCompileController implements ICompileController {
     public HttpResponseApi<CompileResponse> compile(CompileRequestDto request) {
         try {
             logInfo("*****START COMPILING*****");
-            String resultCompile = threadForPythonCompileCode.compile(request.getCode(), request.getIdUser());
+            String resultCompile = String.valueOf(
+                    threadForPythonCompileCode.compile(request.getCode(), request.getIdUser()).get());
             CompileResponse compileResponse = new CompileResponse(resultCompile);
             HttpResponseApi<CompileResponse> result = HttpResponseApi.<CompileResponse>builder()
                     .message(API_RESPONSE_STATUS.SUCCESS.getMessage())
@@ -67,7 +69,7 @@ public class PythonCompileController implements ICompileController {
                     .build();
             logInfo("*****COMPILING SUCCESSFULLY*****");
             return result;
-        } catch (InterruptedException | ExecutionException e) {
+        } catch (DockerExecuteException e) {
             logInfo("*****COMPILING FAIL: " + e.getMessage()+ "*****");
             return HttpResponseApi.<CompileResponse>builder()
                     .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())

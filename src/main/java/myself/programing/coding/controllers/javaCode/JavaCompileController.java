@@ -8,6 +8,7 @@ import myself.programing.coding.dto.CompileResponse;
 import myself.programing.coding.dto.HttpResponseApi;
 import myself.programing.coding.dto.RunWithTestCasesDto;
 import myself.programing.coding.enums.API_RESPONSE_STATUS;
+import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.repository.TestCaseRepository;
 import myself.programing.coding.services.ChallengeService;
 import myself.programing.coding.services.javaCoding.JavaCompileService;
@@ -67,7 +68,8 @@ public class JavaCompileController implements ICompileController {
     public HttpResponseApi<CompileResponse> compile(@RequestBody CompileRequestDto request) {
         try {
             logInfo("*****START COMPILING*****");
-            String resultCompile = threadForJavaCompileCode.compile(request.getCode(), request.getIdUser());
+            String resultCompile =
+                    String.valueOf(threadForJavaCompileCode.compile(request.getCode(), request.getIdUser()).get());
             CompileResponse compileResponse = new CompileResponse(resultCompile);
             HttpResponseApi<CompileResponse> result = HttpResponseApi.<CompileResponse>builder()
                     .message(API_RESPONSE_STATUS.SUCCESS.getMessage())
@@ -76,7 +78,7 @@ public class JavaCompileController implements ICompileController {
                     .build();
             logInfo("*****COMPILING SUCCESSFULLY*****");
             return result;
-        } catch (InterruptedException | ExecutionException e) {
+        } catch (InterruptedException | ExecutionException | DockerExecuteException e) {
             logInfo("*****COMPILING FAIL: " + e.getMessage()+ "*****");
             return HttpResponseApi.<CompileResponse>builder()
                     .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())

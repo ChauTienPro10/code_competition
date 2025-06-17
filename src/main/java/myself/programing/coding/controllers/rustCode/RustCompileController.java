@@ -9,6 +9,7 @@ import myself.programing.coding.dto.CompileResponse;
 import myself.programing.coding.dto.HttpResponseApi;
 import myself.programing.coding.dto.RunWithTestCasesDto;
 import myself.programing.coding.enums.API_RESPONSE_STATUS;
+import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.services.rustCoding.threads.ThreadRunWithTestCaseRust;
 import myself.programing.coding.services.rustCoding.threads.ThreadsForRustCompileCode;
 import myself.programing.coding.services.rustCoding.threads.ThreadsForRustRunCode;
@@ -115,6 +116,11 @@ public class RustCompileController implements ICompileController {
         }
     }
 
+    /**
+     *
+     * @param request
+     * @return {@code HttpResponseApi<List<RunWithTestCasesDto>>}
+     */
     public HttpResponseApi<List<RunWithTestCasesDto>> runWithTests(@RequestBody CompileRequestDto request) {
         try {
             logInfo("*****START COMPILING AND RUN*****");
@@ -126,7 +132,7 @@ public class RustCompileController implements ICompileController {
                     .build();
             logInfo("*****RUN COMPETITION*****");
             return result;
-        } catch (InterruptedException | ExecutionException e) {
+        } catch (InterruptedException | ExecutionException | DockerExecuteException e) {
             logInfo("*****RUN FAIL: " + e.getMessage()+ "*****");
             return HttpResponseApi.<List<RunWithTestCasesDto>>builder()
                     .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
