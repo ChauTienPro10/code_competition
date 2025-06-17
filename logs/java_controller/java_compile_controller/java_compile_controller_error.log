@@ -83,3 +83,18 @@
 2025-06-17 08:33:35 - ERROR - *****RUN FAIL BY ERROR SYSTEM: Task java.util.concurrent.FutureTask@6cb21bd[Not completed, task = myself.programing.coding.services.pythonCoding.threads.ThreadForPythonRunCode$$Lambda/0x0000787190e7ce18@6b0e2973] rejected from java.util.concurrent.ThreadPoolExecutor@493557d7[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]*****
 2025-06-17 08:56:36 - ERROR - *****RUN FAIL BY ERROR SYSTEM: Invalid return type for async method (only Future and void supported): class java.lang.String*****
 2025-06-17 08:57:29 - ERROR - *****RUN FAIL BY ERROR SYSTEM: Invalid return type for async method (only Future and void supported): class java.lang.String*****
+2025-06-17 09:27:38 - ERROR - *****RUN FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:27:41 - ERROR - *****RUN FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:27:45 - ERROR - *****RUN FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:27:46 - ERROR - *****RUN FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:30:30 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:31:50 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:35:42 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:36:45 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:39:00 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:43:59 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:46:25 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:48:09 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:49:02 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:52:54 - ERROR - *****COMPILING FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:49:33 - ERROR - *****RUN FAIL BY ERROR SYSTEM: java.lang.reflect.UndeclaredThrowableException*****

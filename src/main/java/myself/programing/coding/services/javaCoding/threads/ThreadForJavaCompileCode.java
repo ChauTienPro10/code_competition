@@ -20,18 +20,20 @@ public class ThreadForJavaCompileCode {
      * @param code
      * @param idUser
      * @return {@code CompletableFuture<String>}
-     * @throws DockerExecuteException
-     * @throws IOException
+     * @throws ExecutionException
      */
     @Async("taskExecutor")
-    public CompletableFuture<String> compile(String code, Long idUser)
-            throws DockerExecuteException, IOException {
-        String nameClass = javaCompileService.detectFileName(code);
-        String filePath = javaCompileService.doCopyFileToContainer(
-                javaCompileService.generateCodeFile(nameClass, code, idUser),
-                idUser
-        );
-        String rs = javaCompileService.doCompile(filePath);
-        return CompletableFuture.completedFuture(rs);
+    public CompletableFuture<String> compile(String code, Long idUser) throws ExecutionException {
+        try {
+            String nameClass = javaCompileService.detectFileName(code);
+            String filePath = javaCompileService.doCopyFileToContainer(
+                    javaCompileService.generateCodeFile(nameClass, code, idUser),
+                    idUser
+            );
+            String rs = javaCompileService.doCompile(filePath);
+            return CompletableFuture.completedFuture(rs);
+        } catch (Throwable e) {
+            throw new ExecutionException(e);
+        }
     }
 }

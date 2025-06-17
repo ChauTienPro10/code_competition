@@ -1992,3 +1992,88 @@ NameError: name 'get_index_of_two_elm_equal_target' is not defined
 2025-06-17 09:11:22 - INFO - *****RUN COMPETITION*****
 2025-06-17 09:11:23 - INFO - *****START COMPILING AND RUN*****
 2025-06-17 09:11:24 - INFO - *****RUN COMPETITION*****
+2025-06-17 09:27:20 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 09:27:21 - INFO - *****RUN COMPETITION*****
+2025-06-17 09:27:23 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 09:27:24 - INFO - *****RUN COMPETITION*****
+2025-06-17 09:27:38 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 09:27:40 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 09:27:44 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 09:27:45 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 09:27:47 - INFO - *****START COMPILING*****
+2025-06-17 09:27:48 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:27:52 - INFO - *****START COMPILING*****
+2025-06-17 09:27:52 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:27:53 - INFO - *****START COMPILING*****
+2025-06-17 09:27:54 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:29:04 - INFO - *****START COMPILING*****
+2025-06-17 09:29:04 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 09:30:29 - INFO - *****START COMPILING*****
+2025-06-17 09:31:49 - INFO - *****START COMPILING*****
+2025-06-17 09:32:18 - INFO - *****START COMPILING*****
+2025-06-17 09:32:19 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-06-17 09:32:41 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 09:32:42 - INFO - *****RUN COMPETITION*****
+2025-06-17 09:32:44 - INFO - *****START COMPILING*****
+2025-06-17 09:32:45 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-06-17 09:32:45 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 09:32:47 - INFO - *****RUN COMPETITION*****
+2025-06-17 09:35:41 - INFO - *****START COMPILING*****
+2025-06-17 09:36:44 - INFO - *****START COMPILING*****
+2025-06-17 09:38:43 - INFO - *****START COMPILING*****
+2025-06-17 09:43:24 - INFO - *****START COMPILING*****
+2025-06-17 09:46:24 - INFO - *****START COMPILING*****
+2025-06-17 09:48:08 - INFO - *****START COMPILING*****
+2025-06-17 09:49:01 - INFO - *****START COMPILING*****
+2025-06-17 09:52:54 - INFO - *****START COMPILING*****
+2025-06-17 10:05:29 - INFO - *****START COMPILING*****
+2025-06-17 10:05:30 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:05:34 - INFO - *****START COMPILING*****
+2025-06-17 10:05:35 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-06-17 10:05:46 - INFO - *****START COMPILING*****
+2025-06-17 10:05:47 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:08:20 - INFO - *****START COMPILING*****
+2025-06-17 10:08:21 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:10:34 - INFO - *****START COMPILING*****
+2025-06-17 10:10:34 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:21:05 - INFO - *****START COMPILING*****
+2025-06-17 10:21:06 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:21:36 - INFO - *****START COMPILING*****
+2025-06-17 10:21:37 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-06-17 10:21:42 - INFO - *****START COMPILING*****
+2025-06-17 10:21:43 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:21:51 - INFO - *****START COMPILING*****
+2025-06-17 10:21:52 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-06-17 10:21:56 - INFO - *****START COMPILING*****
+2025-06-17 10:21:57 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:23:01 - INFO - *****START COMPILING*****
+2025-06-17 10:23:01 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:25:40 - INFO - *****START COMPILING*****
+2025-06-17 10:26:33 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:27:02 - INFO - *****START COMPILING*****
+2025-06-17 10:29:23 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:31:04 - INFO - *****START COMPILING*****
+2025-06-17 10:31:56 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:35:40 - INFO - *****START COMPILING*****
+2025-06-17 10:36:02 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:43:32 - INFO - *****START COMPILING*****
+2025-06-17 10:43:33 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:43:34 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 10:43:35 - INFO - *****RUN FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:43:39 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 10:43:40 - INFO - *****RUN COMPETITION*****
+2025-06-17 10:43:42 - INFO - *****START COMPILING*****
+2025-06-17 10:43:43 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-06-17 10:49:16 - INFO - *****START COMPILING*****
+2025-06-17 10:49:17 - INFO - *****COMPILING SUCCESSFULLY*****
+2025-06-17 10:49:18 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 10:49:20 - INFO - *****RUN COMPETITION*****
+2025-06-17 10:49:21 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 10:49:22 - INFO - *****RUN COMPETITION*****
+2025-06-17 10:49:32 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 10:49:34 - INFO - *****START COMPILING*****
+2025-06-17 10:49:35 - INFO - *****COMPILING FAIL: java.lang.reflect.UndeclaredThrowableException*****
+2025-06-17 10:50:11 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 10:50:12 - INFO - *****RUN COMPETITION*****
+2025-06-17 10:50:28 - INFO - *****START COMPILING AND RUN*****
+2025-06-17 10:50:29 - INFO - *****RUN COMPETITION*****

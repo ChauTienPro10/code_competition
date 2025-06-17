@@ -12,6 +12,7 @@ import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.services.javaCoding.threads.ThreadForJavaCompileCode;
 import myself.programing.coding.services.javaCoding.threads.ThreadRunWithTestCases;
 import myself.programing.coding.services.javaCoding.threads.ThreadsForJavaRunCode;
+import myself.programing.coding.utils.HandleExeptionUtils;
 import myself.programing.coding.utils.HandleStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -75,14 +76,24 @@ public class JavaCompileController implements ICompileController {
                     .build();
             logInfo("*****COMPILING SUCCESSFULLY*****");
             return result;
-        } catch (InterruptedException | ExecutionException | DockerExecuteException e) {
-            logInfo("*****COMPILING FAIL: " + e.getMessage()+ "*****");
-            return HttpResponseApi.<CompileResponse>builder()
-                    .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
-                    .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
-                    .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(e.getMessage())))
-                    .build();
-        } catch (Exception e) {
+        } catch (ExecutionException e) {
+            Throwable actual = HandleExeptionUtils.unwrap(e);
+            logInfo("*****COMPILING FAIL: " + e.getMessage() + "*****");
+            if (actual instanceof DockerExecuteException dex) {
+                return HttpResponseApi.<CompileResponse>builder()
+                        .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
+                        .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
+                        .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(dex.getMessage())))
+                        .build();
+            } else {
+                return HttpResponseApi.<CompileResponse>builder()
+                        .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
+                        .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
+                        .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(actual.getMessage())))
+                        .build();
+            }
+        }
+        catch (Exception e) {
             logError("*****COMPILING FAIL BY ERROR SYSTEM: " + e.getMessage()+ "*****");
             return HttpResponseApi.<CompileResponse>builder()
                     .code(API_RESPONSE_STATUS.SERVER_ERROR.getCode())
@@ -110,13 +121,22 @@ public class JavaCompileController implements ICompileController {
                     .build();
             logInfo("*****RUN COMPETITION*****");
             return result;
-        } catch (DockerExecuteException e) {
+        } catch (ExecutionException e) {
+            Throwable actual = HandleExeptionUtils.unwrap(e);
             logInfo("*****RUN FAIL: " + e.getMessage()+ "*****");
-            return HttpResponseApi.<CompileResponse>builder()
-                    .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
-                    .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
-                    .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(e.getMessage())))
-                    .build();
+            if (actual instanceof DockerExecuteException dex) {
+                return HttpResponseApi.<CompileResponse>builder()
+                        .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
+                        .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
+                        .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(dex.getMessage())))
+                        .build();
+            } else {
+                return HttpResponseApi.<CompileResponse>builder()
+                        .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
+                        .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
+                        .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(actual.getMessage())))
+                        .build();
+            }
         } catch (Exception e) {
             logError("*****RUN FAIL BY ERROR SYSTEM: " + e.getMessage() + "*****");
             return HttpResponseApi.<CompileResponse>builder()
@@ -135,7 +155,7 @@ public class JavaCompileController implements ICompileController {
     public HttpResponseApi<List<RunWithTestCasesDto>> runWithTests(@RequestBody CompileRequestDto request) {
         try {
             logInfo("*****START COMPILING AND RUN*****");
-            List<RunWithTestCasesDto> resultRun = threadRunWithTestCases.runWithTest(request.getCode(), request.getIdUser(), request.getChallengeId());
+            List<RunWithTestCasesDto> resultRun = threadRunWithTestCases.runWithTest(request.getCode(), request.getIdUser(), request.getChallengeId()).get();
             HttpResponseApi<List<RunWithTestCasesDto>> result = HttpResponseApi.<List<RunWithTestCasesDto>>builder()
                     .message(API_RESPONSE_STATUS.SUCCESS.getMessage())
                     .code(API_RESPONSE_STATUS.SUCCESS.getCode())
@@ -143,13 +163,6 @@ public class JavaCompileController implements ICompileController {
                     .build();
             logInfo("*****RUN COMPETITION*****");
             return result;
-        } catch (InterruptedException | ExecutionException e) {
-            logInfo("*****RUN FAIL: " + e.getMessage()+ "*****");
-            return HttpResponseApi.<List<RunWithTestCasesDto>>builder()
-                    .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
-                    .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
-                    .data(null)
-                    .build();
         } catch (Exception e) {
             logError("*****RUN FAIL BY ERROR SYSTEM: " + e.getMessage() + "*****");
             return HttpResponseApi.<List<RunWithTestCasesDto>>builder()
