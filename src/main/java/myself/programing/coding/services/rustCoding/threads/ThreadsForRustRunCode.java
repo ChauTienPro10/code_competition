@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+import java.util.concurrent.ExecutionException;
 import myself.programing.coding.entity.TestCase;
 import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.services.rustCoding.RustCompileService;
@@ -19,7 +20,8 @@ public class ThreadsForRustRunCode {
     @Autowired RustRunCodeService rustRunCodeService;
 
     @Async("taskExecutor")
-    public CompletableFuture<String> runCode(String code, Long idUser, Long challengeId) {
+    public CompletableFuture<String> runCode(String code, Long idUser, Long challengeId)
+            throws ExecutionException {
         try {
             StringBuilder output;
 
@@ -40,8 +42,8 @@ public class ThreadsForRustRunCode {
             }
 
             return CompletableFuture.completedFuture(output.toString());
-        } catch (DockerExecuteException | IOException e) {
-            return CompletableFuture.failedFuture(e);
+        } catch (Throwable e) {
+            throw new ExecutionException(e);
         }
     }
 }

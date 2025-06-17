@@ -26,11 +26,11 @@ public class ThreadRunWithTestCaseRust {
      * @param idUser
      * @param challengeId
      * @return {@code CompletableFuture<List<RunWithTestCasesDto>>}
-     * @throws DockerExecuteException
+     * @throws ExecutionException
      */
     @Async("taskExecutor")
     public CompletableFuture<List<RunWithTestCasesDto>> runWithTest(String code, Long idUser, Long challengeId)
-            throws DockerExecuteException {
+            throws ExecutionException {
         try {
             String nameClass = rustCompileService.detectFileName(code);
             String filePath = rustCompileService.doCopyFileToContainer(
@@ -68,8 +68,8 @@ public class ThreadRunWithTestCaseRust {
                             .map(CompletableFuture::join)
                             .collect(Collectors.toList())
             );
-        } catch (Exception e) {
-            return CompletableFuture.failedFuture(e);
+        } catch (Throwable e) {
+            throw new ExecutionException(e);
         }
     }
 

@@ -13,6 +13,7 @@ import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.services.rustCoding.threads.ThreadRunWithTestCaseRust;
 import myself.programing.coding.services.rustCoding.threads.ThreadsForRustCompileCode;
 import myself.programing.coding.services.rustCoding.threads.ThreadsForRustRunCode;
+import myself.programing.coding.utils.HandleExeptionUtils;
 import myself.programing.coding.utils.HandleStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -72,13 +73,22 @@ public class RustCompileController implements ICompileController {
                     .build();
             logInfo("*****COMPILING SUCCESSFULLY*****");
             return result;
-        } catch (InterruptedException | ExecutionException e) {
+        } catch (ExecutionException e) {
+            Throwable actual = HandleExeptionUtils.unwrap(e);
             logInfo("*****COMPILING FAIL: " + e.getMessage()+ "*****");
-            return HttpResponseApi.<CompileResponse>builder()
-                    .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
-                    .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
-                    .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(e.getMessage())))
-                    .build();
+            if (actual instanceof DockerExecuteException dex) {
+                return HttpResponseApi.<CompileResponse>builder()
+                        .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
+                        .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
+                        .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(dex.getMessage())))
+                        .build();
+            } else {
+                return HttpResponseApi.<CompileResponse>builder()
+                        .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
+                        .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
+                        .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(actual.getMessage())))
+                        .build();
+            }
         } catch (Exception e) {
             logError("*****COMPILING FAIL BY ERROR SYSTEM: " + e.getMessage()+ "*****");
             return HttpResponseApi.<CompileResponse>builder()
@@ -106,6 +116,22 @@ public class RustCompileController implements ICompileController {
                     .build();
             logInfo("*****RUN COMPETITION*****");
             return result;
+        } catch (ExecutionException e) {
+            Throwable actual = HandleExeptionUtils.unwrap(e);
+            logInfo("*****RUN FAIL: " + e.getMessage()+ "*****");
+            if (actual instanceof DockerExecuteException dex) {
+                return HttpResponseApi.<CompileResponse>builder()
+                        .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
+                        .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
+                        .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(dex.getMessage())))
+                        .build();
+            } else {
+                return HttpResponseApi.<CompileResponse>builder()
+                        .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
+                        .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
+                        .data(new CompileResponse(HandleStringUtils.getRightPartAfterFirstBracket(actual.getMessage())))
+                        .build();
+            }
         } catch (Exception e) {
             logError("*****RUN FAIL BY ERROR SYSTEM: " + e.getMessage() + "*****");
             return HttpResponseApi.<CompileResponse>builder()
@@ -132,13 +158,6 @@ public class RustCompileController implements ICompileController {
                     .build();
             logInfo("*****RUN COMPETITION*****");
             return result;
-        } catch (InterruptedException | ExecutionException | DockerExecuteException e) {
-            logInfo("*****RUN FAIL: " + e.getMessage()+ "*****");
-            return HttpResponseApi.<List<RunWithTestCasesDto>>builder()
-                    .code(API_RESPONSE_STATUS.ERROR_COMPILE.getCode())
-                    .message(API_RESPONSE_STATUS.ERROR_COMPILE.getMessage())
-                    .data(null)
-                    .build();
         } catch (Exception e) {
             logError("*****RUN FAIL BY ERROR SYSTEM: " + e.getMessage() + "*****");
             return HttpResponseApi.<List<RunWithTestCasesDto>>builder()

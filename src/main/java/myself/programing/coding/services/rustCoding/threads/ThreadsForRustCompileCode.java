@@ -16,7 +16,7 @@ public class ThreadsForRustCompileCode {
     RustCompileService rustCompileService;
 
     @Async("taskExecutor")
-    public CompletableFuture<String> compile(String code, Long idUser) {
+    public CompletableFuture<String> compile(String code, Long idUser) throws ExecutionException {
         try {
             String nameClass = rustCompileService.detectFileName(code);
             String filePath = rustCompileService.doCopyFileToContainer(
@@ -25,8 +25,8 @@ public class ThreadsForRustCompileCode {
             );
             String result = rustCompileService.doCompile(filePath);
             return CompletableFuture.completedFuture(result);
-        } catch (DockerExecuteException | IOException e) {
-            return CompletableFuture.failedFuture(e);
+        } catch (Throwable e) {
+            throw new ExecutionException(e);
         }
     }
 

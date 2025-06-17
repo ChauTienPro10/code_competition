@@ -5,6 +5,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     if args.len() != 3 {
+        eprintln!("Usage: <program> <comma-separated-nums> <target>");
         return;
     }
 
@@ -16,11 +17,11 @@ fn main() {
         .map(|s| s.trim().parse().expect("Invalid number in nums"))
         .collect();
 
-    let result = two_sum(nums, target);
+    let result = two_sum(&nums, target);
     println!("{:?}", result);
 }
 
-fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-    // code cua ban o day
+fn two_sum(nums: &[i32], target: i32) -> Vec<i32> {
+    // code you here
     vec![]
 }
