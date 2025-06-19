@@ -22,7 +22,7 @@ public class OracleJpaConfig {
     @Bean
     public DataSource dataSource() throws SQLException {
         OracleDataSource ods = new OracleDataSource();
-        ods.setURL("jdbc:oracle:thin:@" + oracleHost + "/FREEPDB1");
+        ods.setURL(STR."jdbc:oracle:thin:@\{oracleHost}/FREEPDB1");
         ods.setUser("developer");
         ods.setPassword("tien22012003");
         return ods;
@@ -40,7 +40,6 @@ public class OracleJpaConfig {
         Properties props = new Properties();
         props.setProperty("hibernate.dialect", "org.hibernate.dialect.OracleDialect");
         props.setProperty("hibernate.hbm2ddl.auto", "update");
-//        props.setProperty("hibernate.hbm2ddl.auto", "none");
         props.setProperty("hibernate.show_sql", "true");
 
         em.setJpaProperties(props);

@@ -1,12 +1,10 @@
 package myself.programing.coding.services.rustCoding.threads;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import java.util.concurrent.ExecutionException;
 import myself.programing.coding.entity.TestCase;
-import myself.programing.coding.exception.DockerExecuteException;
 import myself.programing.coding.services.rustCoding.RustCompileService;
 import myself.programing.coding.services.rustCoding.RustRunCodeService;
 import org.springframework.beans.factory.annotation.Autowired;

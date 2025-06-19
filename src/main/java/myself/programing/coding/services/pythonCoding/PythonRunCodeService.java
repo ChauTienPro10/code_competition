@@ -8,7 +8,6 @@ import myself.programing.coding.repository.TestCaseRepository;
 import myself.programing.coding.services.dockerService.DockerServiceForPython;
 import myself.programing.coding.services.interfaces.IRun;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
 @Service
